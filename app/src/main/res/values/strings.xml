@@ -1,0 +1,113 @@
+<resources>
+    <!-- MAIN ACTIVITY -->
+    <string name="app_name">Adrar Connect</string>
+    <string name="l_adrar">L\'Adrar</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="les_formations">Les formations</string>
+    <string name="processus_d_inscription">Processus d\'inscription</string>
+    <string name="se_connecter">Se connecter</string>
+
+    <!-- ADRAR ACTIVITY -->
+    <string name="adrar">Le Pôle Numérique, vous propose des formations innovantes aux métiers et technologies du numérique accessibles – avec ou sans diplôme – dans les domaines du Développement d’applications web et mobiles, du support et administration des Systèmes et Réseaux et de la transformation numérique des entreprises. Nos formations « métiers » vous permettront de certifier vos compétences, acquérir de l’expérience, obtenir un titre professionnel niveaux IV (niv. Bac), III (niv. Bac+2) et II (niv. Bac+3) et surtout…DEVENIR UN PROFESSIONNEL ACTIF DU SECTEUR NUMÉRIQUE ET INFORMATIQUE EN OCCITANIE… et au-delà. Contactez un conseiller, il vous accompagnera dans la concrétisation de votre projet de formationBean et votre projet professionnel. Une équipe pédagogique à votre disposition. Le Pôle numérique s’appuie sur une équipe d’une vingtaine de formateurs experts dans leur domaine. Ils possèdent tous une expérience de plus de 5 ans dans le métier et sont formés à la pédagogie pour adultes. Chaque dispositif est suivi par un formateur référent : il est le garant technique et gère au quotidien la formationBean. La coordinatrice de la filière prend en charge l’adaptation de votre parcours de formationBean, la mise en place de son individualisation, ainsi que la coordination des groupes et votre suivi individuel tout au long du parcours.Les locaux à votre disposition Nous dispensons nos formations dans plus de 4000m² de locaux et sommes en capacité d’intervenir sur l’ensemble de la Région Occitanie.</string>
+    <string name="title_activity_adrar">L\'adrar</string>
+
+    <!-- PROCESSUS ACTIVITY -->
+    <string name="salari">Salarié</string>
+    <string name="demandeur_d_emploi">demandeur d\'emploi</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_processus">ProcessusActivity</string>
+    <string name="salarie">Salarié</string>
+    <string name="chomeur">Demandeur d\'emploi</string>
+    <string name="flecheretour">flecheRetour</string>
+
+    <!-- S'INSCRIRE ACTIVITY -->
+    <string name="text_debut_formulaire">Merci de remplir \n le formulaire ci dessous</string>
+    <string name="nom">Nom :</string>
+    <string name="prenom">Prénom :</string>
+    <string name="e_mail">E-mail :</string>
+    <string name="mot_de_passe">Mot de passe :</string>
+    <string name="confirmer_mdp">Confirmation Mdp :</string>
+
+    <!-- FRAGMENT SALARIE & DEMANDEUR D'EMPLOI -->
+    <string name="developpeur">Développeur</string>
+    <string name="logodev">logoDev</string>
+    <string name="contact">Contact : </string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="telephone">01 23 45 67 89</string>
+    <string name="logotelephone">logo téléphone</string>
+    <string name="mail_exemple">toto.tata@adrar-formationBean.com</string>
+    <string name="logo_e_mail">logo e-mail</string>
+
+    <!-- POUR LES BOUTONS ET TEXTE CLICKABLE -->
+    <string name="valider">Valider</string>
+    <string name="annuler">Annuler</string>
+
+    <!-- FORMATION ACTIVITY -->
+    <string name="nom_de_la_formation">Nom de la formationBean</string>
+
+
+    <!-- ESPACE PERSO ACTIVITY -->
+    <string name="bonjour">Bonjour</string>
+    <string name="prenom_utilisateur">{Prénom}</string>
+    <string name="avancement_de_mon_dossier">Avancement de mon dossier :</string>
+    <string name="inscription">Inscription</string>
+    <string name="infos_personnelles">Infos Personnelles</string>
+    <string name="documents">Documents</string>
+    <string name="inscription_info_co">Inscription information collective</string>
+    <string name="participation_info_co">Participation information collective</string>
+    <string name="dossier_valide">Dossier validé :</string>
+    <string name="icon_check">icon check</string>
+    <string name="mes_informations">Mes Informations</string>
+    <string name="mes_documents">Mes documents</string>
+
+    <!-- MES INFORMATIONS ACTIVITY -->
+    <string name="merci_de_remplir_le_formulaire_ci_dessous">Merci de remplir le formulaire ci dessous</string>
+    <string name="mon_espace">Mon espace</string>
+    <string name="photo_de_profil">photo de profil</string>
+    <string name="logo_ajouter">logo ajouter</string>
+    <string name="date_de_naissance">Date de naissance :</string>
+    <string name="t_l_phone">Téléphone :</string>
+    <string name="num_pole_emploi">N° Pôle Emploi :</string>
+    <string name="adresse">Adresse :</string>
+    <string name="num_voie">N° Voie :</string>
+    <string name="complement_adresse">Complément d\'adresse :</string>
+    <string name="code_postal">Code postal :</string>
+    <string name="ville">Ville :</string>
+    <string name="interesse_par">Intéressé par :</string>
+    <string name="dev">Développement informatique</string>
+    <string name="reseaux">Réseaux</string>
+    <string name="developpement">Développement</string>
+    <string name="reseaux2point">Réseaux</string>
+
+    <!-- MES DOCUMENTS ACTIVITY -->
+    <string name="ajout_pieces_justificative">Ajout de vos pièces justificatives</string>
+    <string name="votre_cv">Votre CV :</string>
+    <string name="votre_lettre_motivation">Votre lettre de motivation :</string>
+    <string name="votre_prescription_pe">Votre prescription pôle emploi :</string>
+
+    <!-- LOGIN ACTIVITY -->
+    <string name="identifiant">Identifiant</string>
+    <string name="password">Mot de passe</string>
+
+    <!-- INFORMATION COLLECTIVE ACTIVITY -->
+    <string name="msg_erreur_infoco">Votre dossier doit être validé pour acceder a cette section</string>
+    <string name="inscription_info_col">S\'inscrire à une information collective</string>
+    <string name="lieu">Lieu</string>
+    <string name="ramonville">Ramonville</string>
+    <string name="date">Date</string>
+    <string name="heure">Heure</string>
+    <string name="_date">21/05/2019 à 14:00</string>
+    <string name="s_lectionner_une_date_et_valider">Sélectionner une date et valider</string>
+    <string name="vous_avez_selectionne">Vous avez sélectionné :</string>
+
+    <!-- TEXTE DE TEST D'AFFICHAGE -->
+    <string name="loremQuestion" translatable="false">1/Lorem ipsum dolor sit amet, consectetur adipiscing elit?</string>
+    <string name="loremReponse" translatable="false">Nulla maximus est sem. Praesent ac purus vel elit vehicula scelerisque. Quisque eget dui vel elit posuere rhoncus id in risus.</string>
+    <string name="lorem" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus est sem.Praesent ac purus vel elit vehicula scelerisque. Quisque eget dui vel elit posuere rhoncus id in risus. Maecenas tincidun nulla a tellus pulvinar facilisis. Vestibulum congue gravida tincidunt.Nam nulla sem, aliquet a metus ac, aucto aliquam mi. Vestibulum mattis eu est nonvolutpat. Vestibulum sed elementum mi. Vestibulum sem nibh, venenatis vitae interdum non, condimentum a diam. Nullam sed quam nec quam tincidunt tempus. Aenean pretium risus at lectus rhoncus auctor. Nunc et nulla mauris.Sed fermentum libero eros, nec semper lectus convallis sit amet. In rhoncus porttitor elit, id laoreet turpis porttitor eu.Nam nulla sem, aliquet a metus ac, auctor aliquam mi. Vestibulum mattis eu est non volutpat. Vestibulum sed elementum mi.Vestibulum sem nibh, venenatis vitae interdum non, condimentum a diam. Nullam sed quam nec quam tincidunt tempus. Aenean pretium risus at lectus rhoncus auctor. Nunc et nulla mauris. </string>
+    <string name="texte_explicatif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus est sem.Praesent ac purus vel elit vehicula scelerisque. Quisque eget dui vel elit posuere rhoncus id in risus. Maecenas tincidunt nulla a tellus pulvinar facilisis. Vestibulum congue gravida tincidunt. </string>
+
+    <!-- DERNIER AJOUT A TRIER ET A CLASSER -->
+
+</resources>

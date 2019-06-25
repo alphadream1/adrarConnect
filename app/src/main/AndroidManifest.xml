@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.adrar.adrarconnect">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_adrar"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_adrar_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".ValidationInformationCollectiveActivity"
+            android:label="Information collective"
+            android:parentActivityName=".ChoixInformationCollectiveActivity" />
+        <activity
+            android:name=".ChoixInformationCollectiveActivity"
+            android:label="Information collective"
+            android:parentActivityName=".InformationCollectiveActivity" />
+        <activity
+            android:name=".InformationCollectiveActivity"
+            android:label="Information collective"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="Connexion"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DescriptionFormationActivity"
+            android:label="intitulé de la formation"
+            android:parentActivityName=".FormationActivity" />
+        <activity
+            android:name=".MesDocumentsActivity"
+            android:label="Mes documents"
+            android:parentActivityName=".EspacePersoActivity" />
+        <activity
+            android:name=".MesInformationsActivity"
+            android:label="Mes informations"
+            android:parentActivityName=".EspacePersoActivity" />
+        <activity
+            android:name=".EspacePersoActivity"
+            android:label="@string/mon_espace"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".FormationActivity"
+            android:label="@string/les_formations"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SinscrireActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ProcessusActivity"
+            android:label="Processus d&apos;inscription"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AdarActivity"
+            android:label="@string/l_adrar"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FaqActivity"
+            android:label="FAQ"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

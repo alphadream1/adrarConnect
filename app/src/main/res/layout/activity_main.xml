@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btAdrar"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="2dp"
+        android:backgroundTint="@color/bleuAdrar"
+        android:onClick="onClickBoutonAdrar"
+        android:text="@string/l_adrar"
+        android:textAllCaps="false"
+        android:textColor="@color/blancEcriture"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btProcessus"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_marginEnd="2dp"
+        android:backgroundTint="@color/rougeProcess"
+        android:onClick="onClickBoutonProcessus"
+        android:text="@string/processus_d_inscription"
+        android:textAllCaps="false"
+        android:textColor="@color/blancEcriture"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/btAdrar" />
+
+    <Button
+        android:id="@+id/btFormation"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/orangeFormation"
+        android:onClick="onClickBoutonFormation"
+        android:text="@string/les_formations"
+        android:textAllCaps="false"
+        android:textColor="@color/blancEcriture"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btInscrire"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btInscrire"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="2dp"
+        android:backgroundTint="@color/vertInscrire"
+        android:onClick="onClickBoutonSinscrire"
+        android:text="@string/s_inscrire"
+        android:textAllCaps="false"
+        android:textColor="@color/blancEcriture"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/btFormation" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btProcessus">
+
+        <TextView
+            android:id="@+id/tvSeConnecter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:onClick="onClickSeConnecter"
+            android:padding="5dp"
+            android:text="@string/se_connecter"
+            android:textColor="@color/bleuAdrar"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="360dp"
+        android:layout_height="88dp"
+        android:src="@drawable/baniere_adrar_gen19"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
