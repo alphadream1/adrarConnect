@@ -19,6 +19,13 @@ class ProcessusInscriptionBean {
         super();
     }
 
+    public ProcessusInscriptionBean(ProcessusInscriptionBean data) {
+        this.salarie_html = data.salarie_html;
+        this.demandeur_emploi_html = data.getDemandeur_emploi_html();
+        this.email = data.getEmail();
+        this.telephone = data.getTelephone();
+    }
+
     public ProcessusInscriptionBean(String salarie_html, String demandeur_emploi_html, String telephone, String email) {
         this.salarie_html = salarie_html;
         this.demandeur_emploi_html = demandeur_emploi_html;

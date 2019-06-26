@@ -23,18 +23,25 @@ public class AccueilBean {
     // constructeur
     //---------------
 
-
-    public AccueilBean(AccueilBean accueilBean) {
+    public AccueilBean() {
         super();
     }
 
-    public AccueilBean(ArrayList<FormationBean> dataFormation, String adrar_html, ProcessusInscriptionBean processusInscription, String informationCollective_html, ArrayList<InfoCollectiveBean> dataInfoCo, ArrayList<FaqBean> dataFaq) {
-        this.dataFormation = dataFormation;
-        this.adrar_html = adrar_html;
-        this.processusInscription = processusInscription;
-        this.informationCollective_html = informationCollective_html;
-        this.dataInfoCo = dataInfoCo;
-        this.dataFaq = dataFaq;
+    public AccueilBean(AccueilBean data) {
+        processusInscription = new ProcessusInscriptionBean(data.getProcessusInscription());
+
+        dataFormation = new ArrayList<>();
+        dataFormation.addAll(data.getDataFormation());
+
+        this.adrar_html = data.getAdrar_html();
+
+        this.informationCollective_html = data.getInformationCollective_html();
+
+        dataInfoCo = new ArrayList<>();
+        dataInfoCo.addAll(data.getDataInfoCo());
+
+        dataFaq = new ArrayList<>();
+        dataFaq.addAll(data.getDataFaq());
     }
 
     //---------------

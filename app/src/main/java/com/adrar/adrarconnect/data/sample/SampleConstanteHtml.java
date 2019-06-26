@@ -24,7 +24,6 @@ public class SampleConstanteHtml {
             "            }\n" +
             "            p {\n" +
             "                font-size: 1rem;\n" +
-            "                color: blue;\n" +
             "                text-align: justify;\n" +
             "            }\n" +
             "        </style>\n" +
@@ -64,7 +63,6 @@ public class SampleConstanteHtml {
             "            }\n" +
             "            p {\n" +
             "                font-size: 1rem;\n" +
-            "                color: orange;\n" +
             "                text-align: justify;\n" +
             "            }\n" +
             "        </style>\n" +
@@ -153,7 +151,6 @@ public class SampleConstanteHtml {
             "            }\n" +
             "            p {\n" +
             "                font-size: 1rem;\n" +
-            "                color: orangered;\n" +
             "                text-align: justify;\n" +
             "            }\n" +
             "        </style>\n" +
@@ -195,7 +192,6 @@ public class SampleConstanteHtml {
             "            }\n" +
             "            p {                \n" +
             "                font-size: 1rem;\n" +
-            "                color: orangered;\n" +
             "                text-align: justify;\n" +
             "            }\n" +
             "        </style>\n" +
