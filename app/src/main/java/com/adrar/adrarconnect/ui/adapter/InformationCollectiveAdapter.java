@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.adrar.adrarconnect.R;
 import com.adrar.adrarconnect.ValidationInformationCollectiveActivity;
 import com.adrar.adrarconnect.data.model.InfoCollectiveBean;
+import com.adrar.adrarconnect.data.utils.Constants;
 
 import java.util.ArrayList;
 
@@ -33,7 +34,7 @@ public class InformationCollectiveAdapter extends RecyclerView.Adapter<Informati
     // classe qui stock les données d'1 ligne
     protected static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvVille, tvDate, tvHeure;
+        TextView tvVille, tvDate;
         View root;
 
         public ViewHolder(View itemView) {
@@ -53,15 +54,17 @@ public class InformationCollectiveAdapter extends RecyclerView.Adapter<Informati
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
-        InfoCollectiveBean datum = data.get(i);
-        // todo corriger juste en dessous
-//        viewHolder.tvVille.setText(datum.getVille());
-        viewHolder.tvDate.setText(datum.getDate());
+        final InfoCollectiveBean datum = data.get(i);
+
+        viewHolder.tvVille.setText(datum.getCentreDeFormation().getVille());
+        viewHolder.tvDate.setText(Constants.SDF_ALL.format(datum.getDate()));
 
         viewHolder.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewHolder.root.getContext().startActivity(new Intent(viewHolder.root.getContext(), ValidationInformationCollectiveActivity.class));
+                Intent intent = new Intent(viewHolder.root.getContext(), ValidationInformationCollectiveActivity.class);
+                intent.putExtra("clé", "a remplir ici"); // todo a finir de remplir ici
+                viewHolder.root.getContext().startActivity(intent);
             }
         });
     }

@@ -8,16 +8,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 
-import com.adrar.adrarconnect.data.sample.SampleConstanteHtml;
+import com.adrar.adrarconnect.data.utils.MyApplication;
 
-public class AdarActivity extends AppCompatActivity {
+public class AdrarActivity extends AppCompatActivity {
 
+    // private String adrar_html;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adrar);
         WebView myWebView = findViewById(R.id.webViewAdrar);
-        myWebView.loadData(SampleConstanteHtml.ADRAR_HTML, "text/html", "UTF-8");
+
+        myWebView.loadData(MyApplication.getAccueilData().getAdrar_html(), "text/html", "utf-8");
     }
 }

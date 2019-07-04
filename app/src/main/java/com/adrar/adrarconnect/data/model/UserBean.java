@@ -4,12 +4,14 @@ package com.adrar.adrarconnect.data.model;
 // Created by FERRARIS Philippe on 13/06/2019 for adrarConnect.
 //
 
+import android.text.Editable;
+
 import java.util.Date;
 
 public class UserBean {
 
-    private int id,avancementInscription;
-    private String nom, prenom, email,telephone, numeroPe, mdp, numeroVoie, adresse, complementAdresse, cp, ville, idSessionConnexion;
+    private int id, avancementInscription;
+    private String nom, prenom, email, telephone, numeroPe, mdp, numeroVoie, adresse, complementAdresse, cp, ville, idSessionConnexion;
     private Date ddn;
     private boolean dev, reseau, admin;
     private DocumentsBean documents;
@@ -20,13 +22,13 @@ public class UserBean {
     //---------------
 
 
-    public UserBean() {
+    public UserBean(Editable text, Editable etPrenomText, Editable etEmailText, Editable etPasswordText) {
         super();
     }
 
     public UserBean(String nom, String prenom, String email, String mdp) {
-        this.nom = nom;
         this.prenom = prenom;
+        this.nom = nom;
         this.email = email;
         this.mdp = mdp;
     }

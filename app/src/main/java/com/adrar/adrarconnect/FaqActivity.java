@@ -9,14 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.adrar.adrarconnect.ui.adapter.FaqAdapter;
 import com.adrar.adrarconnect.data.model.FaqBean;
+import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.ui.adapter.FaqAdapter;
 
 import java.util.ArrayList;
 
 import static com.adrar.adrarconnect.R.id;
 import static com.adrar.adrarconnect.R.layout;
-import static com.adrar.adrarconnect.R.string;
 
 public class FaqActivity extends AppCompatActivity {
 
@@ -35,6 +35,8 @@ public class FaqActivity extends AppCompatActivity {
 
         // création de la lliste
         data = new ArrayList<>();
+        // remplissage de la liste
+        data = MyApplication.getAccueilData().getFaq();
         // instanciation FaqAdapter
         adapter = new FaqAdapter(data);
         rvFaq = findViewById(id.rvFaq);
@@ -42,14 +44,6 @@ public class FaqActivity extends AppCompatActivity {
         rvFaq.setAdapter(adapter);
         // réglage de l'affichage
         rvFaq.setLayoutManager(new LinearLayoutManager(this));
-
-        // ---------------
-        // jeux de test de données
-        // ---------------
-        FaqBean faqBean = new FaqBean(getString(string.loremQuestion), getString(string.loremReponse));
-        for (int num = 0; num < 10; num++) {
-            data.add(num, faqBean);
-        }
 
     }
 

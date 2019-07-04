@@ -4,23 +4,23 @@ package com.adrar.adrarconnect.ui.fragment;
 // Created by FERRARIS Philippe on 13/06/2019 for adrarConnect.
 //
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.adrar.adrarconnect.R;
-import com.adrar.adrarconnect.data.sample.SampleConstanteHtml;
+import com.adrar.adrarconnect.SinscrireActivity;
+import com.adrar.adrarconnect.data.utils.MyApplication;
 
 
 public class JobSearcherFragment extends Fragment {
-
-    private TextView tvDescription;
-    private Button btSinscrireProcessus;
 
     public JobSearcherFragment() {
         // Required empty public constructor
@@ -37,15 +37,25 @@ public class JobSearcherFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_jobsearcher, container, false);
 
-        WebView webView = v.findViewById(R.id.webViewDemandeurEmploi);
-        webView.loadData(SampleConstanteHtml.DEMANDEUR_EMPLOI_HTML, "text/html", "UTF-8");
-//        btSinscrireProcessus = v.findViewById(R.id.btSinscrier);
-//        btSinscrireProcessus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getActivity(), SinscrireActivity.class));
-//            }
-//        });
+        // les findViewById :
+        WebView webViewDemandeurEmploi = v.findViewById(R.id.webViewDemandeurEmploi);
+        Button btSinscrireProcessus = v.findViewById(R.id.btSinscrireProcessus);
+
+        // reglage de la webview
+        webViewDemandeurEmploi.setWebViewClient(new WebViewClient());
+        webViewDemandeurEmploi.getSettings().setJavaScriptEnabled(true);
+
+        // on met l'html dans la webview
+        webViewDemandeurEmploi.loadData(MyApplication.getAccueilData().getProcessusInscription().getDemandeurEmploi_html(), "text/html", "UTF-8");
+        Log.w("testHtml", MyApplication.getAccueilData().getProcessusInscription().getDemandeurEmploi_html());
+
+        // on créer le listener pour le bouton.
+        btSinscrireProcessus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), SinscrireActivity.class));
+            }
+        });
 
         return v;
     }

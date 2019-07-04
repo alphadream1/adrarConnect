@@ -13,6 +13,7 @@ import com.adrar.adrarconnect.ui.adapter.SectionsPagerAdapter;
 
 public class ProcessusActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

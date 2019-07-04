@@ -165,6 +165,8 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:background="?android:selectableItemBackground"
+        android:onClick="onClickValiderSinscrire"
+        android:padding="3dp"
         android:text="@string/valider"
         android:textColor="@color/vertInscrire"
         android:textSize="24sp"
@@ -172,12 +174,14 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/tvAnnuler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:background="?android:selectableItemBackground"
+        android:onClick="onClickAnnulerSinscrire"
+        android:padding="3dp"
         android:text="@string/annuler"
         android:textColor="@color/rougeProcess"
         android:textSize="24sp"

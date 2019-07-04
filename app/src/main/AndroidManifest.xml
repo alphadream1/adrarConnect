@@ -6,77 +6,94 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".data.utils.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_adrar"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_adrar_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".ui.splashScreen.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".ValidationInformationCollectiveActivity"
             android:label="Information collective"
-            android:parentActivityName=".ChoixInformationCollectiveActivity" />
+            android:parentActivityName=".ChoixInfoCoActivity" />
+
         <activity
-            android:name=".ChoixInformationCollectiveActivity"
+            android:name=".ChoixInfoCoActivity"
             android:label="Information collective"
             android:parentActivityName=".InformationCollectiveActivity" />
+
         <activity
             android:name=".InformationCollectiveActivity"
             android:label="Information collective"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".LoginActivity"
             android:label="Connexion"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".DescriptionFormationActivity"
             android:label="intitulé de la formation"
             android:parentActivityName=".FormationActivity" />
+
         <activity
             android:name=".MesDocumentsActivity"
             android:label="Mes documents"
             android:parentActivityName=".EspacePersoActivity" />
+
         <activity
             android:name=".MesInformationsActivity"
             android:label="Mes informations"
             android:parentActivityName=".EspacePersoActivity" />
+
         <activity
             android:name=".EspacePersoActivity"
             android:label="@string/mon_espace"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".FormationActivity"
             android:label="@string/les_formations"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".SinscrireActivity"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".ProcessusActivity"
             android:label="Processus d&apos;inscription"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
+
         <activity
-            android:name=".AdarActivity"
+            android:name=".AdrarActivity"
             android:label="@string/l_adrar"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+
         <activity
             android:name=".FaqActivity"
             android:label="FAQ"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

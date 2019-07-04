@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.adrar.adrarconnect.data.utils.InterfaceWebServices;
+
 public class MainActivity extends AppCompatActivity {
 
     // -------------
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         ITEM_ID_INFO_COL = 3;
     }
 
+    // --------------
+    public InterfaceWebServices webServices;
 
     // --------------
     // on create
@@ -36,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
+
 
     // --------------
     // burgerMenu
@@ -54,11 +60,18 @@ public class MainActivity extends AppCompatActivity {
     // ajout des onClickListener sur les items du menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // si faq est cliquer
         if (item.getItemId() == ITEM_ID_FAQ) {
+            // on lance l'activity FAQ
             startActivity(new Intent(this, FaqActivity.class));
-        } else if (item.getItemId() == ITEM_ID_MY_SPACE) {
+        }
+        // si mon espace est cliquer
+        else if (item.getItemId() == ITEM_ID_MY_SPACE) {
             startActivity(new Intent(this, EspacePersoActivity.class));
-        } else if (item.getItemId() == ITEM_ID_INFO_COL) {
+        }
+        // si info collective est cliquer
+        else if (item.getItemId() == ITEM_ID_INFO_COL) {
+            // on lance l'activité FAQ
             startActivity(new Intent(this, InformationCollectiveActivity.class));
         }
         return super.onOptionsItemSelected(item);
@@ -70,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
     // methode onclick pour le bouton "adrar" le clic lance l'activité "adrar"
     public void onClickBoutonAdrar(View view) {
-        startActivity(new Intent(this, AdarActivity.class));
+        // on lance l'activité "adrar"
+        startActivity(new Intent(this, AdrarActivity.class));
     }
 
     // methode onclick pour le bouton "s'inscire" le clic lance l'activité pour s'inscrire
@@ -85,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
     // methode onclick pour le bouton "processus" le clic lance l'activité pour les modalités sur les formations
     public void onClickBoutonProcessus(View view) {
+        // on lance l'activité processus d 'inscription
         startActivity(new Intent(this, ProcessusActivity.class));
     }
 

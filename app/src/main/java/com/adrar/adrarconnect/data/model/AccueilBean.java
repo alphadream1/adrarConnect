@@ -13,11 +13,11 @@ public class AccueilBean {
     //---------------
 
     private ProcessusInscriptionBean processusInscription;
-    private ArrayList<FormationBean> dataFormation;
+    private ArrayList<InfoCollectiveBean> listeInfosCollectives;
+    private ArrayList<FormationBean> formations;
+    private ArrayList<FaqBean> faq;
+    private String infosCollectives_html;
     private String adrar_html;
-    private String informationCollective_html;
-    private ArrayList<InfoCollectiveBean> dataInfoCo;
-    private ArrayList<FaqBean> dataFaq;
 
     //---------------
     // constructeur
@@ -30,30 +30,30 @@ public class AccueilBean {
     public AccueilBean(AccueilBean data) {
         processusInscription = new ProcessusInscriptionBean(data.getProcessusInscription());
 
-        dataFormation = new ArrayList<>();
-        dataFormation.addAll(data.getDataFormation());
+        formations = new ArrayList<>();
+        formations.addAll(data.getFormations());
 
         this.adrar_html = data.getAdrar_html();
 
-        this.informationCollective_html = data.getInformationCollective_html();
+        this.infosCollectives_html = data.getInfosCollectives_html();
 
-        dataInfoCo = new ArrayList<>();
-        dataInfoCo.addAll(data.getDataInfoCo());
+        listeInfosCollectives = new ArrayList<>();
+        listeInfosCollectives.addAll(data.getListeInfosCollectives());
 
-        dataFaq = new ArrayList<>();
-        dataFaq.addAll(data.getDataFaq());
+        faq = new ArrayList<>();
+        faq.addAll(data.getFaq());
     }
 
     //---------------
     // getter & setter
     //---------------
 
-    public ArrayList<FormationBean> getDataFormation() {
-        return dataFormation;
+    public ArrayList<FormationBean> getFormations() {
+        return formations;
     }
 
-    public void setDataFormation(ArrayList<FormationBean> dataFormation) {
-        this.dataFormation = dataFormation;
+    public void setFormations(ArrayList<FormationBean> formations) {
+        this.formations = formations;
     }
 
     public String getAdrar_html() {
@@ -72,27 +72,27 @@ public class AccueilBean {
         this.processusInscription = processusInscription;
     }
 
-    public String getInformationCollective_html() {
-        return informationCollective_html;
+    public String getInfosCollectives_html() {
+        return infosCollectives_html;
     }
 
-    public void setInformationCollective_html(String informationCollective_html) {
-        this.informationCollective_html = informationCollective_html;
+    public void setInfosCollectives_html(String infosCollectives_html) {
+        this.infosCollectives_html = infosCollectives_html;
     }
 
-    public ArrayList<InfoCollectiveBean> getDataInfoCo() {
-        return dataInfoCo;
+    public ArrayList<InfoCollectiveBean> getListeInfosCollectives() {
+        return listeInfosCollectives;
     }
 
-    public void setDataInfoCo(ArrayList<InfoCollectiveBean> dataInfoCo) {
-        this.dataInfoCo = dataInfoCo;
+    public void setListeInfosCollectives(ArrayList<InfoCollectiveBean> listeInfosCollectives) {
+        this.listeInfosCollectives = listeInfosCollectives;
     }
 
-    public ArrayList<FaqBean> getDataFaq() {
-        return dataFaq;
+    public ArrayList<FaqBean> getFaq() {
+        return faq;
     }
 
-    public void setDataFaq(ArrayList<FaqBean> dataFaq) {
-        this.dataFaq = dataFaq;
+    public void setFaq(ArrayList<FaqBean> faq) {
+        this.faq = faq;
     }
 }

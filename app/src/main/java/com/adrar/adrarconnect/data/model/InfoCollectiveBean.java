@@ -1,14 +1,14 @@
 package com.adrar.adrarconnect.data.model;
 
-public class InfoCollectiveBean {
+import java.io.Serializable;
+
+public class InfoCollectiveBean implements Serializable {
 
     private int id;
-    // todo changer le format date de string vers long. le string c'etait juste pour tester
-    private String date;
-    // private long date;
+    private long date;
     private CentreFormationBean centreDeFormation;
     private int nombrePlacesMax;
-    private boolean complet;
+    private int complet;
 
 
     //---------------
@@ -19,12 +19,12 @@ public class InfoCollectiveBean {
         super();
     }
 
-    public InfoCollectiveBean(String date, int nombrePlacesMax) {
+    public InfoCollectiveBean(int date, int nombrePlacesMax) {
         this.date = date;
         this.nombrePlacesMax = nombrePlacesMax;
     }
 
-    public InfoCollectiveBean(String date, CentreFormationBean centreDeFormation, int nombrePlacesMax, boolean complet) {
+    public InfoCollectiveBean(int date, CentreFormationBean centreDeFormation, int nombrePlacesMax, int complet) {
         this.date = date;
         this.centreDeFormation = centreDeFormation;
         this.nombrePlacesMax = nombrePlacesMax;
@@ -44,11 +44,11 @@ public class InfoCollectiveBean {
         this.id = id;
     }
 
-    public String getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
@@ -68,11 +68,11 @@ public class InfoCollectiveBean {
         this.centreDeFormation = centreDeFormation;
     }
 
-    public boolean isComplet() {
+    public int isComplet() {
         return complet;
     }
 
-    public void setComplet(boolean complet) {
+    public void setComplet(int complet) {
         this.complet = complet;
     }
 }

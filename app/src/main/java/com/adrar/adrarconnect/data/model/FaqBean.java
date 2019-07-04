@@ -4,7 +4,9 @@ package com.adrar.adrarconnect.data.model;
 // Created by FERRARIS Philippe on 13/06/2019 for adrarConnect.
 //
 
-public class FaqBean {
+import java.io.Serializable;
+
+public class FaqBean implements Serializable {
 
     private int id;
     private String question, reponse;

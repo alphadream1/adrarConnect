@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.adrar.adrarconnect.data.model.FormationBean;
+import com.adrar.adrarconnect.data.utils.MyApplication;
 import com.adrar.adrarconnect.ui.AutoFitGridLayoutManager;
 import com.adrar.adrarconnect.ui.adapter.FormationAdapter;
 
@@ -41,14 +42,15 @@ public class FormationActivity extends AppCompatActivity {
         //reglage de l'affichage
         rv.setLayoutManager(new AutoFitGridLayoutManager(this, pixelSize));
 
+        data.addAll(MyApplication.getAccueilData().getFormations());
 
-        //--------------------------
-        // données pour jeux de test
-        //--------------------------
-        FormationBean formationBean = new FormationBean(getString(R.string.nom_de_la_formation), getString(R.string.lorem),getString(R.string.ramonville));
-        for (int num = 0; num < 7; num++) {
-            data.add(num, formationBean);
-        }
+//        //--------------------------
+//        // données pour jeux de test
+//        //--------------------------
+//        FormationBean formationBean = new FormationBean(getString(R.string.nom_de_la_formation), getString(R.string.lorem),getString(R.string.ramonville));
+//        for (int num = 0; num < 7; num++) {
+//            data.add(num, formationBean);
+//        }
     }
 
 }

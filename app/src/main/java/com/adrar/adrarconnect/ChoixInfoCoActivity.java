@@ -6,15 +6,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.adrar.adrarconnect.data.model.InfoCollectiveBean;
+import com.adrar.adrarconnect.data.utils.MyApplication;
 import com.adrar.adrarconnect.ui.adapter.InformationCollectiveAdapter;
 
 import java.util.ArrayList;
 
-public class ChoixInformationCollectiveActivity extends AppCompatActivity {
+public class ChoixInfoCoActivity extends AppCompatActivity {
 
     //Données
     private ArrayList<InfoCollectiveBean> data;
-
+    private Bundle extraInfoco;
     // composant graphique
     private RecyclerView rv;
 
@@ -25,25 +26,20 @@ public class ChoixInformationCollectiveActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choix_information_collective);
+        setContentView(R.layout.activity_choix_info_co);
 
-        //Création de la liste
+        //----------------
+        // instanciation
+        //----------------
         data = new ArrayList<>();
-//Instanciation d’un EleveAdapter
+        extraInfoco = getIntent().getExtras();
         adapter = new InformationCollectiveAdapter(data);
         rv = findViewById(R.id.rvChoixInformationCollective);
-// L’adapter que l’on souhaite afficher
+        // L’adapter que l’on souhaite afficher
         rv.setAdapter(adapter);
-//Réglage : Est ce qu'on affiche ligne par ligne ou
+        //Réglage : affichage ligne par ligne
         rv.setLayoutManager(new LinearLayoutManager(this));
 
-
-        // ---------------
-        // jeux de test de données
-        // ---------------
-        InfoCollectiveBean infoColBean = new InfoCollectiveBean(getString(R.string._date), 15);
-        for (int num = 0; num < 10; num++) {
-            data.add(num, infoColBean);
-        }
+        data.addAll(MyApplication.getAccueilData().getListeInfosCollectives());
     }
 }

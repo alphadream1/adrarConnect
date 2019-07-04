@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InformationCollectiveActivity" >
+    tools:context=".InformationCollectiveActivity">
 
     <View
         android:id="@+id/dividerInfoco"
@@ -17,56 +17,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
+    <WebView
+        android:id="@+id/wvInfoco"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvMsgErreur"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dividerInfoco">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/tvMsgErreur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/msg_erreur_infoco"
+        android:textAlignment="center"
+        android:textColor="@color/rougeErreur"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btSinscrireInfoCo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/tvDescriptionInfoCo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/lorem"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tcMsgErreur"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="30dp"
-                android:text="@string/msg_erreur_infoco"
-                android:textAlignment="center"
-                android:textColor="@color/rougeErreur"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/btSinscrireInfoCo"
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="20dp"
-                android:backgroundTint="@color/vertInscrire"
-                android:text="@string/inscription_info_col"
-                android:textColor="@color/blancEcriture"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/tcMsgErreur"
-                android:onClick="onClickSinscrireInformationCollective"/>
-        </LinearLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/btSinscrireInfoCo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/vertInscrire"
+        android:onClick="onClickSinscrireInformationCollective"
+        android:text="@string/inscription_info_col"
+        android:textColor="@color/blancEcriture"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

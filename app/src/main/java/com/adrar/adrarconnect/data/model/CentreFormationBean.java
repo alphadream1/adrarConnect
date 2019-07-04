@@ -4,7 +4,9 @@ package com.adrar.adrarconnect.data.model;
 // Created by FERRARIS Philippe on 13/06/2019 for adrarConnect.
 //
 
-class CentreFormationBean {
+import java.io.Serializable;
+
+public class CentreFormationBean implements Serializable {
 
     private int id;
     private String numeroVoie, adresse, complementAdresse, cp, ville, telephone, coordonneeX, coordonneeY;
