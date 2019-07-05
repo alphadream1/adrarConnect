@@ -5,9 +5,6 @@ package com.adrar.adrarconnect.ui.adapter;
 //
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,9 +16,8 @@ import android.widget.TextView;
 import com.adrar.adrarconnect.DescriptionFormationActivity;
 import com.adrar.adrarconnect.R;
 import com.adrar.adrarconnect.data.model.FormationBean;
+import com.squareup.picasso.Picasso;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.ViewHolder> {
@@ -69,7 +65,7 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.View
         // set du texte avec l'intitulé de la formation
         viewHolder.tvIntituleFormation.setText(datum.getIntitule());
         // todo penser au set de l'image suivant les intitulés des formations( penser a la rajouter a la doc du web service)
-
+        Picasso.get().load(datum.getUrl_photo()).into(viewHolder.ivLogoFormation);
 
         viewHolder.tvTransparent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,39 +85,4 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.View
         return data.size();
     }
 
-    private class DownLoadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView imageView;
-
-        public DownLoadImageTask(ImageView imageView) {
-            this.imageView = imageView;
-        }
-
-        /*
-            doInBackground(Params... params)
-                Override this method to perform a computation on a background thread.
-         */
-        protected Bitmap doInBackground(String... urls) {
-            String urlOfImage = urls[0];
-            Bitmap logo = null;
-            try {
-                InputStream is = new URL(urlOfImage).openStream();
-                /*
-                    decodeStream(InputStream is)
-                        Decode an input stream into a bitmap.
-                 */
-                logo = BitmapFactory.decodeStream(is);
-            } catch (Exception e) { // Catch the download exception
-                e.printStackTrace();
-            }
-            return logo;
-        }
-
-        /*
-            onPostExecute(Result result)
-                Runs on the UI thread after doInBackground(Params...).
-         */
-        protected void onPostExecute(Bitmap result) {
-            imageView.setImageBitmap(result);
-        }
-    }
 }
