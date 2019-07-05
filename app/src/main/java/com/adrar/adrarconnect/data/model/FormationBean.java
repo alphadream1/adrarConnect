@@ -4,10 +4,12 @@ package com.adrar.adrarconnect.data.model;
 // Created by FERRARIS Philippe on 13/06/2019 for adrarConnect.
 //
 
-public class FormationBean {
+import java.io.Serializable;
+
+public class FormationBean implements Serializable {
 
     private int id;
-    private String intitule, url_photo, html;
+    private String intitule, urlPhoto, html;
 
     //--------------
     // CONSTRUCTEUR
@@ -17,9 +19,9 @@ public class FormationBean {
         super();
     }
 
-    public FormationBean(String intitule, String url_photo, String html) {
+    public FormationBean(String intitule, String urlPhoto, String html) {
         this.intitule = intitule;
-        this.url_photo = url_photo;
+        this.urlPhoto = urlPhoto;
         this.html = html;
     }
 
@@ -43,12 +45,12 @@ public class FormationBean {
         this.intitule = intitule;
     }
 
-    public String getUrl_photo() {
-        return url_photo;
+    public String getUrlPhoto() {
+        return urlPhoto;
     }
 
-    public void setUrl_photo(String url_photo) {
-        this.url_photo = url_photo;
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
     }
 
     public String getHtml() {

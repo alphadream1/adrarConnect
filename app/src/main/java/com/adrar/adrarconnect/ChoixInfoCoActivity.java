@@ -39,7 +39,6 @@ public class ChoixInfoCoActivity extends AppCompatActivity {
         rv.setAdapter(adapter);
         //Réglage : affichage ligne par ligne
         rv.setLayoutManager(new LinearLayoutManager(this));
-
         data.addAll(MyApplication.getAccueilData().getListeInfosCollectives());
     }
 }

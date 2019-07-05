@@ -17,27 +17,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/tvInscriptionValide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/vous_avez_selectionne"
+        android:text="@string/vous_tes_inscrit_a_cette_information_collective"
+        android:textAlignment="center"
         android:textSize="20sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_margin="10dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="@color/vertClairInfiCo"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/vertClairInfiCo"
         app:cardCornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25">
+        app:layout_constraintTop_toBottomOf="@+id/tvInscriptionValide">
 
         <LinearLayout
             android:id="@+id/root"
@@ -45,57 +50,190 @@
             android:layout_height="match_parent"
             android:background="?android:selectableItemBackground"
             android:baselineAligned="false"
-            android:orientation="vertical"
             android:paddingLeft="16dp"
             android:paddingTop="10dp"
             android:paddingRight="16dp">
 
-            <TextView
-                android:id="@+id/tvDateInfoCol"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/_date"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvVilleInfoCol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/ramonville"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                android:textStyle="italic" />
+                <TextView
+                    android:id="@+id/tvDateInfoCol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/_date"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvVilleInfoCol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/ramonville"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvInscrit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/vous_tes_inscrit_a_cette_information_collective"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/bleuAdrar"
+                    android:textSize="10sp"
+                    android:visibility="invisible"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvComplet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/complet"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/rougeErreur"
+                    android:visibility="invisible" />
+            </LinearLayout>
 
         </LinearLayout>
+
     </android.support.v7.widget.CardView>
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/tvAnnuler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginBottom="50dp"
-        android:onClick="onClickValider"
+        android:background="?selectableItemBackground"
+        android:onClick="onClickAnnuler"
+        android:padding="5dp"
         android:text="@string/annuler"
         android:textColor="@color/rougeProcess"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView29" />
+        app:layout_constraintEnd_toStartOf="@+id/tvValider" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/tvValider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="50dp"
-        android:onClick="onClickAnnuler"
+        android:background="?selectableItemBackground"
+        android:onClick="onClickValider"
+        android:padding="5dp"
         android:text="@string/valider"
         android:textColor="@color/vertInscrire"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInscriptionRemplacement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/la_remplacer_par_celle_ci"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/vertClairInfiCo"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInscriptionRemplacement">
+
+        <LinearLayout
+            android:id="@+id/root2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:selectableItemBackground"
+            android:baselineAligned="false"
+            android:paddingLeft="16dp"
+            android:paddingTop="10dp"
+            android:paddingRight="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDateInfoCol2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/_date"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvVilleInfoCol2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/ramonville"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvInscrit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/vous_tes_inscrit_a_cette_information_collective"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/bleuAdrar"
+                    android:textSize="10sp"
+                    android:visibility="invisible"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvComplet2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/complet"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/rougeErreur"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

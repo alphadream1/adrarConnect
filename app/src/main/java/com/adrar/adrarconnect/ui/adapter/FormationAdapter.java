@@ -64,16 +64,14 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.View
         final FormationBean datum = data.get(i);
         // set du texte avec l'intitulé de la formation
         viewHolder.tvIntituleFormation.setText(datum.getIntitule());
-        // todo penser au set de l'image suivant les intitulés des formations( penser a la rajouter a la doc du web service)
-        Picasso.get().load(datum.getUrl_photo()).into(viewHolder.ivLogoFormation);
+        Picasso.get().load(datum.getUrlPhoto()).placeholder(R.mipmap.ic_formation).error(R.mipmap.ic_formation).into(viewHolder.ivLogoFormation);
 
         viewHolder.tvTransparent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(viewHolder.ivLogoFormation.getContext(), "clic", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(viewHolder.tvTransparent.getContext(), DescriptionFormationActivity.class);
-                intent.putExtra("description", datum.getHtml());
-                intent.putExtra("intitule", datum.getIntitule());
+                intent.putExtra("formation", datum);
                 viewHolder.tvTransparent.getContext().startActivity(intent);
             }
         });

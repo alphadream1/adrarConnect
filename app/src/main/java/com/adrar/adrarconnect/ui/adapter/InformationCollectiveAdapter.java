@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.adrar.adrarconnect.R;
 import com.adrar.adrarconnect.ValidationInformationCollectiveActivity;
@@ -32,16 +33,18 @@ public class InformationCollectiveAdapter extends RecyclerView.Adapter<Informati
     }
 
     // classe qui stock les données d'1 ligne
-    protected static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvVille, tvDate;
+        TextView tvVille, tvDate, tvInscrit, tvComplet;
         View root;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             tvVille = itemView.findViewById(R.id.tvVilleInfoCol);
             tvDate = itemView.findViewById(R.id.tvDateInfoCol);
             root = itemView.findViewById(R.id.root);
+            tvInscrit = itemView.findViewById(R.id.tvInscrit);
+            tvComplet = itemView.findViewById(R.id.tvComplet);
         }
     }
 
@@ -52,6 +55,7 @@ public class InformationCollectiveAdapter extends RecyclerView.Adapter<Informati
         return new InformationCollectiveAdapter.ViewHolder(v);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         final InfoCollectiveBean datum = data.get(i);
@@ -59,12 +63,26 @@ public class InformationCollectiveAdapter extends RecyclerView.Adapter<Informati
         viewHolder.tvVille.setText(datum.getCentreDeFormation().getVille());
         viewHolder.tvDate.setText(Constants.SDF_ALL.format(datum.getDate()));
 
+        if (datum.isComplet() == 1) {
+            viewHolder.tvComplet.setVisibility(View.VISIBLE);
+        }
+
+        // todo finir le if juste en dessous pour afficher ou pas " vous etes inscrit a cette infoco"
+//        if () {
+//            viewHolder.tvInscrit.setVisibility(View.VISIBLE);
+//        }
+
+
         viewHolder.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(viewHolder.root.getContext(), ValidationInformationCollectiveActivity.class);
-                intent.putExtra("clé", "a remplir ici"); // todo a finir de remplir ici
-                viewHolder.root.getContext().startActivity(intent);
+                if (datum.isComplet() == 1) {
+                    Toast.makeText(viewHolder.tvComplet.getContext(), "Vous ne pouvez vous inscrire à cette information collective car elle est complète", Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intent = new Intent(viewHolder.root.getContext(), ValidationInformationCollectiveActivity.class);
+                    intent.putExtra("infoco", datum);
+                    viewHolder.root.getContext().startActivity(intent);
+                }
             }
         });
     }
