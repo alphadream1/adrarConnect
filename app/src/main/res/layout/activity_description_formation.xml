@@ -8,7 +8,7 @@
     tools:context=".DescriptionFormationActivity">
 
     <View
-        android:ID_InfoCollective="@+ID_InfoCollective/dividerFormation"
+        android:id="@+id/dividerFormation"
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:background="@color/orangeFormation"
@@ -18,12 +18,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <WebView
-        android:ID_InfoCollective="@+ID_InfoCollective/webViewFormation"
+        android:id="@+id/webViewFormation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/dividerFormation" />
+        app:layout_constraintTop_toBottomOf="@+id/dividerFormation" />
 
 </android.support.constraint.ConstraintLayout>

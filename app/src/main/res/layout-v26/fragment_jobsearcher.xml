@@ -9,16 +9,16 @@
     tools:context=".ui.fragment.SalaryFragment">
 
     <WebView
-        android:ID_InfoCollective="@+ID_InfoCollective/webViewDemandeurEmploi"
+        android:id="@+id/webViewDemandeurEmploi"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+ID_InfoCollective/btSinscrireProcessus"
+        app:layout_constraintBottom_toTopOf="@+id/btSinscrireProcessus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:ID_InfoCollective="@+ID_InfoCollective/btSinscrireProcessus"
+        android:id="@+id/btSinscrireProcessus"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -32,5 +32,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/webViewDemandeurEmploi" />
+        app:layout_constraintTop_toBottomOf="@+id/webViewDemandeurEmploi" />
 </android.support.constraint.ConstraintLayout>

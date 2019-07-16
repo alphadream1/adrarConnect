@@ -7,7 +7,7 @@
     tools:context=".ValidationInformationCollectiveActivity">
 
     <View
-        android:ID_InfoCollective="@+ID_InfoCollective/divider2"
+        android:id="@+id/divider2"
         android:layout_width="0dp"
         android:layout_height="8dp"
         android:background="@color/vertInscrire"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvInscriptionValide"
+        android:id="@+id/tvInscriptionValide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -27,10 +27,10 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/divider2" />
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <android.support.v7.widget.CardView
-        android:ID_InfoCollective="@+ID_InfoCollective/cardView"
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_margin="10dp"
@@ -42,10 +42,10 @@
         app:cardCornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/tvInscriptionValide">
+        app:layout_constraintTop_toBottomOf="@+id/tvInscriptionValide">
 
         <LinearLayout
-            android:ID_InfoCollective="@+ID_InfoCollective/root"
+            android:id="@+id/root"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?android:selectableItemBackground"
@@ -60,7 +60,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/tvDateInfoCol"
+                    android:id="@+id/tvDateInfoCol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -70,7 +70,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/tvVilleInfoCol"
+                    android:id="@+id/tvVilleInfoCol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -86,7 +86,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/tvInscrit"
+                    android:id="@+id/tvInscrit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -98,7 +98,7 @@
                     tools:ignore="SmallSp" />
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/tvComplet"
+                    android:id="@+id/tvComplet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -113,7 +113,7 @@
     </android.support.v7.widget.CardView>
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvAnnulerDoc"
+        android:id="@+id/tvAnnulerDoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
@@ -125,10 +125,10 @@
         android:textColor="@color/rougeProcess"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+ID_InfoCollective/tvValiderDoc" />
+        app:layout_constraintEnd_toStartOf="@+id/tvValiderDoc" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvValiderDoc"
+        android:id="@+id/tvValiderDoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -143,7 +143,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvInscriptionRemplacement"
+        android:id="@+id/tvInscriptionRemplacement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -154,10 +154,10 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <android.support.v7.widget.CardView
-        android:ID_InfoCollective="@+ID_InfoCollective/cardView2"
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -168,10 +168,10 @@
         app:cardCornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/tvInscriptionRemplacement">
+        app:layout_constraintTop_toBottomOf="@+id/tvInscriptionRemplacement">
 
         <LinearLayout
-            android:ID_InfoCollective="@+ID_InfoCollective/root2"
+            android:id="@+id/root2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?android:selectableItemBackground"
@@ -186,7 +186,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/tvDateInfoCol2"
+                    android:id="@+id/tvDateInfoCol2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -196,7 +196,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/tvVilleInfoCol2"
+                    android:id="@+id/tvVilleInfoCol2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -212,7 +212,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/tvInscrit2"
+                    android:id="@+id/tvInscrit2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -224,7 +224,7 @@
                     tools:ignore="SmallSp" />
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/tvComplet2"
+                    android:id="@+id/tvComplet2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"

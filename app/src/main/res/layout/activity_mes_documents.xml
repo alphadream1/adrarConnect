@@ -7,7 +7,7 @@
     tools:context=".MesDocumentsActivity">
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/textView3"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvCV"
+        android:id="@+id/tvCV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -26,10 +26,10 @@
         android:text="@string/votre_cv"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageView
-        android:ID_InfoCollective="@+ID_InfoCollective/ivCv"
+        android:id="@+id/ivCv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -37,12 +37,12 @@
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/logo_ajouter"
         android:onClick="onClickAjouterCV"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/tvCV"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/textView3"
+        app:layout_constraintStart_toEndOf="@+id/tvCV"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/ic_ajouter" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/textView18"
+        android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -50,10 +50,10 @@
         android:text="@string/votre_lettre_motivation"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/ivCv" />
+        app:layout_constraintTop_toBottomOf="@+id/ivCv" />
 
     <ImageView
-        android:ID_InfoCollective="@+ID_InfoCollective/ivLettreMotivation"
+        android:id="@+id/ivLettreMotivation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -61,12 +61,12 @@
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/logo_ajouter"
         android:onClick="onClickAjouterLM"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView18"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/ivCv"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/ivCv"
         app:srcCompat="@drawable/ic_ajouter" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/textView22"
+        android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -74,10 +74,10 @@
         android:text="@string/votre_prescription_pe"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/ivLettreMotivation" />
+        app:layout_constraintTop_toBottomOf="@+id/ivLettreMotivation" />
 
     <ImageView
-        android:ID_InfoCollective="@+ID_InfoCollective/ivPrescriptionPE"
+        android:id="@+id/ivPrescriptionPE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -85,12 +85,12 @@
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/logo_ajouter"
         android:onClick="onClickAjouterPPE"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView22"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/ivLettreMotivation"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/ivLettreMotivation"
         app:srcCompat="@drawable/ic_ajouter" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvValiderDoc"
+        android:id="@+id/tvValiderDoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -103,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvAnnulerDoc"
+        android:id="@+id/tvAnnulerDoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -113,41 +113,41 @@
         android:textColor="@color/rougeProcess"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+ID_InfoCollective/tvValiderDoc" />
+        app:layout_constraintEnd_toStartOf="@+id/tvValiderDoc" />
 
     <ImageView
-        android:ID_InfoCollective="@+ID_InfoCollective/ivChechCV"
+        android:id="@+id/ivChechCV"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:contentDescription="@string/icon_check"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/ivCv"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/textView3"
+        app:layout_constraintStart_toEndOf="@+id/ivCv"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/ic_check" />
 
     <ImageView
-        android:ID_InfoCollective="@+ID_InfoCollective/ivCheckLM"
+        android:id="@+id/ivCheckLM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:contentDescription="@string/icon_check"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/ivLettreMotivation"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/ivCv"
+        app:layout_constraintStart_toEndOf="@+id/ivLettreMotivation"
+        app:layout_constraintTop_toBottomOf="@+id/ivCv"
         app:srcCompat="@drawable/ic_check" />
 
     <ImageView
-        android:ID_InfoCollective="@+ID_InfoCollective/ivChechPPE"
+        android:id="@+id/ivChechPPE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:contentDescription="@string/icon_check"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/ivPrescriptionPE"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/ivLettreMotivation"
+        app:layout_constraintStart_toEndOf="@+id/ivPrescriptionPE"
+        app:layout_constraintTop_toBottomOf="@+id/ivLettreMotivation"
         app:srcCompat="@drawable/ic_check" />
 </android.support.constraint.ConstraintLayout>

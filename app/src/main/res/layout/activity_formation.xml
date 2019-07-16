@@ -8,14 +8,14 @@
     tools:context=".FormationActivity">
 
     <View
-        android:ID_InfoCollective="@+ID_InfoCollective/dividerFormation"
+        android:id="@+id/dividerFormation"
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:background="@color/orangeFormation"
         android:backgroundTint="@color/orangeFormation" />
 
     <android.support.v7.widget.RecyclerView
-        android:ID_InfoCollective="@+ID_InfoCollective/rvFormation"
+        android:id="@+id/rvFormation"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"

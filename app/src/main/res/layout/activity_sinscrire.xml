@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <View
-        android:ID_InfoCollective="@+ID_InfoCollective/dividerSinscrire"
+        android:id="@+id/dividerSinscrire"
         android:layout_width="0dp"
         android:layout_height="8dp"
         android:background="@color/vertInscrire"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/textView2"
+        android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -26,10 +26,10 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/dividerSinscrire" />
+        app:layout_constraintTop_toBottomOf="@+id/dividerSinscrire" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvNom"
+        android:id="@+id/tvNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -37,10 +37,10 @@
         android:text="@string/nom"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:ID_InfoCollective="@+ID_InfoCollective/etNom"
+        android:id="@+id/etNom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -49,13 +49,13 @@
         android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
-        android:labelFor="@ID_InfoCollective/etNom"
+        android:labelFor="@id/etNom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/tvNom"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/textView2" />
+        app:layout_constraintStart_toEndOf="@+id/tvNom"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvPrenom"
+        android:id="@+id/tvPrenom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -63,10 +63,10 @@
         android:text="@string/prenom"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etNom" />
+        app:layout_constraintTop_toBottomOf="@+id/etNom" />
 
     <EditText
-        android:ID_InfoCollective="@+ID_InfoCollective/etPrenom"
+        android:id="@+id/etPrenom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -75,13 +75,13 @@
         android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
-        android:labelFor="@ID_InfoCollective/etPrenom"
+        android:labelFor="@id/etPrenom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/tvPrenom"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etNom" />
+        app:layout_constraintStart_toEndOf="@+id/tvPrenom"
+        app:layout_constraintTop_toBottomOf="@+id/etNom" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvEmail"
+        android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -89,10 +89,10 @@
         android:text="@string/e_mail"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etPrenom" />
+        app:layout_constraintTop_toBottomOf="@+id/etPrenom" />
 
     <EditText
-        android:ID_InfoCollective="@+ID_InfoCollective/etEmail"
+        android:id="@+id/etEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -101,13 +101,13 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
-        android:labelFor="@ID_InfoCollective/etEmail"
+        android:labelFor="@id/etEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/tvEmail"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etPrenom" />
+        app:layout_constraintStart_toEndOf="@+id/tvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etPrenom" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvMotDePasse"
+        android:id="@+id/tvMotDePasse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -115,10 +115,10 @@
         android:text="@string/mot_de_passe"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <EditText
-        android:ID_InfoCollective="@+ID_InfoCollective/etPassword"
+        android:id="@+id/etPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -127,13 +127,13 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textPassword"
-        android:labelFor="@ID_InfoCollective/etPassword"
+        android:labelFor="@id/etPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/tvMotDePasse"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etEmail" />
+        app:layout_constraintStart_toEndOf="@+id/tvMotDePasse"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvConfirMdp"
+        android:id="@+id/tvConfirMdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -141,10 +141,10 @@
         android:text="@string/confirmer_mdp"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <EditText
-        android:ID_InfoCollective="@+ID_InfoCollective/etConfirMdp"
+        android:id="@+id/etConfirMdp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -153,13 +153,13 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textPassword"
-        android:labelFor="@ID_InfoCollective/etConfirMdp"
+        android:labelFor="@id/etConfirMdp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/tvConfirMdp"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etPassword" />
+        app:layout_constraintStart_toEndOf="@+id/tvConfirMdp"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvValiderDoc"
+        android:id="@+id/tvValiderDoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -174,7 +174,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvAnnulerDoc"
+        android:id="@+id/tvAnnulerDoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -186,5 +186,5 @@
         android:textColor="@color/rougeProcess"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+ID_InfoCollective/tvValiderDoc" />
+        app:layout_constraintEnd_toStartOf="@+id/tvValiderDoc" />
 </android.support.constraint.ConstraintLayout>

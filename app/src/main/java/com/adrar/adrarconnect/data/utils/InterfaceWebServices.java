@@ -6,7 +6,6 @@ package com.adrar.adrarconnect.data.utils;
 
 import com.adrar.adrarconnect.data.model.AccueilBean;
 import com.adrar.adrarconnect.data.model.DocumentsBean;
-import com.adrar.adrarconnect.data.model.InfoCollectiveBean;
 import com.adrar.adrarconnect.data.model.UserBean;
 
 import retrofit2.Call;
@@ -32,11 +31,8 @@ public interface InterfaceWebServices {
     Call<UserBean> postUserDocument(@Body DocumentsBean documentsBean);
 
     @POST(Constants.URL_INFOCOL_INSCRIPTION)
-    Call<UserBean> postUserInfoco(@Body InfoCollectiveBean infoCollectiveBean);
+    Call<UserBean> postUserInfoco(@Body UserBean userBean);
 
     @POST(Constants.URL_INFOCOL_MODIFICATION)
-    Call<UserBean> postUserUpdateInfoco(@Body InfoCollectiveBean infoCollectiveBean);
-
-    @POST(Constants.URL_INFOCOL_ANNULATION)
-    Call<UserBean> postUserDeleteInfoco(@Body InfoCollectiveBean infoCollectiveBean);
+    Call<UserBean> postUserUpdateInfoco(@Body UserBean userBean);
 }

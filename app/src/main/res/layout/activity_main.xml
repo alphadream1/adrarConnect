@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <android.support.constraint.Guideline
-        android:ID_InfoCollective="@+ID_InfoCollective/guideline"
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="180dp"
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:ID_InfoCollective="@+ID_InfoCollective/btAdrar"
+        android:id="@+id/btAdrar"
         android:layout_width="135dp"
         android:layout_height="135dp"
         android:layout_marginTop="115dp"
@@ -27,11 +27,11 @@
         android:textAllCaps="false"
         android:textColor="@color/blancEcriture"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+ID_InfoCollective/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:ID_InfoCollective="@+ID_InfoCollective/btProcessus"
+        android:id="@+id/btProcessus"
         android:layout_width="135dp"
         android:layout_height="135dp"
         android:layout_marginEnd="2dp"
@@ -41,11 +41,11 @@
         android:textAllCaps="false"
         android:textColor="@color/blancEcriture"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+ID_InfoCollective/guideline"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/btAdrar" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/btAdrar" />
 
     <Button
-        android:ID_InfoCollective="@+ID_InfoCollective/btFormation"
+        android:id="@+id/btFormation"
         android:layout_width="135dp"
         android:layout_height="135dp"
         android:layout_marginStart="2dp"
@@ -57,12 +57,12 @@
         android:textAllCaps="false"
         android:textColor="@color/blancEcriture"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+ID_InfoCollective/btInscrire"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/guideline"
+        app:layout_constraintBottom_toTopOf="@+id/btInscrire"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:ID_InfoCollective="@+ID_InfoCollective/btInscrire"
+        android:id="@+id/btInscrire"
         android:layout_width="135dp"
         android:layout_height="135dp"
         android:layout_marginStart="2dp"
@@ -72,8 +72,8 @@
         android:textAllCaps="false"
         android:textColor="@color/blancEcriture"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+ID_InfoCollective/guideline"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/btFormation" />
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/btFormation" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -83,10 +83,10 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/btProcessus">
+        app:layout_constraintTop_toBottomOf="@+id/btProcessus">
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/tvSeConnecter"
+            android:id="@+id/tvSeConnecter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?selectableItemBackground"

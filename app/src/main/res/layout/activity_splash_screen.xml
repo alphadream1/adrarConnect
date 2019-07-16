@@ -7,20 +7,20 @@
     tools:context=".ui.splashScreen.SplashScreen">
 
     <ImageView
-        android:ID_InfoCollective="@+ID_InfoCollective/image_icon"
+        android:id="@+id/image_icon"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="200dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/logo_adrarconnect"
         android:src="@drawable/logo_adrar_connect"
-        app:layout_constraintBottom_toTopOf="@+ID_InfoCollective/progressBar"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:ID_InfoCollective="@+ID_InfoCollective/progressBar"
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

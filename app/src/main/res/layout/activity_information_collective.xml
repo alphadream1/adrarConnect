@@ -8,7 +8,7 @@
     tools:context=".InformationCollectiveActivity">
 
     <View
-        android:ID_InfoCollective="@+ID_InfoCollective/dividerInfoco"
+        android:id="@+id/dividerInfoco"
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:background="@color/vertInscrire"
@@ -18,17 +18,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <WebView
-        android:ID_InfoCollective="@+ID_InfoCollective/wvInfoco"
+        android:id="@+id/wvInfoco"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+ID_InfoCollective/tvMsgErreur"
+        app:layout_constraintBottom_toTopOf="@+id/tvMsgErreur"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:ID_InfoCollective="@+ID_InfoCollective/tvMsgErreur"
+        android:id="@+id/tvMsgErreur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -38,12 +38,12 @@
         android:textColor="@color/rougeErreur"
         android:textSize="16sp"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+ID_InfoCollective/btSinscrireInfoCo"
+        app:layout_constraintBottom_toTopOf="@+id/btSinscrireInfoCo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:ID_InfoCollective="@+ID_InfoCollective/btSinscrireInfoCo"
+        android:id="@+id/btSinscrireInfoCo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

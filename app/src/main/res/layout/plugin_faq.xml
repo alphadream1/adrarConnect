@@ -13,14 +13,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/tvQuestion"
+            android:id="@+id/tvQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/loremQuestion"
             android:textStyle="bold" />
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/tvReponse"
+            android:id="@+id/tvReponse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"

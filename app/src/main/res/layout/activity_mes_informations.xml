@@ -12,7 +12,7 @@
         android:layout_marginBottom="50dp">
 
         <android.support.v7.widget.CardView
-            android:ID_InfoCollective="@+ID_InfoCollective/cardView2"
+            android:id="@+id/cardView2"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginStart="32dp"
@@ -25,14 +25,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:ID_InfoCollective="@+ID_InfoCollective/ivPhoto"
+                android:id="@+id/ivPhoto"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:contentDescription="@string/photo_de_profil"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
-                android:ID_InfoCollective="@+ID_InfoCollective/ivAjouterPhoto"
+                android:id="@+id/ivAjouterPhoto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="90dp"
@@ -44,7 +44,7 @@
         </android.support.v7.widget.CardView>
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/textView8"
+            android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24sp"
@@ -52,10 +52,10 @@
             android:text="@string/nom"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/cardView2" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
         <EditText
-            android:ID_InfoCollective="@+ID_InfoCollective/etNom"
+            android:id="@+id/etNom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -64,15 +64,15 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="textPersonName"
-            android:labelFor="@ID_InfoCollective/etNom"
+            android:labelFor="@id/etNom"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView8"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/cardView2" />
+            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/textView9"
+            android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24sp"
@@ -80,10 +80,10 @@
             android:text="@string/prenom"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etNom" />
+            app:layout_constraintTop_toBottomOf="@+id/etNom" />
 
         <EditText
-            android:ID_InfoCollective="@+ID_InfoCollective/etPrenom"
+            android:id="@+id/etPrenom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -92,14 +92,14 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="textPersonName"
-            android:labelFor="@+ID_InfoCollective/etPrenom"
+            android:labelFor="@+id/etPrenom"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView9"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etNom" />
+            app:layout_constraintStart_toEndOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/etNom" />
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/textView10"
+            android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24sp"
@@ -109,10 +109,10 @@
             android:textSize="16sp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etPrenom" />
+            app:layout_constraintTop_toBottomOf="@+id/etPrenom" />
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/tvEmail"
+            android:id="@+id/tvEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -123,11 +123,11 @@
             android:textSize="16sp"
             android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView10"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etPrenom" />
+            app:layout_constraintStart_toEndOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/etPrenom" />
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/textView12"
+            android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -135,10 +135,10 @@
             android:text="@string/date_de_naissance"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/tvEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
         <EditText
-            android:ID_InfoCollective="@+ID_InfoCollective/etDateDeNaissance"
+            android:id="@+id/etDateDeNaissance"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -147,24 +147,24 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="date"
-            android:labelFor="@ID_InfoCollective/etDateDeNaissance"
+            android:labelFor="@id/etDateDeNaissance"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView12"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/tvEmail" />
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/textView13"
+            android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="20dp"
             android:text="@string/t_l_phone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etDateDeNaissance" />
+            app:layout_constraintTop_toBottomOf="@+id/etDateDeNaissance" />
 
         <EditText
-            android:ID_InfoCollective="@+ID_InfoCollective/etTelephone"
+            android:id="@+id/etTelephone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -173,24 +173,24 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="phone"
-            android:labelFor="@ID_InfoCollective/etTelephone"
+            android:labelFor="@id/etTelephone"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView13"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etDateDeNaissance" />
+            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/etDateDeNaissance" />
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/textView14"
+            android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="20dp"
             android:text="@string/num_pole_emploi"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etTelephone" />
+            app:layout_constraintTop_toBottomOf="@+id/etTelephone" />
 
         <EditText
-            android:ID_InfoCollective="@+ID_InfoCollective/etNumPE"
+            android:id="@+id/etNumPE"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -199,14 +199,14 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="textPersonName"
-            android:labelFor="@ID_InfoCollective/etNumPE"
+            android:labelFor="@id/etNumPE"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView14"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etTelephone" />
+            app:layout_constraintStart_toEndOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/etTelephone" />
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/textView15"
+            android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -214,10 +214,10 @@
             android:text="@string/adresse"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etNumPE" />
+            app:layout_constraintTop_toBottomOf="@+id/etNumPE" />
 
         <android.support.v7.widget.CardView
-            android:ID_InfoCollective="@+ID_InfoCollective/cardView3"
+            android:id="@+id/cardView3"
             android:layout_width="match_parent"
             android:layout_height="210dp"
             android:layout_marginStart="16dp"
@@ -228,7 +228,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/textView15">
+            app:layout_constraintTop_toBottomOf="@+id/textView15">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -236,7 +236,7 @@
                 android:layout_margin="4dp">
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/textView16"
+                    android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
@@ -246,7 +246,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:ID_InfoCollective="@+ID_InfoCollective/etNumVoie"
+                    android:id="@+id/etNumVoie"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
@@ -254,24 +254,24 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:inputType="number"
-                    android:labelFor="@ID_InfoCollective/etNumVoie"
+                    android:labelFor="@id/etNumVoie"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView16"
+                    app:layout_constraintStart_toEndOf="@+id/textView16"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/textView17"
+                    android:id="@+id/textView17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="12dp"
                     android:text="@string/adresse"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etNumVoie" />
+                    app:layout_constraintTop_toBottomOf="@+id/etNumVoie" />
 
                 <EditText
-                    android:ID_InfoCollective="@+ID_InfoCollective/etAdresse"
+                    android:id="@+id/etAdresse"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
@@ -279,24 +279,24 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:labelFor="@ID_InfoCollective/etAdresse"
+                    android:labelFor="@id/etAdresse"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView17"
-                    app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etNumVoie" />
+                    app:layout_constraintStart_toEndOf="@+id/textView17"
+                    app:layout_constraintTop_toBottomOf="@+id/etNumVoie" />
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/textView19"
+                    android:id="@+id/textView19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="12dp"
                     android:text="@string/complement_adresse"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etAdresse" />
+                    app:layout_constraintTop_toBottomOf="@+id/etAdresse" />
 
                 <EditText
-                    android:ID_InfoCollective="@+ID_InfoCollective/etComplementAdresse"
+                    android:id="@+id/etComplementAdresse"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
@@ -304,24 +304,24 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:labelFor="@ID_InfoCollective/etComplementAdresse"
+                    android:labelFor="@id/etComplementAdresse"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView19"
-                    app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etAdresse" />
+                    app:layout_constraintStart_toEndOf="@+id/textView19"
+                    app:layout_constraintTop_toBottomOf="@+id/etAdresse" />
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/textView20"
+                    android:id="@+id/textView20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="12dp"
                     android:text="@string/code_postal"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etComplementAdresse" />
+                    app:layout_constraintTop_toBottomOf="@+id/etComplementAdresse" />
 
                 <EditText
-                    android:ID_InfoCollective="@+ID_InfoCollective/etCodePostal"
+                    android:id="@+id/etCodePostal"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
@@ -329,23 +329,23 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:inputType="number"
-                    android:labelFor="@ID_InfoCollective/etCodePostal"
+                    android:labelFor="@id/etCodePostal"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView20"
-                    app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etComplementAdresse" />
+                    app:layout_constraintStart_toEndOf="@+id/textView20"
+                    app:layout_constraintTop_toBottomOf="@+id/etComplementAdresse" />
 
                 <TextView
-                    android:ID_InfoCollective="@+ID_InfoCollective/textView21"
+                    android:id="@+id/textView21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="12dp"
                     android:text="@string/ville"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etCodePostal" />
+                    app:layout_constraintTop_toBottomOf="@+id/etCodePostal" />
 
                 <EditText
-                    android:ID_InfoCollective="@+ID_InfoCollective/etVille"
+                    android:id="@+id/etVille"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
@@ -353,27 +353,27 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:labelFor="@ID_InfoCollective/etVille"
+                    android:labelFor="@id/etVille"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+ID_InfoCollective/textView21"
-                    app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etCodePostal" />
+                    app:layout_constraintStart_toEndOf="@+id/textView21"
+                    app:layout_constraintTop_toBottomOf="@+id/etCodePostal" />
             </android.support.constraint.ConstraintLayout>
 
         </android.support.v7.widget.CardView>
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/textView23"
+            android:id="@+id/textView23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="@string/interesse_par"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/cardView3" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/tvAnnulerDoc"
+            android:id="@+id/tvAnnulerDoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -387,10 +387,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/cbDeveloppement" />
+            app:layout_constraintTop_toBottomOf="@+id/cbDeveloppement" />
 
         <TextView
-            android:ID_InfoCollective="@+ID_InfoCollective/tvValiderDoc"
+            android:id="@+id/tvValiderDoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
@@ -405,7 +405,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <CheckBox
-            android:ID_InfoCollective="@+ID_InfoCollective/cbDeveloppement"
+            android:id="@+id/cbDeveloppement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -413,10 +413,10 @@
             android:buttonTint="@color/vertInscrire"
             android:text="@string/developpement"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/textView23" />
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
         <CheckBox
-            android:ID_InfoCollective="@+ID_InfoCollective/cbReseaux"
+            android:id="@+id/cbReseaux"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
@@ -424,7 +424,7 @@
             android:buttonTint="@color/vertInscrire"
             android:text="@string/reseaux2point"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/textView23" />
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
