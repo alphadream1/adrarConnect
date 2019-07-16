@@ -4,6 +4,10 @@
     package="com.adrar.adrarconnect">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.MANAGE_DOCUMENTS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".data.utils.MyApplication"
@@ -16,7 +20,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".ui.splashScreen.SplashScreen">
+        <activity
+            android:name=".ui.splashScreen.SplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -26,51 +32,61 @@
         <activity
             android:name=".ValidationInformationCollectiveActivity"
             android:label="Information collective"
-            android:parentActivityName=".ChoixInfoCoActivity" />
+            android:parentActivityName=".ChoixInfoCoActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ChoixInfoCoActivity"
             android:label="Information collective"
-            android:parentActivityName=".InformationCollectiveActivity" />
+            android:parentActivityName=".InformationCollectiveActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".InformationCollectiveActivity"
             android:label="Information collective"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".LoginActivity"
             android:label="Connexion"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".DescriptionFormationActivity"
             android:label="intitulé de la formation"
-            android:parentActivityName=".FormationActivity" />
+            android:parentActivityName=".FormationActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".MesDocumentsActivity"
             android:label="Mes documents"
-            android:parentActivityName=".EspacePersoActivity" />
+            android:parentActivityName=".EspacePersoActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".MesInformationsActivity"
             android:label="Mes informations"
-            android:parentActivityName=".EspacePersoActivity" />
+            android:parentActivityName=".EspacePersoActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".EspacePersoActivity"
             android:label="@string/mon_espace"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".FormationActivity"
             android:label="@string/les_formations"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".SinscrireActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ProcessusActivity"

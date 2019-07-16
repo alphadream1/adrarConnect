@@ -6,16 +6,19 @@ package com.adrar.adrarconnect;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.adrar.adrarconnect.data.utils.InterfaceWebServices;
 import com.adrar.adrarconnect.data.model.UserBean;
-import com.adrar.adrarconnect.data.utils.Constants;
+import com.adrar.adrarconnect.data.utils.MyApplication;
 
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SinscrireActivity extends AppCompatActivity {
 
@@ -25,8 +28,6 @@ public class SinscrireActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etPassword;
     private EditText etConfirMdp;
-    private UserBean userBean;
-    private InterfaceWebServices webServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class SinscrireActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         etConfirMdp = findViewById(R.id.etConfirMdp);
+
     }
 
     public void onClickAnnulerSinscrire(View view) {
@@ -51,12 +53,46 @@ public class SinscrireActivity extends AppCompatActivity {
     }
 
     public void onClickValiderSinscrire(View view) {
-        userBean = new UserBean(etNom.getText(), etPrenom.getText(), etEmail.getText(), etPassword.getText());
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.URL_BASE)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        webServices = retrofit.create(InterfaceWebServices.class);
-        webServices.postUserSignin(userBean);
+
+        if (!etNom.getText().toString().equals("")) {
+            if (!etPrenom.getText().toString().equals("")) {
+                if (MainActivity.isEmailValid(etEmail.getText().toString())) {
+                    if (etPassword.getText().toString().trim().length() >= 6) {
+                        if (etPassword.getText().toString().equals(etConfirMdp.getText().toString())) {
+                            UserBean userBean = new UserBean(etPrenom.getText().toString(), etNom.getText().toString(), etEmail.getText().toString(), etPassword.getText().toString());
+                            MyApplication.webServices.postUserSignin(userBean).enqueue(new Callback<UserBean>() {
+                                @Override
+                                public void onResponse(@NonNull Call<UserBean> call, @NonNull Response<UserBean> response) {
+                                    assert response.body() != null;
+                                    Log.w("ca marche", response.body().getNom());
+                                    MyApplication.setUtilisateur(response.body());
+                                }
+
+                                @Override
+                                public void onFailure(Call<UserBean> call, Throwable t) {
+                                    Log.w("erreur", "" + t);
+                                }
+                            });
+                            if (MyApplication.utilisateur == null) {
+                                Toast.makeText(this, "cette email est déjà utilisé.", Toast.LENGTH_LONG).show();
+                            } else {
+                                startActivity(new Intent(this, EspacePersoActivity.class));
+                                finish();
+                            }
+                        } else {
+                            Toast.makeText(this, "le mot de passe et sa confirmation ne sont pas identique.", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        Toast.makeText(this, "Le mot de passe doit contenir 6 caractères minimum.", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(this, "le format de l'email n'est pas bon.", Toast.LENGTH_LONG).show();
+                }
+            } else {
+                Toast.makeText(this, "Veuillez saisir votre prénom.", Toast.LENGTH_LONG).show();
+            }
+        } else {
+            Toast.makeText(this, "Veuillez saisir votre nom.", Toast.LENGTH_LONG).show();
+        }
     }
 }

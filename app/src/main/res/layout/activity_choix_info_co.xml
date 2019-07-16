@@ -8,7 +8,7 @@
     tools:context=".ChoixInfoCoActivity">
 
     <View
-        android:id="@+id/divider"
+        android:ID_InfoCollective="@+ID_InfoCollective/divider"
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:background="@color/vertInscrire"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvInscriptionValide"
+        android:ID_InfoCollective="@+ID_InfoCollective/tvInscriptionValide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -27,10 +27,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/divider" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvChoixInformationCollective"
+        android:ID_InfoCollective="@+ID_InfoCollective/rvChoixInformationCollective"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp"
@@ -38,5 +38,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInscriptionValide" />
+        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/tvInscriptionValide" />
 </android.support.constraint.ConstraintLayout>

@@ -7,11 +7,14 @@ package com.adrar.adrarconnect;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Patterns;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-import com.adrar.adrarconnect.data.utils.InterfaceWebServices;
+import com.adrar.adrarconnect.data.utils.MyApplication;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,17 +24,18 @@ public class MainActivity extends AppCompatActivity {
 
     // constantes pour le burger menu
     private static final int ITEM_ID_FAQ;
-    private static final int ITEM_ID_MY_SPACE;
-    private static final int ITEM_ID_INFO_COL;
+    private static final int ITEM_ID_SE_DECONNECTER;
 
     static {
         ITEM_ID_FAQ = 1;
-        ITEM_ID_MY_SPACE = 2;
-        ITEM_ID_INFO_COL = 3;
+        ITEM_ID_SE_DECONNECTER = 4;
     }
 
-    // --------------
-    public InterfaceWebServices webServices;
+    //----------------
+    // attributs
+    //----------------
+    private Button btInscrire;
+    private TextView tvSeConnecter;
 
     // --------------
     // on create
@@ -41,8 +45,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    }
+        // les findViewById necessaires
+        btInscrire = findViewById(R.id.btInscrire);
+        tvSeConnecter = findViewById(R.id.tvSeConnecter);
 
+        //on test si un utilisateur est logguer, et on set les affichage suivant la réponse
+        if (MyApplication.utilisateur != null) {
+            btInscrire.setText(getString(R.string.infoco_main));
+            tvSeConnecter.setText(getString(R.string.mon_espace_main));
+        }
+    }
 
     // --------------
     // burgerMenu
@@ -52,8 +64,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, ITEM_ID_FAQ, 0, "FAQ");
-        menu.add(1, ITEM_ID_MY_SPACE, 1, "Mon espace");
-        menu.add(2, ITEM_ID_INFO_COL, 2, "Information Collective");
+        if (MyApplication.utilisateur != null) {
+            menu.add(3, ITEM_ID_SE_DECONNECTER, 1, "Se déconnecter");
+        }
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -64,15 +77,9 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == ITEM_ID_FAQ) {
             // on lance l'activity FAQ
             startActivity(new Intent(this, FaqActivity.class));
-        }
-        // si mon espace est cliquer
-        else if (item.getItemId() == ITEM_ID_MY_SPACE) {
-            startActivity(new Intent(this, EspacePersoActivity.class));
-        }
-        // si info collective est cliquer
-        else if (item.getItemId() == ITEM_ID_INFO_COL) {
-            // on lance l'activité FAQ
-            startActivity(new Intent(this, InformationCollectiveActivity.class));
+        } else if (item.getItemId() == ITEM_ID_SE_DECONNECTER) {
+            MyApplication.setUtilisateur(null);
+            recreate();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -87,9 +94,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, AdrarActivity.class));
     }
 
-    // methode onclick pour le bouton "s'inscire" le clic lance l'activité pour s'inscrire
+    // methode onclick pour le bouton "s'inscire" le clic lance l'activité pour s'inscrire si on est pas inscrit ou logguer, sinon lance la page infoco
     public void onClickBoutonSinscrire(View view) {
-        startActivity(new Intent(this, SinscrireActivity.class));
+        // si id session connection de l'utilisateur est null on lance l'inscription
+        if (MyApplication.getUtilisateur() == null) {
+            startActivity(new Intent(this, SinscrireActivity.class));
+        }// sinon on lance les infoco
+        else {
+            startActivity(new Intent(this, InformationCollectiveActivity.class));
+        }
     }
 
     // methode onclick pour le bouton "formation" le clic lance l'activité pour se renseigner sur les formations
@@ -103,8 +116,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, ProcessusActivity.class));
     }
 
-    // methode onclick sur le textview "se connecter" le clic lance l'activité pour se logguer
+    // methode onclick sur le textview "se connecter" le clic lance l'activité pour se logguer, si déja logguer deviens l'acces a l'espace perso
     public void onClickSeConnecter(View view) {
-        startActivity(new Intent(this, LoginActivity.class));
+        // on test si idsessionsConnection est null si oui on lance l'activité login, sinon on lance espace perso
+        if (MyApplication.getUtilisateur() == null) {
+            startActivity(new Intent(this, LoginActivity.class));
+        } else {
+            startActivity(new Intent(this, EspacePersoActivity.class));
+        }
+    }
+
+    // methode pour tester les etMail, savoir si le texte rentrer est bien au format email donc avec "@" et .com|.fr etc
+    public static boolean isEmailValid(CharSequence email) {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }

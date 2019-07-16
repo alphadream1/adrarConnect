@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/root"
+    android:ID_InfoCollective="@+ID_InfoCollective/root"
     android:layout_width="@dimen/formationRowSize"
     android:layout_height="@dimen/formationRowSize"
     android:layout_margin="5dp">
 
     <TextView
-        android:id="@+id/textView4"
+        android:ID_InfoCollective="@+ID_InfoCollective/textView4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary" />
 
     <ImageView
-        android:id="@+id/ivLogoFormation"
+        android:ID_InfoCollective="@+ID_InfoCollective/ivLogoFormation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="1dp"
@@ -24,7 +24,7 @@
         app:srcCompat="@mipmap/ic_formation" />
 
     <TextView
-        android:id="@+id/tvIntituleFormation"
+        android:ID_InfoCollective="@+ID_InfoCollective/tvIntituleFormation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -43,7 +43,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvTransparent"
+        android:ID_InfoCollective="@+ID_InfoCollective/tvTransparent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?android:selectableItemBackground"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +15,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvBonjour"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvBonjour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -23,7 +24,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvPrenomUtilisateur"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvPrenomUtilisateur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -33,7 +34,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView6"
+        android:ID_InfoCollective="@+ID_InfoCollective/tvExplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -45,7 +46,7 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:ID_InfoCollective="@+ID_InfoCollective/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -54,7 +55,7 @@
         android:text="@string/avancement_de_mon_dossier" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:ID_InfoCollective="@+ID_InfoCollective/seekBar"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
@@ -72,7 +73,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvMySpaceInscription"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvMySpaceInscription"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_weight="0"
@@ -82,7 +83,7 @@
             tools:ignore="SmallSp" />
 
         <TextView
-            android:id="@+id/tvMySpaceInfoPerso"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvMySpaceInfoPerso"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_marginStart="12dp"
@@ -93,7 +94,7 @@
             tools:ignore="SmallSp" />
 
         <TextView
-            android:id="@+id/tvMySpaceDocuments"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvMySpaceDocuments"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="18dp"
@@ -104,7 +105,7 @@
             tools:ignore="SmallSp" />
 
         <TextView
-            android:id="@+id/tvMySpaceInscriptionInfoCo"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvMySpaceInscriptionInfoCo"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
@@ -115,7 +116,7 @@
             tools:ignore="SmallSp" />
 
         <TextView
-            android:id="@+id/tvMySpaceParticipationInfoCo"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvMySpaceParticipationInfoCo"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_marginStart="12dp"
@@ -126,16 +127,29 @@
             tools:ignore="SmallSp" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvDossierValide"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
-        android:drawableEnd="@drawable/ic_check"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        android:text="@string/dossier_valide" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:ID_InfoCollective="@+ID_InfoCollective/tvDossierValide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:paddingTop="8dp"
+            android:text="@string/dossier_valide" />
+
+        <ImageView
+            android:ID_InfoCollective="@+ID_InfoCollective/ivCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_check" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -145,7 +159,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvMesInformations"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvMesInformations"
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginEnd="40dp"
@@ -157,7 +171,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvMesDocuments"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvMesDocuments"
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginStart="40dp"

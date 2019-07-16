@@ -63,6 +63,7 @@ public class InformationCollectiveAdapter extends RecyclerView.Adapter<Informati
         viewHolder.tvVille.setText(datum.getCentreDeFormation().getVille());
         viewHolder.tvDate.setText(Constants.SDF_ALL.format(datum.getDate()));
 
+        // condition si l'infoco est complete
         if (datum.isComplet() == 1) {
             viewHolder.tvComplet.setVisibility(View.VISIBLE);
         }

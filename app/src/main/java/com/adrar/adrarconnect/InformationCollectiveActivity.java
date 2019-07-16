@@ -8,7 +8,10 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.adrar.adrarconnect.data.model.DocumentsBean;
 import com.adrar.adrarconnect.data.utils.MyApplication;
+
+import java.util.ArrayList;
 
 public class InformationCollectiveActivity extends AppCompatActivity {
 
@@ -43,5 +46,28 @@ public class InformationCollectiveActivity extends AppCompatActivity {
         Intent choixInfocoIntent = new Intent(this, ChoixInfoCoActivity.class);
         // on lance l'Activité
         startActivity(choixInfocoIntent);
+        // condition d'accés aux infoco
+//        if (MyApplication.getUtilisateur().getListDocument() == null || retourneLeBonDocument(MyApplication.getUtilisateur().getListDocument(), Constants.DOC_TYPE_CV) == null && retourneLeBonDocument(MyApplication.getUtilisateur().getListDocument(), Constants.DOC_TYPE_PRESCRIPTION_PE) == null) {
+//            Toast.makeText(this, "Vous devez enregistrer vos documents dans votre espace personnel pour accéder a cette section", Toast.LENGTH_LONG).show();
+//        } else {
+//            if (retourneLeBonDocument(MyApplication.getUtilisateur().getListDocument(), Constants.DOC_TYPE_CV).isEtat() && retourneLeBonDocument(MyApplication.getUtilisateur().getListDocument(), Constants.DOC_TYPE_PRESCRIPTION_PE).isEtat()) {
+//                // on prepare la nouvelle activité
+//                Intent choixInfocoIntent = new Intent(this, ChoixInfoCoActivity.class);
+//                // on lance l'Activité
+//                startActivity(choixInfocoIntent);
+//            } else {
+//                Toast.makeText(this, "Vous n'avez pas accés a cette section tant que votre dossier n'est pas validé.", Toast.LENGTH_LONG).show();
+//            }
+//        }
+    }
+
+    public DocumentsBean retourneLeBonDocument(ArrayList<DocumentsBean> list, int typeDeDocument) {
+        for (DocumentsBean doc : list
+        ) {
+            if (doc.getId_typeDocument() == typeDeDocument) {
+                return doc;
+            }
+        }
+        return null;
     }
 }

@@ -8,6 +8,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.adrar.adrarconnect.data.model.AccueilBean;
+import com.adrar.adrarconnect.data.model.UserBean;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,6 +20,7 @@ public class MyApplication extends Application {
 
     public static AccueilBean accueilData;
     public static InterfaceWebServices webServices;
+    public static UserBean utilisateur;
 
     @Override
     public void onCreate() {
@@ -54,5 +56,13 @@ public class MyApplication extends Application {
 
     public static void setAccueilData(AccueilBean accueilData) {
         MyApplication.accueilData = accueilData;
+    }
+
+    public static UserBean getUtilisateur() {
+        return utilisateur;
+    }
+
+    public static void setUtilisateur(UserBean utilisateur) {
+        MyApplication.utilisateur = utilisateur;
     }
 }

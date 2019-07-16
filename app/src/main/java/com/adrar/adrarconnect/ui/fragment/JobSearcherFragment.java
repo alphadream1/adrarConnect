@@ -49,6 +49,10 @@ public class JobSearcherFragment extends Fragment {
         webViewDemandeurEmploi.loadData(MyApplication.getAccueilData().getProcessusInscription().getDemandeurEmploi_html(), "text/html", "UTF-8");
         Log.w("testHtml", MyApplication.getAccueilData().getProcessusInscription().getDemandeurEmploi_html());
 
+        if (MyApplication.utilisateur != null) {
+            btSinscrireProcessus.setVisibility(View.GONE);
+        }
+
         // on créer le listener pour le bouton.
         btSinscrireProcessus.setOnClickListener(new View.OnClickListener() {
             @Override

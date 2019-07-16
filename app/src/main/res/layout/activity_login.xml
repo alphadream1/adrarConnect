@@ -7,17 +7,17 @@
     tools:context=".LoginActivity">
 
     <EditText
-        android:id="@+id/etIdentifiant"
+        android:ID_InfoCollective="@+ID_InfoCollective/etIdentifiant"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="50dp"
-        android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
-        android:labelFor="@id/etIdentifiant"
-        android:text="@string/identifiant"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:labelFor="@ID_InfoCollective/etIdentifiant"
+        android:text="@string/mail_phil"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,44 +25,46 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:ID_InfoCollective="@+ID_InfoCollective/etPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="32dp"
-        android:autofillHints=""
+        android:layout_marginEnd="50dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
-        android:labelFor="@id/etPassword"
-        android:text="@string/password"
+        android:labelFor="@ID_InfoCollective/etPassword"
+        android:text="@string/mdp_phil"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etIdentifiant" />
+        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etIdentifiant" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:ID_InfoCollective="@+ID_InfoCollective/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSeConnecter" />
+        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/btSeConnecter" />
 
     <Button
-        android:id="@+id/btSeConnecter"
+        android:ID_InfoCollective="@+ID_InfoCollective/btSeConnecter"
         android:layout_width="175dp"
         android:layout_height="65dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/vertInscrire"
+        android:onClick="onClickConnection"
         android:text="@string/se_connecter"
         android:textColor="@color/blancEcriture"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+ID_InfoCollective/etPassword" />
 
 </android.support.constraint.ConstraintLayout>

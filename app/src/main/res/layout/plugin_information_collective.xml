@@ -8,7 +8,7 @@
     app:cardCornerRadius="5dp">
 
     <LinearLayout
-        android:id="@+id/root"
+        android:ID_InfoCollective="@+ID_InfoCollective/root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?android:selectableItemBackground"
@@ -23,7 +23,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvDateInfoCol"
+                android:ID_InfoCollective="@+ID_InfoCollective/tvDateInfoCol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -33,7 +33,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvVilleInfoCol"
+                android:ID_InfoCollective="@+ID_InfoCollective/tvVilleInfoCol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -49,7 +49,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvInscrit"
+                android:ID_InfoCollective="@+ID_InfoCollective/tvInscrit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -61,7 +61,7 @@
                 tools:ignore="SmallSp" />
 
             <TextView
-                android:id="@+id/tvComplet"
+                android:ID_InfoCollective="@+ID_InfoCollective/tvComplet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

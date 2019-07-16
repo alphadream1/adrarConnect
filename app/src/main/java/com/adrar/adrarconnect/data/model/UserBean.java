@@ -4,39 +4,45 @@ package com.adrar.adrarconnect.data.model;
 // Created by FERRARIS Philippe on 13/06/2019 for adrarConnect.
 //
 
-import android.text.Editable;
-
+import java.util.ArrayList;
 import java.util.Date;
 
 public class UserBean {
 
-    private int id, avancementInscription;
-    private String nom, prenom, email, telephone, numeroPe, mdp, numeroVoie, adresse, complementAdresse, cp, ville, idSessionConnexion;
+    private int id;
+    private int ID_avancementInscription;
+    private String prenom, nom, email, telephone, numeroPe, mdp, numeroVoie, adresse, complementAdresse, cp, ville, idSessionConnexion;
     private Date ddn;
-    private boolean dev, reseau, admin;
-    private DocumentsBean documents;
-    private InfoCollectiveBean infoCollective;
+    private int dev, reseau, admin;
+    private ArrayList<DocumentsBean> listDocument;
+    private InfoCollectiveBean infoCollectiveBean;
 
     //---------------
     // constructeur
     //---------------
 
 
-    public UserBean(Editable text, Editable etPrenomText, Editable etEmailText, Editable etPasswordText) {
+    public UserBean() {
         super();
     }
 
-    public UserBean(String nom, String prenom, String email, String mdp) {
+    public UserBean(String email, String mdp) {
+        this.email = email;
+        this.mdp = mdp;
+    }
+
+    public UserBean(String prenom, String nom, String email, String mdp) {
         this.prenom = prenom;
         this.nom = nom;
         this.email = email;
         this.mdp = mdp;
     }
 
-    public UserBean(int avancementInscription, String nom, String prenom, String email, String telephone, String numeroPe, String mdp, String numeroVoie, String adresse, String complementAdresse, String cp, String ville, String idSessionConnexion, Date ddn, boolean dev, boolean reseau, boolean admin, DocumentsBean documents, InfoCollectiveBean infoCollective) {
-        this.avancementInscription = avancementInscription;
-        this.nom = nom;
+    public UserBean(int id, int ID_avancementInscription, String prenom, String nom, String email, String telephone, String numeroPe, String mdp, String numeroVoie, String adresse, String complementAdresse, String cp, String ville, String idSessionConnexion, Date ddn, int dev, int reseau, int admin, ArrayList<DocumentsBean> listDocument, InfoCollectiveBean infoCollectiveBean) {
+        this.id = id;
+        this.ID_avancementInscription = ID_avancementInscription;
         this.prenom = prenom;
+        this.nom = nom;
         this.email = email;
         this.telephone = telephone;
         this.numeroPe = numeroPe;
@@ -51,8 +57,8 @@ public class UserBean {
         this.dev = dev;
         this.reseau = reseau;
         this.admin = admin;
-        this.documents = documents;
-        this.infoCollective = infoCollective;
+        this.listDocument = listDocument;
+        this.infoCollectiveBean = infoCollectiveBean;
     }
 
     //---------------
@@ -68,12 +74,12 @@ public class UserBean {
         this.id = id;
     }
 
-    public int getAvancementInscription() {
-        return avancementInscription;
+    public int getID_avancementInscription() {
+        return ID_avancementInscription;
     }
 
-    public void setAvancementInscription(int avancementInscription) {
-        this.avancementInscription = avancementInscription;
+    public void setID_avancementInscription(int ID_avancementInscription) {
+        this.ID_avancementInscription = ID_avancementInscription;
     }
 
     public String getNom() {
@@ -180,43 +186,43 @@ public class UserBean {
         this.ddn = ddn;
     }
 
-    public boolean isDev() {
+    public int getDev() {
         return dev;
     }
 
-    public void setDev(boolean dev) {
+    public void setDev(int dev) {
         this.dev = dev;
     }
 
-    public boolean isReseau() {
+    public int getReseau() {
         return reseau;
     }
 
-    public void setReseau(boolean reseau) {
+    public void setReseau(int reseau) {
         this.reseau = reseau;
     }
 
-    public boolean isAdmin() {
+    public int getAdmin() {
         return admin;
     }
 
-    public void setAdmin(boolean admin) {
+    public void setAdmin(int admin) {
         this.admin = admin;
     }
 
-    public DocumentsBean getDocuments() {
-        return documents;
+    public ArrayList<DocumentsBean> getListDocument() {
+        return listDocument;
     }
 
-    public void setDocuments(DocumentsBean documents) {
-        this.documents = documents;
+    public void setListDocument(ArrayList<DocumentsBean> listDocument) {
+        this.listDocument = listDocument;
     }
 
-    public InfoCollectiveBean getInfoCollective() {
-        return infoCollective;
+    public InfoCollectiveBean getInfoCollectiveBean() {
+        return infoCollectiveBean;
     }
 
-    public void setInfoCollective(InfoCollectiveBean infoCollective) {
-        this.infoCollective = infoCollective;
+    public void setInfoCollectiveBean(InfoCollectiveBean infoCollectiveBean) {
+        this.infoCollectiveBean = infoCollectiveBean;
     }
 }

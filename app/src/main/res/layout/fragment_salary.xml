@@ -3,7 +3,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:ID_InfoCollective="@+ID_InfoCollective/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
@@ -12,17 +12,17 @@
 
 
     <WebView
-        android:id="@+id/webViewSalary"
+        android:ID_InfoCollective="@+ID_InfoCollective/webViewSalary"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#00D63B3B"
-        app:layout_constraintBottom_toTopOf="@+id/linerLayout"
+        app:layout_constraintBottom_toTopOf="@+ID_InfoCollective/linerLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linerLayout"
+        android:ID_InfoCollective="@+ID_InfoCollective/linerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/tvTelephone"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvTelephone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -45,7 +45,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tvMail"
+            android:ID_InfoCollective="@+ID_InfoCollective/tvMail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

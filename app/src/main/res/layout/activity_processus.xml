@@ -8,14 +8,14 @@
     tools:context=".ProcessusActivity">
 
     <View
-        android:id="@+id/dividerProcessus"
+        android:ID_InfoCollective="@+ID_InfoCollective/dividerProcessus"
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:background="@color/rougeProcess"
         android:backgroundTint="@color/rougeProcess" />
 
     <android.support.design.widget.TabLayout
-        android:id="@+id/tabs"
+        android:ID_InfoCollective="@+ID_InfoCollective/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -23,7 +23,7 @@
         app:tabTextColor="@color/blancEcriture" />
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/view_pager"
+        android:ID_InfoCollective="@+ID_InfoCollective/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

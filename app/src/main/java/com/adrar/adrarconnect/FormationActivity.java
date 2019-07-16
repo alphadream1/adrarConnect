@@ -44,13 +44,6 @@ public class FormationActivity extends AppCompatActivity {
 
         data.addAll(MyApplication.getAccueilData().getFormations());
 
-//        //--------------------------
-//        // données pour jeux de test
-//        //--------------------------
-//        FormationBean formationBean = new FormationBean(getString(R.string.nom_de_la_formation), getString(R.string.lorem),getString(R.string.ramonville));
-//        for (int num = 0; num < 7; num++) {
-//            data.add(num, formationBean);
-//        }
     }
 
 }

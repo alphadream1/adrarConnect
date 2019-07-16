@@ -4,11 +4,12 @@ import java.io.Serializable;
 
 public class InfoCollectiveBean implements Serializable {
 
-    private int id;
+    private int ID_InfoCollective;
     private long date;
     private CentreFormationBean centreDeFormation;
     private int nombrePlacesMax;
     private int complet;
+    private String idSessionConnexion;
 
 
     //---------------
@@ -24,6 +25,11 @@ public class InfoCollectiveBean implements Serializable {
         this.nombrePlacesMax = nombrePlacesMax;
     }
 
+    public InfoCollectiveBean(String idSessionConnexion, int ID_InfoCollective) {
+        this.idSessionConnexion = idSessionConnexion;
+        this.ID_InfoCollective = ID_InfoCollective;
+    }
+
     public InfoCollectiveBean(int date, CentreFormationBean centreDeFormation, int nombrePlacesMax, int complet) {
         this.date = date;
         this.centreDeFormation = centreDeFormation;
@@ -36,12 +42,12 @@ public class InfoCollectiveBean implements Serializable {
     //---------------
 
 
-    public int getId() {
-        return id;
+    public int getID_InfoCollective() {
+        return ID_InfoCollective;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setID_InfoCollective(int ID_InfoCollective) {
+        this.ID_InfoCollective = ID_InfoCollective;
     }
 
     public long getDate() {
@@ -68,11 +74,15 @@ public class InfoCollectiveBean implements Serializable {
         this.centreDeFormation = centreDeFormation;
     }
 
-    public int isComplet() {
+    public int getComplet() {
         return complet;
     }
 
-    public void setComplet(int complet) {
-        this.complet = complet;
+    public String getIdSessionConnexion() {
+        return idSessionConnexion;
+    }
+
+    public void setIdSessionConnexion(String idSessionConnexion) {
+        this.idSessionConnexion = idSessionConnexion;
     }
 }
