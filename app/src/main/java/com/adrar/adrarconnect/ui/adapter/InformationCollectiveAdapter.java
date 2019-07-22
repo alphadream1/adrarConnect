@@ -17,6 +17,7 @@ import com.adrar.adrarconnect.R;
 import com.adrar.adrarconnect.ValidationInformationCollectiveActivity;
 import com.adrar.adrarconnect.data.model.InfoCollectiveBean;
 import com.adrar.adrarconnect.data.utils.Constants;
+import com.adrar.adrarconnect.data.utils.MyApplication;
 
 import java.util.ArrayList;
 
@@ -64,20 +65,19 @@ public class InformationCollectiveAdapter extends RecyclerView.Adapter<Informati
         viewHolder.tvDate.setText(Constants.SDF_ALL.format(datum.getDate()));
 
         // condition si l'infoco est complete
-        if (datum.isComplet() == 1) {
+        if (datum.getComplet() == 1) {
             viewHolder.tvComplet.setVisibility(View.VISIBLE);
         }
 
-        // todo finir le if juste en dessous pour afficher ou pas " vous etes inscrit a cette infoco"
-//        if () {
-//            viewHolder.tvInscrit.setVisibility(View.VISIBLE);
-//        }
+        if (datum.getId() == MyApplication.getUtilisateur().getID_infoCollective()) {
+            viewHolder.tvInscrit.setVisibility(View.VISIBLE);
+        }
 
 
         viewHolder.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (datum.isComplet() == 1) {
+                if (datum.getComplet() == 1) {
                     Toast.makeText(viewHolder.tvComplet.getContext(), "Vous ne pouvez vous inscrire à cette information collective car elle est complète", Toast.LENGTH_LONG).show();
                 } else {
                     Intent intent = new Intent(viewHolder.root.getContext(), ValidationInformationCollectiveActivity.class);

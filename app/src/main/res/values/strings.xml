@@ -108,13 +108,14 @@
     <string name="lorem" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus est sem.Praesent ac purus vel elit vehicula scelerisque. Quisque eget dui vel elit posuere rhoncus id in risus. Maecenas tincidun nulla a tellus pulvinar facilisis. Vestibulum congue gravida tincidunt.Nam nulla sem, aliquet a metus ac, aucto aliquam mi. Vestibulum mattis eu est nonvolutpat. Vestibulum sed elementum mi. Vestibulum sem nibh, venenatis vitae interdum non, condimentum a diam. Nullam sed quam nec quam tincidunt tempus. Aenean pretium risus at lectus rhoncus auctor. Nunc et nulla mauris.Sed fermentum libero eros, nec semper lectus convallis sit amet. In rhoncus porttitor elit, id laoreet turpis porttitor eu.Nam nulla sem, aliquet a metus ac, auctor aliquam mi. Vestibulum mattis eu est non volutpat. Vestibulum sed elementum mi.Vestibulum sem nibh, venenatis vitae interdum non, condimentum a diam. Nullam sed quam nec quam tincidunt tempus. Aenean pretium risus at lectus rhoncus auctor. Nunc et nulla mauris. </string>
     <string name="texte_explicatif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus est sem.Praesent ac purus vel elit vehicula scelerisque. Quisque eget dui vel elit posuere rhoncus id in risus. Maecenas tincidunt nulla a tellus pulvinar facilisis. Vestibulum congue gravida tincidunt. </string>
     <string name="logo_adrarconnect">logo adrarConnect</string>
-    <string name="vous_tes_inscrit_a_cette_information_collective">Vous êtes inscrit a cette information collective</string>
+    <string name="vous_tes_inscrit_a_cette_information_collective">Vous êtes inscrit a cette information collective : </string>
     <string name="complet">Complet</string>
     <string name="la_remplacer_par_celle_ci">La remplacer par celle-ci?</string>
     <string name="mail_phil">philippe.ferraris@gmail.com</string>
     <string name="mdp_phil">123456</string>
     <string name="infoco_main">Information collective</string>
     <string name="mon_espace_main">Mon espace</string>
+    <string name="vous_souhaitez_vous_inscrire_a_cette_information_collective">Vous souhaitez vous inscrire a cette information collective?</string>
 
     <!-- DERNIER AJOUT A TRIER ET A CLASSER -->
 

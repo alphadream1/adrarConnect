@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.adrar.adrarconnect.data.model.LoginBean;
 import com.adrar.adrarconnect.data.model.UserBean;
 import com.adrar.adrarconnect.data.utils.MyApplication;
 
@@ -22,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etIdentifiant;
     private EditText etPassword;
     private ProgressBar progressBar;
-    private Button btSeConnecter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,23 +32,22 @@ public class LoginActivity extends AppCompatActivity {
         etIdentifiant = findViewById(R.id.etIdentifiant);
         etPassword = findViewById(R.id.etPassword);
         progressBar = findViewById(R.id.progressBar);
-        btSeConnecter = findViewById(R.id.btSeConnecter);
-
-
     }
 
     public void onClickConnection(final View view) {
         if (MainActivity.isEmailValid(etIdentifiant.getText().toString())) {
             if (etPassword.getText().toString().trim().length() >= 6) {
-                UserBean userBean = new UserBean(etIdentifiant.getText().toString(), etPassword.getText().toString());
+                LoginBean loginBean = new LoginBean(etIdentifiant.getText().toString(), etPassword.getText().toString());
                 progressBar.setVisibility(View.VISIBLE);
-                MyApplication.webServices.postUserLogin(userBean).enqueue(new Callback<UserBean>() {
+                MyApplication.webServices.postUserLogin(loginBean).enqueue(new Callback<UserBean>() {
                     @Override
                     public void onResponse(Call<UserBean> call, Response<UserBean> response) {
-                        Log.w("LOGIN_OK", response.body().getIdSessionConnexion());
-                        MyApplication.utilisateur = response.body();
-                        startActivity(new Intent(view.getContext(), EspacePersoActivity.class));
-                        finish();
+                        if (response.body() != null) {
+                            Log.w("LOGIN_OK", response.body().getIdSessionConnexion());
+                            MyApplication.setUtilisateur(response.body());
+                            startActivity(new Intent(view.getContext(), MySpaceActivity.class));
+                            finish();
+                        }
                     }
 
                     @Override

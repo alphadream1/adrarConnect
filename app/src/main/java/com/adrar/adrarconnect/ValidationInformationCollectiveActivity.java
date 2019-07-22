@@ -1,21 +1,33 @@
 package com.adrar.adrarconnect;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.adrar.adrarconnect.data.model.InfoCollectiveBean;
+import com.adrar.adrarconnect.data.model.InfocoUserBean;
+import com.adrar.adrarconnect.data.model.UserBean;
 import com.adrar.adrarconnect.data.utils.Constants;
+import com.adrar.adrarconnect.data.utils.MyApplication;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ValidationInformationCollectiveActivity extends AppCompatActivity {
 
+    private static InfoCollectiveBean data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_validation_information_collective);
-        InfoCollectiveBean data = (InfoCollectiveBean) getIntent().getSerializableExtra("infoco");
+        data = (InfoCollectiveBean) getIntent().getSerializableExtra("infoco");
 
 
         TextView tvDateInfoco = findViewById(R.id.tvDateInfoCol);
@@ -30,21 +42,76 @@ public class ValidationInformationCollectiveActivity extends AppCompatActivity {
         TextView tvInscrit2 = findViewById(R.id.tvInscrit2);
         TextView tvComplet2 = findViewById(R.id.tvComplet2);
         TextView tvInscriptionValide = findViewById(R.id.tvInscriptionValide);
+        CardView cardView = findViewById(R.id.cardView);
 
-
-        // todo continuer pour mettre en place les condition pour l'affichage de 2 infoco celle de l'user et celle ou il souhaite s'inscrire
-        tvInscriptionRemplacement.setText(R.string.vous_tes_inscrit_a_cette_information_collective);
-        tvVilleInfoCol2.setText(data.getCentreDeFormation().getVille());
-        tvDateInfoCol2.setText(Constants.SDF_ALL.format(data.getDate()));
-
-
+        if (data.getId() == MyApplication.getUtilisateur().getID_infoCollective()) {
+            tvInscriptionRemplacement.setText("vous souhaitez vous désinscrire de cette information collective : ");
+            tvDateInfoCol2.setText(Constants.SDF_ALL.format(data.getDate()));
+            tvVilleInfoCol2.setText(data.getCentreDeFormation().getVille());
+        } else {
+            if (MyApplication.getUtilisateur().getID_infoCollective() > 0) {
+                tvInscriptionValide.setVisibility(View.VISIBLE);
+                tvInscriptionValide.setText(R.string.vous_tes_inscrit_a_cette_information_collective);
+                cardView.setVisibility(View.VISIBLE);
+                tvInscrit.setVisibility(View.VISIBLE);
+                tvDateInfoco.setText(Constants.SDF_ALL.format(MyApplication.getAccueilData().getListeInfosCollectives().get(MyApplication.getUtilisateur().getID_infoCollective() - 1).getDate()));
+                tvVilleInfoco.setText(MyApplication.getAccueilData().getListeInfosCollectives().get(MyApplication.getUtilisateur().getID_infoCollective() - 1).getCentreDeFormation().getVille());
+                tvInscriptionRemplacement.setText("la remplacer par celle-ci?");
+                tvVilleInfoCol2.setText(data.getCentreDeFormation().getVille());
+                tvDateInfoCol2.setText(Constants.SDF_ALL.format(data.getDate()));
+            } else {
+                tvVilleInfoCol2.setText(data.getCentreDeFormation().getVille());
+                tvDateInfoCol2.setText(Constants.SDF_ALL.format(data.getDate()));
+            }
+        }
     }
 
-    public void onClickValider(View view) {
+    public void onClickValiderInfoCo(final View view) {
+        InfocoUserBean user = new InfocoUserBean();
+        user.setIdSessionConnexion(MyApplication.getUtilisateur().getIdSessionConnexion());
+        user.setID_infoCollective(data.getId());
 
+        if (data.getId() == MyApplication.getUtilisateur().getID_infoCollective()) {
+            MyApplication.webServices.postUserDeleteInfoco(user).enqueue(new Callback<UserBean>() {
+                @Override
+                public void onResponse(Call<UserBean> call, Response<UserBean> response) {
+                    Log.w("SupInfoco", "infocoSupprimer");
+                    MyApplication.setUtilisateur(response.body());
+                    startActivity(new Intent(view.getContext(), MainActivity.class));
+                    Toast.makeText(ValidationInformationCollectiveActivity.this, "Vous venez de vous désinscrire d'une information collective", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+
+                @Override
+                public void onFailure(Call<UserBean> call, Throwable t) {
+                    Log.w("SupInfoco", "infoco non supprimé" + t);
+                }
+            });
+        } else {
+            MyApplication.webServices.postUserInfoco(user).enqueue(new Callback<UserBean>() {
+                @Override
+                public void onResponse(Call<UserBean> call, Response<UserBean> response) {
+                    Log.w("YesInfoco", "infocoEnvoyer");
+                    MyApplication.setUtilisateur(response.body());
+                    startActivity(new Intent(view.getContext(), MySpaceActivity.class));
+                    finish();
+                }
+
+                @Override
+                public void onFailure(Call<UserBean> call, Throwable t) {
+                    Log.w("NonInfoco", "infoco non inscrite" + t);
+                }
+            });
+
+            startActivity(new Intent(this, MySpaceActivity.class));
+            Toast.makeText(this, "Vous venez de vous inscrire a une information collective", Toast.LENGTH_LONG).show();
+            finish();
+        }
     }
 
-    public void onClickAnnuler(View view) {
+    public void onClickAnnulerInfoCo(View view) {
         finish();
     }
+
+
 }

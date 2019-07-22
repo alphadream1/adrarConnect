@@ -56,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if (MyApplication.utilisateur != null) {
+            btInscrire.setText(getString(R.string.infoco_main));
+            tvSeConnecter.setText(getString(R.string.mon_espace_main));
+        }
+    }
+
     // --------------
     // burgerMenu
     //---------------
@@ -98,7 +107,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClickBoutonSinscrire(View view) {
         // si id session connection de l'utilisateur est null on lance l'inscription
         if (MyApplication.getUtilisateur() == null) {
-            startActivity(new Intent(this, SinscrireActivity.class));
+            startActivity(new Intent(this, SigninActivity.class));
+            recreate();
         }// sinon on lance les infoco
         else {
             startActivity(new Intent(this, InformationCollectiveActivity.class));
@@ -121,12 +131,13 @@ public class MainActivity extends AppCompatActivity {
         // on test si idsessionsConnection est null si oui on lance l'activité login, sinon on lance espace perso
         if (MyApplication.getUtilisateur() == null) {
             startActivity(new Intent(this, LoginActivity.class));
+            recreate();
         } else {
-            startActivity(new Intent(this, EspacePersoActivity.class));
+            startActivity(new Intent(this, MySpaceActivity.class));
         }
     }
 
-    // methode pour tester les etMail, savoir si le texte rentrer est bien au format email donc avec "@" et .com|.fr etc
+    // methode pour tester les etMail, savoir si le texte rentrer est bien au format email donc avec "@" et .com , .fr , etc.
     public static boolean isEmailValid(CharSequence email) {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }

@@ -1,63 +1,47 @@
 package com.adrar.adrarconnect.data.model;
 
 //
-// Created by FERRARIS Philippe on 13/06/2019 for adrarConnect.
+// Created by FERRARIS Philippe on 18/07/2019 for adrarConnect.
 //
 
-import java.util.ArrayList;
+public class UpdateUserBean {
 
-public class UserBean {
-
-    private int id;
-    private String nom, prenom, email, telephone, numeroPe, mdp, numeroVoie, adresse, complementAdresse, cp, ville, idSessionConnexion;
+    private String idSessionConnexion, nom, prenom, telephone, numeroPe, numeroVoie, adresse, complementAdresse, cp, ville;
     private Long ddn;
-    private int dev, reseau, admin;
-    private int ID_avancementInscription;
-    private ArrayList<DocumentsBean> documents;
-    private int ID_infoCollective;
+    private int dev, reseau, admin, ID_avancementInscription;
 
-    //---------------
-    // constructeur
-    //---------------
-
-
-    public UserBean() {
+    public UpdateUserBean() {
         super();
     }
 
-    public UserBean(int id, String nom, String prenom, String email, String telephone, String numeroPe, String mdp, String numeroVoie, String adresse, String complementAdresse, String cp, String ville, String idSessionConnexion, Long ddn, int dev, int reseau, int admin, int ID_avancementInscription, ArrayList<DocumentsBean> documents, int ID_infoCollective) {
-        this.id = id;
+    public UpdateUserBean(String idSessionConnexion, String nom, String prenom, String telephone, String numeroPe, String numeroVoie, String adresse, String complementAdresse, String cp, String ville, Long ddn, int dev, int reseau, int admin, int ID_avancementInscription) {
+        this.idSessionConnexion = idSessionConnexion;
         this.nom = nom;
         this.prenom = prenom;
-        this.email = email;
         this.telephone = telephone;
         this.numeroPe = numeroPe;
-        this.mdp = mdp;
         this.numeroVoie = numeroVoie;
         this.adresse = adresse;
         this.complementAdresse = complementAdresse;
         this.cp = cp;
         this.ville = ville;
-        this.idSessionConnexion = idSessionConnexion;
         this.ddn = ddn;
         this.dev = dev;
         this.reseau = reseau;
         this.admin = admin;
         this.ID_avancementInscription = ID_avancementInscription;
-        this.documents = documents;
-        this.ID_infoCollective = ID_infoCollective;
     }
 
-    //---------------
+    //----------------
     // getter & setter
-    //---------------
+    //----------------
 
-    public int getId() {
-        return id;
+    public String getIdSessionConnexion() {
+        return idSessionConnexion;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdSessionConnexion(String idSessionConnexion) {
+        this.idSessionConnexion = idSessionConnexion;
     }
 
     public String getNom() {
@@ -76,14 +60,6 @@ public class UserBean {
         this.prenom = prenom;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getTelephone() {
         return telephone;
     }
@@ -98,14 +74,6 @@ public class UserBean {
 
     public void setNumeroPe(String numeroPe) {
         this.numeroPe = numeroPe;
-    }
-
-    public String getMdp() {
-        return mdp;
-    }
-
-    public void setMdp(String mdp) {
-        this.mdp = mdp;
     }
 
     public String getNumeroVoie() {
@@ -148,14 +116,6 @@ public class UserBean {
         this.ville = ville;
     }
 
-    public String getIdSessionConnexion() {
-        return idSessionConnexion;
-    }
-
-    public void setIdSessionConnexion(String idSessionConnexion) {
-        this.idSessionConnexion = idSessionConnexion;
-    }
-
     public Long getDdn() {
         return ddn;
     }
@@ -194,21 +154,5 @@ public class UserBean {
 
     public void setID_avancementInscription(int ID_avancementInscription) {
         this.ID_avancementInscription = ID_avancementInscription;
-    }
-
-    public ArrayList<DocumentsBean> getDocuments() {
-        return documents;
-    }
-
-    public void setDocuments(ArrayList<DocumentsBean> documents) {
-        this.documents = documents;
-    }
-
-    public int getID_infoCollective() {
-        return ID_infoCollective;
-    }
-
-    public void setID_infoCollective(int ID_infoCollective) {
-        this.ID_infoCollective = ID_infoCollective;
     }
 }

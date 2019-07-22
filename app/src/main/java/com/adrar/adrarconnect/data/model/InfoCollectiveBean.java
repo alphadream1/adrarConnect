@@ -9,7 +9,6 @@ public class InfoCollectiveBean implements Serializable {
     private CentreFormationBean centreDeFormation;
     private int nombrePlacesMax;
     private int complet;
-    private String idSessionConnexion;
 
 
     //---------------
@@ -24,8 +23,6 @@ public class InfoCollectiveBean implements Serializable {
         this.date = date;
         this.nombrePlacesMax = nombrePlacesMax;
     }
-
-//    public InfoCollectiveBean(String idSessionConnexion,)
 
     public InfoCollectiveBean(int date, CentreFormationBean centreDeFormation, int nombrePlacesMax, int complet) {
         this.date = date;
@@ -71,7 +68,7 @@ public class InfoCollectiveBean implements Serializable {
         this.centreDeFormation = centreDeFormation;
     }
 
-    public int isComplet() {
+    public int getComplet() {
         return complet;
     }
 

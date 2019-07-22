@@ -60,19 +60,19 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".MesDocumentsActivity"
+            android:name=".MyDocActivity"
             android:label="Mes documents"
-            android:parentActivityName=".EspacePersoActivity"
+            android:parentActivityName=".MySpaceActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".MesInformationsActivity"
+            android:name=".MyPersonalDataActivity"
             android:label="Mes informations"
-            android:parentActivityName=".EspacePersoActivity"
+            android:parentActivityName=".MySpaceActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".EspacePersoActivity"
+            android:name=".MySpaceActivity"
             android:label="@string/mon_espace"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
@@ -84,7 +84,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".SinscrireActivity"
+            android:name=".SigninActivity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 

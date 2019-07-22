@@ -16,7 +16,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 
 import com.adrar.adrarconnect.R;
-import com.adrar.adrarconnect.SinscrireActivity;
+import com.adrar.adrarconnect.SigninActivity;
 import com.adrar.adrarconnect.data.utils.MyApplication;
 
 
@@ -57,7 +57,7 @@ public class JobSearcherFragment extends Fragment {
         btSinscrireProcessus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), SinscrireActivity.class));
+                startActivity(new Intent(getActivity(), SigninActivity.class));
             }
         });
 

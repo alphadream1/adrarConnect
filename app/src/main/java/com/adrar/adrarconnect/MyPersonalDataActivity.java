@@ -1,5 +1,6 @@
 package com.adrar.adrarconnect;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,8 +14,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.adrar.adrarconnect.data.model.DocumentsBean;
+import com.adrar.adrarconnect.data.model.UpdateUserBean;
 import com.adrar.adrarconnect.data.model.UserBean;
 import com.adrar.adrarconnect.data.utils.Constants;
 import com.adrar.adrarconnect.data.utils.MyApplication;
@@ -26,7 +29,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MesInformationsActivity extends AppCompatActivity {
+public class MyPersonalDataActivity extends AppCompatActivity {
 
     private ImageView ivPhoto;
     private EditText etNom;
@@ -43,10 +46,11 @@ public class MesInformationsActivity extends AppCompatActivity {
     private CheckBox cbDeveloppement;
     private CheckBox cbReseaux;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mes_informations);
+        setContentView(R.layout.activity_my_personal_data);
 
         // les findViewById
         ivPhoto = findViewById(R.id.ivPhoto);
@@ -65,56 +69,54 @@ public class MesInformationsActivity extends AppCompatActivity {
         cbReseaux = findViewById(R.id.cbReseaux);
 
         // set des info de base
-        etNom.setText(MyApplication.utilisateur.getNom());
-        etPrenom.setText(MyApplication.utilisateur.getPrenom());
-        tvEmail.setText(MyApplication.utilisateur.getEmail());
+        etNom.setText(MyApplication.getUtilisateur().getNom());
+        etPrenom.setText(MyApplication.getUtilisateur().getPrenom());
+        tvEmail.setText(MyApplication.getUtilisateur().getEmail());
 
         // set des autres info sous conditions
-        if (MyApplication.utilisateur.getDdn() != null) {
-            etDateDeNaissance.setText(MyApplication.utilisateur.getDdn().toString());
+        if (MyApplication.getUtilisateur().getDdn() != null) {
+            etDateDeNaissance.setText(MyApplication.getUtilisateur().getDdn().toString());
         }
-        if (MyApplication.utilisateur.getTelephone() != null) {
-            etTelephone.setText(MyApplication.utilisateur.getTelephone());
+        if (MyApplication.getUtilisateur().getTelephone() != null) {
+            etTelephone.setText(MyApplication.getUtilisateur().getTelephone());
         }
-        if (MyApplication.utilisateur.getNumeroPe() != null) {
-            etNumPE.setText(MyApplication.utilisateur.getNumeroPe());
+        if (MyApplication.getUtilisateur().getNumeroPe() != null) {
+            etNumPE.setText(MyApplication.getUtilisateur().getNumeroPe());
         }
-        if (MyApplication.utilisateur.getNumeroVoie() != null) {
-            etNumVoie.setText(MyApplication.utilisateur.getNumeroVoie());
+        if (MyApplication.getUtilisateur().getNumeroVoie() != null) {
+            etNumVoie.setText(MyApplication.getUtilisateur().getNumeroVoie());
         }
-        if (MyApplication.utilisateur.getAdresse() != null) {
-            etAdresse.setText(MyApplication.utilisateur.getAdresse());
+        if (MyApplication.getUtilisateur().getAdresse() != null) {
+            etAdresse.setText(MyApplication.getUtilisateur().getAdresse());
         }
-        if (MyApplication.utilisateur.getComplementAdresse() != null) {
-            etComplementAdresse.setText(MyApplication.utilisateur.getComplementAdresse());
+        if (MyApplication.getUtilisateur().getComplementAdresse() != null) {
+            etComplementAdresse.setText(MyApplication.getUtilisateur().getComplementAdresse());
         }
-        if (MyApplication.utilisateur.getCp() != null) {
-            etCodePostal.setText(MyApplication.utilisateur.getCp());
+        if (MyApplication.getUtilisateur().getCp() != null) {
+            etCodePostal.setText(MyApplication.getUtilisateur().getCp());
         }
-        if (MyApplication.utilisateur.getVille() != null) {
-            etVille.setText(MyApplication.utilisateur.getVille());
+        if (MyApplication.getUtilisateur().getVille() != null) {
+            etVille.setText(MyApplication.getUtilisateur().getVille());
         }
-        if (MyApplication.utilisateur.getDev() == Constants.BOOLEEN_TRUE) {
+        if (MyApplication.getUtilisateur().getDev() == Constants.BOOLEEN_TRUE) {
             cbDeveloppement.setChecked(true);
         }
-        if (MyApplication.utilisateur.getReseau() == Constants.BOOLEEN_TRUE) {
+        if (MyApplication.getUtilisateur().getReseau() == Constants.BOOLEEN_TRUE) {
             cbReseaux.setChecked(true);
         }
 
-        //userPhotoPresente();
-        //----------------
-        // test decode base64
-        //----------------
-//        byte[] imageAsBytes = Base64.decode(Constants.BASE64.getBytes(), 0);
-//        ivPhoto.setImageBitmap(BitmapFactory.decodeByteArray(
-//                imageAsBytes, 0, imageAsBytes.length));
+        if (userPhotoPresente(MyApplication.getUtilisateur()) != null) {
+            ivPhoto.setImageBitmap(BitmapFactory.decodeByteArray(
+                    userPhotoPresente(MyApplication.getUtilisateur()), 0, userPhotoPresente(MyApplication.getUtilisateur()).length));
+        }
+
 
     }
 
     public void onClickValiderInfoPerso(View view) {
-        UserBean user = new UserBean();
+        UpdateUserBean user = new UpdateUserBean();
         user.setIdSessionConnexion(MyApplication.getUtilisateur().getIdSessionConnexion());
-        user.setId(MyApplication.getUtilisateur().getId());
+        user.setID_avancementInscription(MyApplication.getUtilisateur().getID_avancementInscription());
         if (!MyApplication.getUtilisateur().getNom().equals(etNom.getText().toString()) && !etNom.getText().toString().equals("")) {
             user.setNom(etNom.getText().toString());
         }
@@ -123,7 +125,6 @@ public class MesInformationsActivity extends AppCompatActivity {
         }
         //todo finir ce if
         if (!etDateDeNaissance.getText().toString().equals("") || etDateDeNaissance.getText().toString().equals(Constants.SDF_JJ_MM_AAAA)) {
-
             //user.setDdn(Constants.SDF_JJ_MM_AAAA.format());
         }
         if (!etTelephone.getText().toString().equals("")) {
@@ -153,22 +154,23 @@ public class MesInformationsActivity extends AppCompatActivity {
         if (cbReseaux.isChecked()) {
             user.setReseau(Constants.BOOLEEN_TRUE);
         }
-        if (!user.getNumeroPe().equals("") && !user.getTelephone().equals("")) {
-            user.setID_avancementInscription(Constants.AVANCEMENT_INSCRIPTION_DOC);
-        }
         MyApplication.webServices.postUserUpdateDetails(user).enqueue(new Callback<UserBean>() {
             @Override
             public void onResponse(Call<UserBean> call, Response<UserBean> response) {
-                MyApplication.setUtilisateur(response.body());
+                if (response.body() != null) {
+                    MyApplication.setUtilisateur(response.body());
+                    startActivity(new Intent(etNom.getContext(), MySpaceActivity.class));
+                    finish();
+                }
             }
 
             @Override
             public void onFailure(Call<UserBean> call, Throwable t) {
                 Log.w("Err_Update", t + "");
+                Toast.makeText(MyPersonalDataActivity.this, "Une erreur c'est produite pendant l'envoi de vos informations, merci de recommencer svp.", Toast.LENGTH_LONG).show();
             }
         });
-        startActivity(new Intent(this, EspacePersoActivity.class));
-        finish();
+
     }
 
     public void onClickAnnulerInfoPerso(View view) {
@@ -201,11 +203,10 @@ public class MesInformationsActivity extends AppCompatActivity {
             // nouveau documentbean
             DocumentsBean photo = new DocumentsBean();
             photo.setBase64(encodedImage);
-            photo.setIdSessionConnexion(MyApplication.getUtilisateur().getIdSessionConnexion());
             photo.setEtat(Constants.DOC_ENVOYER);
             photo.setId_typeDocument(Constants.DOC_TYPE_PHOTO);
             photo.setId_users(MyApplication.getUtilisateur().getId());
-            // todo faire le post doc(photo) ici
+            // post de la photo
             MyApplication.webServices.postUserDocument(photo).enqueue(new Callback<UserBean>() {
                 @Override
                 public void onResponse(Call<UserBean> call, Response<UserBean> response) {
@@ -221,17 +222,14 @@ public class MesInformationsActivity extends AppCompatActivity {
         }
     }
 
-    public void userPhotoPresente() {
-        if (MyApplication.utilisateur.getListDocument() != null) {
-            for (DocumentsBean doc : MyApplication.utilisateur.getListDocument()
-            ) {
-                if (doc.getId_typeDocument() == Constants.DOC_TYPE_PHOTO) {
-                    byte[] imageAsBytes = Base64.decode(doc.getBase64().getBytes(), 0);
-                    ivPhoto.setImageBitmap(BitmapFactory.decodeByteArray(
-                            imageAsBytes, 0, imageAsBytes.length));
-
-                }
+    public byte[] userPhotoPresente(UserBean user) {
+        for (DocumentsBean doc : user.getDocuments()
+        ) {
+            if (doc.getId_typeDocument() == Constants.DOC_TYPE_PHOTO) {
+                byte[] imageAsBytes = Base64.decode(doc.getBase64().getBytes(), 0);
+                return imageAsBytes;
             }
         }
+        return null;
     }
 }

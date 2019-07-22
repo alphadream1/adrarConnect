@@ -39,7 +39,8 @@ public class ChoixInfoCoActivity extends AppCompatActivity {
         rv.setAdapter(adapter);
         //Réglage : affichage ligne par ligne
         rv.setLayoutManager(new LinearLayoutManager(this));
-        data.addAll(MyApplication.getAccueilData().getListeInfosCollectives());
-        //Log.w("testIdInfoco", MyApplication.getAccueilData().getListeInfosCollectives().get(2).getId() + "");
+        if (MyApplication.getAccueilData().getListeInfosCollectives() != null) {
+            data.addAll(MyApplication.getAccueilData().getListeInfosCollectives());
+        }
     }
 }

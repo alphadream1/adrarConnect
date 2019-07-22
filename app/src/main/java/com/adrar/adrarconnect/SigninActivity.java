@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.adrar.adrarconnect.data.model.SigninBean;
 import com.adrar.adrarconnect.data.model.UserBean;
 import com.adrar.adrarconnect.data.utils.MyApplication;
 
@@ -20,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SinscrireActivity extends AppCompatActivity {
+public class SigninActivity extends AppCompatActivity {
 
 
     private EditText etNom;
@@ -59,26 +60,25 @@ public class SinscrireActivity extends AppCompatActivity {
                 if (MainActivity.isEmailValid(etEmail.getText().toString())) {
                     if (etPassword.getText().toString().trim().length() >= 6) {
                         if (etPassword.getText().toString().equals(etConfirMdp.getText().toString())) {
-                            UserBean userBean = new UserBean(etPrenom.getText().toString(), etNom.getText().toString(), etEmail.getText().toString(), etPassword.getText().toString());
-                            MyApplication.webServices.postUserSignin(userBean).enqueue(new Callback<UserBean>() {
+                            SigninBean signinBean = new SigninBean(etNom.getText().toString(), etPrenom.getText().toString(), etEmail.getText().toString(), etPassword.getText().toString());
+                            MyApplication.webServices.postUserSignin(signinBean).enqueue(new Callback<UserBean>() {
                                 @Override
                                 public void onResponse(@NonNull Call<UserBean> call, @NonNull Response<UserBean> response) {
                                     assert response.body() != null;
                                     Log.w("ca marche", response.body().getNom());
                                     MyApplication.setUtilisateur(response.body());
+                                    if (response.body() != null) {
+                                        startActivity(new Intent(etNom.getContext(), MySpaceActivity.class));
+                                        finish();
+                                    }
                                 }
 
                                 @Override
                                 public void onFailure(Call<UserBean> call, Throwable t) {
                                     Log.w("erreur", "" + t);
+                                    Toast.makeText(etEmail.getContext(), "cette email est déjà utilisé.", Toast.LENGTH_LONG).show();
                                 }
                             });
-                            if (MyApplication.utilisateur == null) {
-                                Toast.makeText(this, "cette email est déjà utilisé.", Toast.LENGTH_LONG).show();
-                            } else {
-                                startActivity(new Intent(this, EspacePersoActivity.class));
-                                finish();
-                            }
                         } else {
                             Toast.makeText(this, "le mot de passe et sa confirmation ne sont pas identique.", Toast.LENGTH_LONG).show();
                         }

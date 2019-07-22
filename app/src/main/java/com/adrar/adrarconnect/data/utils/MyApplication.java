@@ -42,7 +42,7 @@ public class MyApplication extends Application {
 
             @Override
             public void onFailure(Call<AccueilBean> call, Throwable t) {
-                Log.w("retrofit", "" + t);
+                Log.w("retrofit", "Download fail : " + t);
             }
         });
     }
@@ -64,5 +64,13 @@ public class MyApplication extends Application {
 
     public static void setUtilisateur(UserBean utilisateur) {
         MyApplication.utilisateur = utilisateur;
+    }
+
+    public static InterfaceWebServices getWebServices() {
+        return webServices;
+    }
+
+    public static void setWebServices(InterfaceWebServices webServices) {
+        MyApplication.webServices = webServices;
     }
 }

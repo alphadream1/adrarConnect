@@ -7,7 +7,7 @@ package com.adrar.adrarconnect.data.model;
 public class DocumentsBean {
 
     private int id, id_typeDocument, id_users, etat;
-    private String base64, idSessionConnexion;
+    private String base64;
 
 
     //---------------
@@ -18,10 +18,10 @@ public class DocumentsBean {
         super();
     }
 
-    public DocumentsBean(int typeDocument, String base64, int etat, int id_users, String idSessionConnexion) {
+    public DocumentsBean(int id, int typeDocument, String base64, int etat, int id_users) {
         super();
+        this.id = id;
         this.id_users = id_users;
-        this.idSessionConnexion = idSessionConnexion;
         this.id_typeDocument = typeDocument;
         this.base64 = base64;
         this.etat = etat;
@@ -30,7 +30,6 @@ public class DocumentsBean {
     //----------------
     // getter & setter
     //----------------
-
 
     public int getId() {
         return id;
@@ -62,14 +61,6 @@ public class DocumentsBean {
 
     public void setBase64(String base64) {
         this.base64 = base64;
-    }
-
-    public String getIdSessionConnexion() {
-        return idSessionConnexion;
-    }
-
-    public void setIdSessionConnexion(String idSessionConnexion) {
-        this.idSessionConnexion = idSessionConnexion;
     }
 
     public int getEtat() {

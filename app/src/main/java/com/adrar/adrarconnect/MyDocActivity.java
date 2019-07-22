@@ -24,7 +24,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MesDocumentsActivity extends AppCompatActivity {
+public class MyDocActivity extends AppCompatActivity {
 
 
     private ImageView ivChechCV;
@@ -34,11 +34,23 @@ public class MesDocumentsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mes_documents);
+        setContentView(R.layout.activity_my_doc);
 
         ivChechCV = findViewById(R.id.ivChechCV);
         ivCheckLM = findViewById(R.id.ivCheckLM);
         ivChechPPE = findViewById(R.id.ivChechPPE);
+
+        if (MyApplication.getUtilisateur().getDocuments() != null) {
+            if (userHaveCV(MyApplication.getUtilisateur())) {
+                ivChechCV.setVisibility(View.VISIBLE);
+            }
+            if (userHavePPE(MyApplication.getUtilisateur())) {
+                ivChechPPE.setVisibility(View.VISIBLE);
+            }
+            if (userHaveLM(MyApplication.getUtilisateur())) {
+                ivCheckLM.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     public void onClickAjouterCV(View view) {
@@ -60,7 +72,7 @@ public class MesDocumentsActivity extends AppCompatActivity {
     }
 
     public void onClickValiderAnnulerDoc(View view) {
-        startActivity(new Intent(this, EspacePersoActivity.class));
+        startActivity(new Intent(this, MySpaceActivity.class));
         finish();
     }
 
@@ -83,10 +95,11 @@ public class MesDocumentsActivity extends AppCompatActivity {
             final String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
             // nouveau documentbean
             DocumentsBean doc = new DocumentsBean();
+            // set des attributs du document
             doc.setBase64(encodedImage);
-            doc.setIdSessionConnexion(MyApplication.getUtilisateur().getIdSessionConnexion());
             doc.setEtat(Constants.DOC_ENVOYER);
-
+            doc.setId_users(MyApplication.getUtilisateur().getId());
+            //set du type de doc suivant le bouton clicker et affichage du doc_check si ok
             switch (requestCode) {
                 case Constants.DOC_TYPE_PRESCRIPTION_PE:
                     doc.setId_typeDocument(Constants.DOC_TYPE_PRESCRIPTION_PE);
@@ -102,13 +115,12 @@ public class MesDocumentsActivity extends AppCompatActivity {
                     break;
             }
 
-            doc.setId_users(MyApplication.getUtilisateur().getId());
             // post du document
             MyApplication.webServices.postUserDocument(doc).enqueue(new Callback<UserBean>() {
                 @Override
                 public void onResponse(Call<UserBean> call, Response<UserBean> response) {
                     // code a mettre quand le serveur seras ok
-                    //MyApplication.setUtilisateur(response.body());
+                    MyApplication.setUtilisateur(response.body());
                     Log.w("youhou", encodedImage.length() + "");
                 }
 
@@ -118,5 +130,35 @@ public class MesDocumentsActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public Boolean userHaveCV(UserBean user) {
+        for (DocumentsBean doc : user.getDocuments()
+        ) {
+            if (doc.getId_typeDocument() == Constants.DOC_TYPE_CV) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Boolean userHavePPE(UserBean user) {
+        for (DocumentsBean doc : user.getDocuments()
+        ) {
+            if (doc.getId_typeDocument() == Constants.DOC_TYPE_PRESCRIPTION_PE) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Boolean userHaveLM(UserBean user) {
+        for (DocumentsBean doc : user.getDocuments()
+        ) {
+            if (doc.getId_typeDocument() == Constants.DOC_TYPE_LETTRE_MOTIVATION) {
+                return true;
+            }
+        }
+        return false;
     }
 }
