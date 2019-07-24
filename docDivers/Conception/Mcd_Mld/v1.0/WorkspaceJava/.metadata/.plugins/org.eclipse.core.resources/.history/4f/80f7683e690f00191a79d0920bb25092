@@ -1,0 +1,10 @@
+package monPackage;
+
+public class jeu2evolution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

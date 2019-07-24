@@ -1,0 +1,23 @@
+package monPackage;
+
+// importer l'utilitaire "random" de java.
+import java.util.Random;
+
+public class Main {
+// creation d'un jeu + et -
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// ecrire Hello World !
+		System.out.println("Hello World !");
+		// creation d'une variable de type random
+		Random generator = new Random();
+		// initialisation d'une variable entre 0 et 4 (car strictement inferieur a 5).
+		// si on veux initialiser la valeur entre 1 et 5 marquer +1 apres la paranthese.
+		// int x = generator.nextInt(5)+1;
+		int x = generator.nextInt(5);
+		// ecrire la variable x
+		System.out.println(x);
+
+	}
+
+}

@@ -1,0 +1,83 @@
+package monPackage;
+
+// pierre.coupechoux@laposte.net
+// importer l'utilitaire "random" de java.
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+	// creation d'un jeu + et -
+	public static void main(String[] args) {
+		System.out.println("Jeu du plus ou moins, a vous de jouer !");
+		// creation d'une variable de type random
+		// Random generator = new Random();
+		// initialisation d'une variable entre 0 et 4 (car strictement inferieur a 5).
+		// si on veux initialiser la valeur entre 1 et 5 marquer +1 apres la paranthese.
+		// int x = generator.nextInt(5)+1;
+		// int inconnu = generator.nextInt(101);
+		// ecrire la variable inconnu
+		// System.out.println(inconnu);
+		// initialisation du scanner et donc lire les entrées clavier
+		Scanner input = new Scanner(System.in);
+		// int compteur = 0;
+		// declaration d'une variable qui vas nous servir dans la boucle
+		int entree;
+		boolean continuer = true;
+		int choix = 1;
+		int inconnu;
+		int compteurPartie = 0;// compteur de partie
+		// boucle do/while pour tester les entrés clavier
+		while (continuer) {
+			Random generator = new Random();
+			inconnu = generator.nextInt(101);
+			int compteur = 0;// compteur de partie
+			do {
+				System.out.println("debut de la partie entrer un nombre entre 0 et 100");
+				// on initialise la var "entree" avec ce que rentre l utilisateur
+				entree = keyboard(input, 0, 100);
+				compteur++; // incrementation du compteur de partie
+				if (entree < inconnu) {
+					System.out.println("c'est plus");
+				} else if (entree > inconnu) {
+					System.out.println("c'est moins");
+				}
+			} while (entree != inconnu);
+			System.out.println("c'est gagné!");
+			System.out.println("vous avez gagné en " + compteur + "coup(s)");
+			System.out.println("voulez vous rejouer ? (Oui=1,Non=0)");
+			choix = keyboard(input, 0, 1);
+			continuer = (choix == 1);
+			compteurPartie++;
+		}
+		System.out.println("vous avez jouez " + compteurPartie + " partie(s), merci et à bientôt");
+		// fermeture de l'input
+		input.close();
+	}
+
+	// creation d'une autre method
+	public static int keyboard(Scanner sc, int min, int max) {
+		int entree;
+		do {
+			// ecrire que lon demande un chiffre
+			System.out.println("entrée un nombre");
+			// initialisation variable "entree" avec l'input clavier
+			entree = sc.nextInt();
+			if (entree < min || entree > max) {
+				System.out.println("Erreur");
+			}
+		} while (entree < min || entree > max);
+		return entree;
+	}
+
+	public static int newgame(Scanner Ng) {
+		int entree2;
+		do {
+			System.out.println("voulez vous rejouer ? (Oui=1,Non=0)");
+			entree2 = Ng.nextInt();
+			if (entree2 != 1 && entree2 != 0) {
+				System.out.println("erreur");
+			}
+		} while (entree2 != 1 && entree2 != 0);
+		return entree2;
+	}
+}

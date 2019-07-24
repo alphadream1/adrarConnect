@@ -1,0 +1,68 @@
+package monPackage;
+
+// pierre.coupechoux@laposte.net
+// importer l'utilitaire "random" de java.
+import java.util.Random;
+import java.util.Scanner;
+/* java lit toujours le main et quand il a besoin d'une methode, fait une pause, utilise l'autre
+ * methode, puis reprend l'avancement sur le main.*/
+
+public class Main {
+// creation d'un jeu + et -
+	public static void main(String[] args) {
+		System.out.println("Jeu du plus ou moins, a vous de jouer !");
+		// creation d'une variable de type random
+		Random generator = new Random();
+		// initialisation d'une variable entre 0 et 4 (car strictement inferieur a 5).
+		// si on veux initialiser la valeur entre 1 et 5 marquer +1 apres la paranthese.
+		// int x = generator.nextInt(5)+1;
+		int inconnu = generator.nextInt(101);
+		// ecrire la variable inconnu
+		// System.out.println(inconnu);
+		// initialisation du scanner et donc lire les entrées clavier
+		Scanner input = new Scanner(System.in);
+		int compteur = 0;
+		// declaration d'une variable qui vas nous servir dans la boucle
+		int entree;
+		// boucle do/while pour tester les entrés clavier
+		do {
+		do {
+			// on initialise la var "entree" avec ce que rentre l utilisateur
+			entree = keyboard(input);
+			compteur++;
+			if (entree < inconnu) {
+				System.out.println("c'est plus");
+			} else if (entree > inconnu) {
+				System.out.println("c'est moins");
+			}
+		} while (entree != inconnu);
+		System.out.println("c'est gagné!");
+		System.out.println("vous avez gagné en " + compteur + "coup(s)");
+		System.out.println("voulez vous rejouer ? (oui entrer 1, si non n'importe quelle touche)");
+		} while (condition);
+		int y = keyboard(input);
+		int compteurPartie = 1;
+		if (y == 1) {
+			main(args);
+			compteurPartie++;
+		}
+		System.out.println("vous avez jouez " + compteurPartie + " partie(s)");
+		// fermeture de l'input
+		input.close();
+	}
+
+	// creation d'une autre method
+	public static int keyboard(Scanner sc) {
+		int entree;
+		do {
+			// ecrire que lon demande un chiffre
+			System.out.println("entrée un nombre entre 0 et 100 svp :");
+			// initialisation variable "entree" avec l'input clavier
+			entree = sc.nextInt();
+			if (entree < 0 || entree > 100) {
+				System.out.println("Erreur");
+			}
+		} while (entree < 0 || entree > 100);
+		return entree;
+	}
+}

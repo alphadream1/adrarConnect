@@ -1,0 +1,37 @@
+package monPackage;
+
+public class BddUtils {
+
+	public static final String URL = "jdbc:mysql://localhost:3306/exojdbc";
+	public static final String LOGIN = "root";
+	public static final String PASSWORD = "";
+
+	private final static String QUERY_SAVE_ELEVES = "INSERT INTO Eleve (nom, note) VALUES (?, ?);";
+	private final static String QUERY_FIND_ELEVES = "SELECT * FROM Eleve ;";
+
+	public static void insertMsg(MessageBean message) throws Exception {
+//		Connection con = null; // java.sql pour le choix
+//		PreparedStatement stmt = null; // java.sql pour le choix
+//		try {
+//			// Pour travailler avec Tomcat
+//			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+//			con = DriverManager.getConnection(URL, LOGIN, PASSWORD);
+//			stmt = con.prepareStatement(QUERY_SAVE_ELEVES);
+//			// Remplir la requête
+//			stmt.setString(1, message.getNom());
+//			stmt.setInt(2, message.getContenu());
+//			// Lancer la requête
+//			stmt.executeUpdate();
+//		} finally {
+//			// On ferme la connexion
+//			if (con != null) {
+//				try {
+//					con.close();
+//				} catch (final SQLException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}
+	}
+
+}

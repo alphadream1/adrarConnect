@@ -1,0 +1,54 @@
+package monPackage;
+
+import java.util.ArrayList;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import com.google.gson.Gson;
+
+@Path("/monService")
+public class ChatService {
+
+	public static ArrayList<MessageBean> miaou = new ArrayList<>();
+
+	// http://localhost:8080/TchatServer/rest/monService/helloWorld
+	// http://192.168.20.5:8080/TchatServer/rest/monService/helloWorld
+	@Path("/helloWorld")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String hello() {
+		System.out.println("Hello World!!");
+		return "Hello World!";
+	}
+
+	// http://192.168.20.5:8080/TchatServer/rest/monService/envoieMsg
+	@POST
+	@Path("/envoieMsg")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response sendMsg(String recu) {
+		System.out.println("/sendMsg \njson:" + recu);
+		Gson gson = new Gson();
+		MessageBean msg = gson.fromJson(recu, MessageBean.class);
+		miaou.add(msg);
+
+		return Response.status(200).build();
+	}
+
+	// http://192.168.20.5:8080/TchatServer/rest/monService/recupMsg
+	@Path("/recupMsg")
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	public static Gson recupMsg() {
+		Gson gson = new Gson();
+		String json =  gson.toJson(miaou);
+		return json;
+	}
+
+}

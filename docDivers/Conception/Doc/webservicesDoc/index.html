@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Documentation WebServices Adrar'Connect</title>
+</head>
+<body>
+		
+	<div id="introduction">
+		<h1><img src="logo.png" alt="logo adrar connect">WebServices</h1>
+
+		<div>
+			<p>Decription détaillée des web services utilisés par les applications mobiles Adrar Connect.<br><br>
+			Ces webservices gèreront les données 
+				<ul>
+					<li><a href="#candidat">des candidats</a>,</li>
+					<li><a href="#donneesStatiques">les données statiques envoyées depuis l'index,</a>,</li>
+					<li><a href="#infoColl">des sessions d'informations collectives</a>,</li>
+					<li><a href="#formation">des formations</a></li>
+					<li><a href="#faq">de la FAQ,</a></li>
+					<li><a href="#document">des documents,</a></li>
+					<li><a href="#typeDocument">des types des document,</a></li>
+					<li><a href="#erreur">des erreurs</a></li>
+				</ul>
+			</p>
+		</div>
+	</div>
+	
+
+	<section id="doc-technique">
+		<div id="ws-details">
+			<h2>Détails des web services</h2>
+			<hr>
+
+			<div class="ws signin">
+				<h3>Signin</h3>
+				<div class="details">
+					<div>
+						<span class="method">POST</span>
+						<span class="url">/ws/signin</span>
+					</div>
+					<span class="description">Renvoie le <a href="#candidat">candidat</a> comprenant un <em>idSessionConnexion</em><br>Renvoie <b><em>'Err_Email_Already_Exist'</em></b> si l'email existe déja en bdd</span>
+				</div>
+				<div class="ideStyleBox">					
+					<div class="entree">
+						<span>Entrée</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="ws login">
+				<h3>Login</h3>
+				<div class="details">
+					<div>
+						<span class="method">POST</span>
+						<span class="url">/ws/login</span>
+					</div>
+					<span class="description">Renvoie le <a href="#candidat">candidat</a> comprenant un <em>idSessionConnexion</em><br>Renvoie <b><em>'Err_Mdp'</em></b> si le mdp est erroné<br>Renvoie <b><em>'Err_Email'</em></b> si le l'email n'existe pas en bdd</span>
+				</div>
+				<div class="ideStyleBox">					
+					<div class="entree">
+						<span>Entrée</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="ws detailsCandidat">
+				<h3>Formulaire informations candidat</h3>
+				<div class="details">
+					<div>
+						<span class="method">POST</span>
+						<span class="url">/ws/candidat/update/details/</span>
+					</div>
+					<span class="description">Renvoie le <a href="#candidat">candidat</a> mis à jour</span>
+				</div>
+				<div class="ideStyleBox">					
+					<div class="entree">
+						<span>Entrée</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="ws envoiDocuments">
+				<h3>Envoi document</h3>
+				<div class="details">
+					<div>
+						<span class="method">POST</span>
+						<span class="url">/ws/candidat/update/doc/</span>
+					</div>
+					<span class="description">Renvoie le <a href="#candidat">candidat</a> mis à jour</span>
+				</div>
+				<div class="ideStyleBox">					
+					<div class="entree">
+						<span>Entrée</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="ws inscriptionSessionCol">
+				<h3>Inscription infos collectives</h3>
+				<div class="details">
+					<div>
+						<span class="method">POST</span>
+						<span class="url">/ws/infos-collectives/inscription</span>
+					</div>
+					<span class="description">Renvoie le <a href="#candidat">candidat</a> mis à jour</span>
+				</div>
+				<div class="ideStyleBox">					
+					<div class="entree">
+						<span>Entrée</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="ws changementSessionCol">
+				<h3>Changement inscription infos collectives</h3>
+				<div class="details">
+					<div>
+						<span class="method">POST</span>
+						<span class="url">/ws/infos-collectives/update/</span>
+					</div>
+					<span class="description">Renvoie le <a href="#candidat">candidat</a> mis à jour</span>
+				</div>
+				<div class="ideStyleBox">					
+					<div class="entree">
+						<span>Entrée</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="ws supprimerSessionCol">
+				<h3>Annuler inscription infos collectives</h3>
+				<div class="details">
+					<div>
+						<span class="method">GET</span>
+						<span class="url">/ws/infos-collectives/delete/</span>
+					</div>
+					<span class="description">Renvoie le <a href="#candidat">candidat</a> mis à jour</span>
+				</div>
+			</div>
+
+
+
+			
+			<div class="ws donneesStatiques">
+				<h3>Données statiques</h3>
+				<div class="details">
+					<div>
+						<span class="method">GET</span>
+						<span class="url">/ws/accueil</span>
+					</div>
+					<span class="description">Lors de la connexion à l'index, le serveur envoie un objet de <a href="#donneesStatiques">données statiques</a></span>
+				</div>
+			</div>
+
+			<div class="ws erreur">
+				<h3>Erreurs</h3>
+				<div class="details">
+					<div>
+						<span class="method">GET</span>
+						<span class="url">/ws/erreur</span>
+					</div>
+					<span class="description">Renvoie une <a href="#erreur">erreur</a></span>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="models-details">
+			<h2>Détails des models</h2>
+			<hr>
+				
+			<div class="wrapper">
+
+				<div class="model" id="infoColl">
+					<h3>Info collective</h3>
+					<div class="ideStyleBox">					
+						<div></div>
+					</div>
+				</div>
+
+				<div class="model" id="candidat">
+					<h3>Candidat</h3>
+					<div class="ideStyleBox">					
+						<div></div>
+					</div>
+				</div>
+
+				<div class="model" id="formation">
+					<h3>Formation</h3>
+					<div class="ideStyleBox">					
+						<div></div>
+					</div>
+				</div>
+
+				<div class="model" id="faq">
+					<h3>F.A.Q</h3>
+					<div class="ideStyleBox">					
+						<div></div>
+					</div>
+				</div>				
+
+				<div class="model" id="document">
+					<h3>Document</h3>
+					<div class="ideStyleBox">					
+						<div></div>
+					</div>
+				</div>
+
+				<div class="model" id="donneesStatiques">
+					<h3>Données statiques</h3>
+					<div class="ideStyleBox">					
+						<div></div>
+					</div>
+				</div>
+
+				<div class="model" id="erreur">
+					<h3>Erreur</h3>
+					<div class="ideStyleBox">					
+						<div></div>
+					</div>
+				</div>			
+			</div>
+		</div>
+	</section>
+
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
