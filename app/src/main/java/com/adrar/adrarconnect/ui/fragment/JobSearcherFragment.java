@@ -17,7 +17,7 @@ import android.widget.Button;
 
 import com.adrar.adrarconnect.R;
 import com.adrar.adrarconnect.SigninActivity;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 
 public class JobSearcherFragment extends Fragment {

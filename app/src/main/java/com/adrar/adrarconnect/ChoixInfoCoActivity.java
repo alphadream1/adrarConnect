@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.adrar.adrarconnect.data.model.InfoCollectiveBean;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.utils.MyApplication;
 import com.adrar.adrarconnect.ui.adapter.InformationCollectiveAdapter;
 
 import java.util.ArrayList;

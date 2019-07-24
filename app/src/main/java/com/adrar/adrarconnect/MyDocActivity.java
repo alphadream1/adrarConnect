@@ -14,8 +14,8 @@ import android.widget.ImageView;
 
 import com.adrar.adrarconnect.data.model.DocumentsBean;
 import com.adrar.adrarconnect.data.model.UserBean;
-import com.adrar.adrarconnect.data.utils.Constants;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.data.staticData.Constants;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -121,7 +121,7 @@ public class MyDocActivity extends AppCompatActivity {
                 public void onResponse(Call<UserBean> call, Response<UserBean> response) {
                     // code a mettre quand le serveur seras ok
                     MyApplication.setUtilisateur(response.body());
-                    Log.w("youhou", encodedImage.length() + "");
+                    Log.w("youhou doc envoyer", encodedImage.length() + "");
                 }
 
                 @Override

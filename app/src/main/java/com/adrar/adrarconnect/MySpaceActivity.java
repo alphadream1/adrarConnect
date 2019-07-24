@@ -14,8 +14,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.adrar.adrarconnect.data.model.DocumentsBean;
-import com.adrar.adrarconnect.data.utils.Constants;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.data.staticData.Constants;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 public class MySpaceActivity extends AppCompatActivity {
 
@@ -60,8 +60,8 @@ public class MySpaceActivity extends AppCompatActivity {
         //----------------
         // set des textView
         //----------------
-        tvPrenomUtilisateur.setText(MyApplication.utilisateur.getPrenom());
-        majAffichageTvExplicationAndSeekbar(MyApplication.utilisateur.getID_avancementInscription());
+        tvPrenomUtilisateur.setText(MyApplication.getUtilisateur().getPrenom());
+        majAffichageTvExplicationAndSeekbar(MyApplication.getUtilisateur().getID_avancementInscription());
         if (dossierValide()) {
             ivIconCheck.setVisibility(View.VISIBLE);
         }
@@ -105,6 +105,17 @@ public class MySpaceActivity extends AppCompatActivity {
                 seekBar.setProgress(5);
                 break;
         }
+        if (documentEnvoyer()) {
+            tvExplication.setText(Constants.ETAPE_VALIDDOC);
+            if (dossierValide()) {
+                tvExplication.setText(Constants.ETAPE_INFOCO);
+                seekBar.setProgress(3);
+                if (MyApplication.getUtilisateur().getID_infoCollective() > 0) {
+                    tvExplication.setText(Constants.ETAPE_RAPPEL_INFOCO);
+                    seekBar.setProgress(4);
+                }
+            }
+        }
     }
 
     public boolean dossierValide() {
@@ -129,7 +140,26 @@ public class MySpaceActivity extends AppCompatActivity {
         } else {
             return false;
         }
+    }
 
+    public Boolean documentEnvoyer() {
+        Boolean ppeEnvoyer = false;
+        Boolean cvEnvoyer = false;
+        if (MyApplication.getUtilisateur().getDocuments() != null) {
+            for (DocumentsBean document : MyApplication.getUtilisateur().getDocuments()) {
+                if (document.getId_typeDocument() == Constants.DOC_TYPE_PRESCRIPTION_PE) {
+                    ppeEnvoyer = true;
+                }
+                if (document.getId_typeDocument() == Constants.DOC_TYPE_CV) {
+                    cvEnvoyer = true;
+                }
+            }
+        }
+        if (ppeEnvoyer && cvEnvoyer) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void onClickProcessusMySpace(View view) {

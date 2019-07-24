@@ -19,8 +19,8 @@ import android.widget.Toast;
 import com.adrar.adrarconnect.data.model.DocumentsBean;
 import com.adrar.adrarconnect.data.model.UpdateUserBean;
 import com.adrar.adrarconnect.data.model.UserBean;
-import com.adrar.adrarconnect.data.utils.Constants;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.data.staticData.Constants;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -123,10 +123,10 @@ public class MyPersonalDataActivity extends AppCompatActivity {
         if (!MyApplication.getUtilisateur().getPrenom().equals(etPrenom.getText().toString()) && !etPrenom.getText().toString().equals("")) {
             user.setPrenom(etPrenom.getText().toString());
         }
-        //todo finir ce if
-        if (!etDateDeNaissance.getText().toString().equals("") || etDateDeNaissance.getText().toString().equals(Constants.SDF_JJ_MM_AAAA)) {
-            //user.setDdn(Constants.SDF_JJ_MM_AAAA.format());
-        }
+//        //todo finir ce if
+//        if (!etDateDeNaissance.getText().toString().equals("") || etDateDeNaissance.getText().toString().equals(Constants.SDF_JJ_MM_AAAA)) {
+//            //user.setDdn(Constants.SDF_JJ_MM_AAAA.format());
+//        }
         if (!etTelephone.getText().toString().equals("")) {
             user.setTelephone(etTelephone.getText().toString());
         }
@@ -197,7 +197,7 @@ public class MyPersonalDataActivity extends AppCompatActivity {
             }
             // encoder l'image en base64
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 25, baos);
             byte[] b = baos.toByteArray();
             final String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
             // nouveau documentbean

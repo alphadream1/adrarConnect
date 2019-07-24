@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.adrar.adrarconnect.data.model.SigninBean;
 import com.adrar.adrarconnect.data.model.UserBean;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 import retrofit2.Call;
 import retrofit2.Callback;

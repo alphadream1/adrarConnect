@@ -5,14 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.adrar.adrarconnect.data.model.LoginBean;
 import com.adrar.adrarconnect.data.model.UserBean;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,6 +31,9 @@ public class LoginActivity extends AppCompatActivity {
         etIdentifiant = findViewById(R.id.etIdentifiant);
         etPassword = findViewById(R.id.etPassword);
         progressBar = findViewById(R.id.progressBar);
+
+        etIdentifiant.setHint("E-mail");
+        etPassword.setHint("Mot de passe");
     }
 
     public void onClickConnection(final View view) {

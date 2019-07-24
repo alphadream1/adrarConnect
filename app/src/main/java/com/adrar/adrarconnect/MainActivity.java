@@ -13,8 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -84,8 +85,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // si faq est cliquer
         if (item.getItemId() == ITEM_ID_FAQ) {
-            // on lance l'activity FAQ
-            startActivity(new Intent(this, FaqActivity.class));
+            //si on a bien les données FAQ
+            if (MyApplication.getAccueilData().getFaq() != null) {
+                // on lance l'activity FAQ
+                startActivity(new Intent(this, FaqActivity.class));
+            } else {
+                Toast.makeText(this, "Un problème est survenu pendant le chargement des données des FAQ", Toast.LENGTH_LONG).show();
+            }
         } else if (item.getItemId() == ITEM_ID_SE_DECONNECTER) {
             MyApplication.setUtilisateur(null);
             recreate();
@@ -117,13 +123,20 @@ public class MainActivity extends AppCompatActivity {
 
     // methode onclick pour le bouton "formation" le clic lance l'activité pour se renseigner sur les formations
     public void onClickBoutonFormation(View view) {
-        startActivity(new Intent(this, FormationActivity.class));
+        if (MyApplication.getAccueilData().getFormations() != null) {
+            startActivity(new Intent(this, FormationActivity.class));
+        } else {
+            Toast.makeText(this, "Un problème est survenu dans le chargement des formations", Toast.LENGTH_LONG).show();
+        }
     }
 
     // methode onclick pour le bouton "processus" le clic lance l'activité pour les modalités sur les formations
     public void onClickBoutonProcessus(View view) {
-        // on lance l'activité processus d 'inscription
-        startActivity(new Intent(this, ProcessusActivity.class));
+        if (MyApplication.getAccueilData().getProcessusInscription() != null) {
+            startActivity(new Intent(this, ProcessusActivity.class));
+        } else {
+            Toast.makeText(this, "Une erreur est survenu dans le chargement du processus de recrutement", Toast.LENGTH_LONG).show();
+        }
     }
 
     // methode onclick sur le textview "se connecter" le clic lance l'activité pour se logguer, si déja logguer deviens l'acces a l'espace perso

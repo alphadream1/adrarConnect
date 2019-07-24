@@ -16,8 +16,8 @@ import android.widget.Toast;
 import com.adrar.adrarconnect.R;
 import com.adrar.adrarconnect.ValidationInformationCollectiveActivity;
 import com.adrar.adrarconnect.data.model.InfoCollectiveBean;
-import com.adrar.adrarconnect.data.utils.Constants;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.data.staticData.Constants;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 import java.util.ArrayList;
 

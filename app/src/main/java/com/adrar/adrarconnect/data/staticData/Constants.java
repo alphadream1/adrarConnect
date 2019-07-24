@@ -1,4 +1,4 @@
-package com.adrar.adrarconnect.data.utils;
+package com.adrar.adrarconnect.data.staticData;
 
 //
 // Created by FERRARIS Philippe on 18/06/2019 for adrarConnect.
@@ -30,7 +30,9 @@ public class Constants {
     // pour les URL
     //---------------
 
-    public static final String URL_BASE = "http://192.168.56.1:3000";
+    public static final String URL_BASE = "http://192.168.56.1:3000"; // url de test local
+    //public static final String URL_BASE = "http://vps623648.ovh.net:3000"; // url du serveur distant
+
     public static final String URL_ACCUEIL = "/ws/accueil";
     public static final String URL_SIGNIN = "/ws/signin";
     public static final String URL_LOGIN = "/ws/login";
@@ -77,4 +79,11 @@ public class Constants {
     public static final int DOC_NULL = 0;
     public static final int DOC_ENVOYER = 1;
     public static final int DOC_VALIDER = 2;
+
+    //----------------
+    // pour les sharedPreferences
+    //----------------
+
+    public static final String PREFS = "PREFS";
+    public static final String PREFS_ACCUEIL = "PREFS_ACCUEIL";
 }

@@ -1,4 +1,4 @@
-package com.adrar.adrarconnect.data.utils;
+package com.adrar.adrarconnect.utils;
 
 //
 // Created by FERRARIS Philippe on 27/06/2019 for adrarConnect.
@@ -11,6 +11,7 @@ import com.adrar.adrarconnect.data.model.LoginBean;
 import com.adrar.adrarconnect.data.model.SigninBean;
 import com.adrar.adrarconnect.data.model.UpdateUserBean;
 import com.adrar.adrarconnect.data.model.UserBean;
+import com.adrar.adrarconnect.data.staticData.Constants;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

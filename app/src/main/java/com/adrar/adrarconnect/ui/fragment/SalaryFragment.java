@@ -16,7 +16,7 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import com.adrar.adrarconnect.R;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 
 public class SalaryFragment extends Fragment {

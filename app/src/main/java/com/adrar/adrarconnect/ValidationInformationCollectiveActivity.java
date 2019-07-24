@@ -12,8 +12,8 @@ import android.widget.Toast;
 import com.adrar.adrarconnect.data.model.InfoCollectiveBean;
 import com.adrar.adrarconnect.data.model.InfocoUserBean;
 import com.adrar.adrarconnect.data.model.UserBean;
-import com.adrar.adrarconnect.data.utils.Constants;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.data.staticData.Constants;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 import retrofit2.Call;
 import retrofit2.Callback;

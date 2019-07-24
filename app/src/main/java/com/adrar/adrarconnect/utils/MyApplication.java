@@ -1,4 +1,4 @@
-package com.adrar.adrarconnect.data.utils;
+package com.adrar.adrarconnect.utils;
 
 //
 // Created by FERRARIS Philippe on 01/07/2019 for adrarConnect.
@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.adrar.adrarconnect.data.model.AccueilBean;
 import com.adrar.adrarconnect.data.model.UserBean;
+import com.adrar.adrarconnect.data.staticData.Constants;
 
 import retrofit2.Call;
 import retrofit2.Callback;

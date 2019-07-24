@@ -10,7 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.adrar.adrarconnect.data.model.FaqBean;
-import com.adrar.adrarconnect.data.utils.MyApplication;
+import com.adrar.adrarconnect.utils.MyApplication;
 import com.adrar.adrarconnect.ui.adapter.FaqAdapter;
 
 import java.util.ArrayList;
