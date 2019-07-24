@@ -4,6 +4,8 @@ package com.adrar.adrarconnect.data.staticData;
 // Created by FERRARIS Philippe on 18/06/2019 for adrarConnect.
 //
 
+import com.google.gson.Gson;
+
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
@@ -16,6 +18,11 @@ public class Constants {
     public static final SimpleDateFormat SDF_JJ_MM_AAAA = new SimpleDateFormat("dd/MM/yyyy", Locale.FRANCE);
     public static final SimpleDateFormat SDF_HH_MM = new SimpleDateFormat("HH:mm", Locale.FRANCE);
     public static final SimpleDateFormat SDF_ALL = new SimpleDateFormat("dd/MM/yyyy à HH:mm", Locale.FRANCE);
+
+    //---------------
+    // GSON
+    //---------------
+    public static final Gson GSON = new Gson();
 
     //---------------
     // pour les types de document

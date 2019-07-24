@@ -5,6 +5,7 @@ package com.adrar.adrarconnect.utils;
 //
 
 import android.app.Application;
+import android.content.Context;
 import android.util.Log;
 
 import com.adrar.adrarconnect.data.model.AccueilBean;
@@ -22,10 +23,12 @@ public class MyApplication extends Application {
     public static AccueilBean accueilData;
     public static InterfaceWebServices webServices;
     public static UserBean utilisateur;
+    public static Context context;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        context = this;
         accueilData = new AccueilBean();
 
         Retrofit retrofit = new Retrofit.Builder()
