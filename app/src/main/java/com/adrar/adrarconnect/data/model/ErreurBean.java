@@ -4,7 +4,7 @@ package com.adrar.adrarconnect.data.model;
 // Created by FERRARIS Philippe on 20/06/2019 for adrarConnect.
 //
 
-public class ErreurBean {
+class ErreurBean {
 
     //---------------
     // attribut

@@ -20,13 +20,6 @@ import static com.adrar.adrarconnect.R.layout;
 
 public class FaqActivity extends AppCompatActivity {
 
-    // Données
-    private ArrayList<FaqBean> data;
-    // composant graphique
-    private RecyclerView rvFaq;
-    // outils
-    private FaqAdapter adapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +27,15 @@ public class FaqActivity extends AppCompatActivity {
         setContentView(layout.activity_faq);
 
         // création de la lliste
-        data = new ArrayList<>();
+        // Données
+        ArrayList<FaqBean> data = new ArrayList<>();
         // remplissage de la liste
         data = MyApplication.getAccueilData().getFaq();
         // instanciation FaqAdapter
-        adapter = new FaqAdapter(data);
-        rvFaq = findViewById(id.rvFaq);
+        // outils
+        FaqAdapter adapter = new FaqAdapter(data);
+        // composant graphique
+        RecyclerView rvFaq = findViewById(id.rvFaq);
         // l'adapter que l'on souhaite afficher
         rvFaq.setAdapter(adapter);
         // réglage de l'affichage

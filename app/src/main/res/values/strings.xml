@@ -6,6 +6,13 @@
     <string name="les_formations">Les Formations</string>
     <string name="processus_d_inscription">Processus d\'inscription</string>
     <string name="se_connecter">Se connecter</string>
+    <string name="infoco_main">Information collective</string>
+    <string name="mon_espace_main">Mon espace</string>
+    <string name="faq">FAQ</string>
+    <string name="se_deconnecter">se déconnecter</string>
+    <string name="un_pb_est_survenu_pendant_le_chargement_des_donnees">Un problème est survenu pendant le chargement des données des FAQ</string>
+    <string name="un_pb_est_survenu_pendant_le_chargement_des_formations">Un problème est survenu pendant le chargement des formations</string>
+    <string name="un_pb_est_survenu_pendant_le_chargement_du_process">Une erreur est survenu dans le chargement du processus de recrutement</string>
 
     <!-- ADRAR ACTIVITY -->
     <string name="adrar">Le Pôle Numérique, vous propose des formations innovantes aux métiers et technologies du numérique accessibles – avec ou sans diplôme – dans les domaines du Développement d’applications web et mobiles, du support et administration des Systèmes et Réseaux et de la transformation numérique des entreprises. Nos formations « métiers » vous permettront de certifier vos compétences, acquérir de l’expérience, obtenir un titre professionnel niveaux IV (niv. Bac), III (niv. Bac+2) et II (niv. Bac+3) et surtout…DEVENIR UN PROFESSIONNEL ACTIF DU SECTEUR NUMÉRIQUE ET INFORMATIQUE EN OCCITANIE… et au-delà. Contactez un conseiller, il vous accompagnera dans la concrétisation de votre projet de formationBean et votre projet professionnel. Une équipe pédagogique à votre disposition. Le Pôle numérique s’appuie sur une équipe d’une vingtaine de formateurs experts dans leur domaine. Ils possèdent tous une expérience de plus de 5 ans dans le métier et sont formés à la pédagogie pour adultes. Chaque dispositif est suivi par un formateur référent : il est le garant technique et gère au quotidien la formationBean. La coordinatrice de la filière prend en charge l’adaptation de votre parcours de formationBean, la mise en place de son individualisation, ainsi que la coordination des groupes et votre suivi individuel tout au long du parcours.Les locaux à votre disposition Nous dispensons nos formations dans plus de 4000m² de locaux et sommes en capacité d’intervenir sur l’ensemble de la Région Occitanie.</string>
@@ -86,10 +93,22 @@
     <string name="votre_cv">Votre CV :</string>
     <string name="votre_lettre_motivation">Votre lettre de motivation :</string>
     <string name="votre_prescription_pe">Votre prescription pôle emploi :</string>
+    <string name="une_erreur_c_produite">Une erreur c\'est produite pendant l\'envoi de vos informations, merci de recommencer svp.</string>
 
     <!-- LOGIN ACTIVITY -->
-    <string name="identifiant">Identifiant</string>
-    <string name="password">Mot de passe</string>
+    <string name="mail">E-mail</string>
+    <string name="mdp">Mot de passe</string>
+    <string name="une_erreur_mail_ou_mdp">Une erreur dans votre identifiant ou mot de passe, merci de recommencer</string>
+    <string name="mdp_6caracteres_minimum">Le mot de passe ne contient pas les 6 caractères minimum</string>
+    <string name="format_identifiant_non_conforme">le format de l\'identifiant n\'est pas conforme, l\'identifiant est votre email</string>
+
+    <!-- SIGNIN ACTIVITY -->
+    <string name="cette_email_est_deja_utiliser">cette email est déjà utilisé.</string>
+    <string name="le_mot_de_passe_et_sa_confirmation">le mot de passe et sa confirmation ne sont pas identique.</string>
+    <string name="le_mdp_doit_contenir_6_caracteres">Le mot de passe doit contenir 6 caractères minimum.</string>
+    <string name="le_format_de_l_email">le format de l\'email n\'est pas bon.</string>
+    <string name="veuillez_saisir_votre_prenom">Veuillez saisir votre prénom.</string>
+    <string name="veuillez_saisir_votre_nom">Veuillez saisir votre nom.</string>
 
     <!-- INFORMATION COLLECTIVE ACTIVITY -->
     <string name="msg_erreur_infoco">Votre dossier doit être validé pour acceder a cette section</string>
@@ -101,22 +120,26 @@
     <string name="_date">21/05/2019 à 14:00</string>
     <string name="s_lectionner_une_date_et_valider">Sélectionner une date et valider</string>
     <string name="vous_avez_selectionne">Vous avez sélectionné :</string>
+    <string name="vous_tes_inscrit_a_cette_information_collective">Vous êtes inscrit a cette information collective : </string>
+    <string name="complet">Complet</string>
+    <string name="la_remplacer_par_celle_ci">La remplacer par celle-ci?</string>
+    <string name="vous_souhaitez_vous_inscrire_a_cette_information_collective">Vous souhaitez vous inscrire a cette information collective?</string>
+    <string name="vous_venez_de_vous_desinscrire">Vous venez de vous désinscrire d\'une information collective</string>
+    <string name="vous_souhaitez_vous_desinscrire">vous souhaitez vous désinscrire de cette information collective :</string>
+    <string name="la_remplacer_par_celle_ci2">la remplacer par celle-ci?</string>
+    <string name="vous_venez_de_vous_inscrire">Vous venez de vous inscrire a une information collective</string>
+    <string name="vous_n_avez_pas_acces_a_cette_section">Vous n\'avez pas accés a cette section tant que votre dossier n\'est pas validé.</string>
+    <string name="vous_devez_enregistrer_vos_documents">Vous devez enregistrer vos documents dans votre espace personnel pour accéder a cette section</string>
 
     <!-- TEXTE DE TEST D'AFFICHAGE -->
     <string name="loremQuestion" translatable="false">1/Lorem ipsum dolor sit amet, consectetur adipiscing elit?</string>
     <string name="loremReponse" translatable="false">Nulla maximus est sem. Praesent ac purus vel elit vehicula scelerisque. Quisque eget dui vel elit posuere rhoncus id in risus.</string>
     <string name="lorem" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus est sem.Praesent ac purus vel elit vehicula scelerisque. Quisque eget dui vel elit posuere rhoncus id in risus. Maecenas tincidun nulla a tellus pulvinar facilisis. Vestibulum congue gravida tincidunt.Nam nulla sem, aliquet a metus ac, aucto aliquam mi. Vestibulum mattis eu est nonvolutpat. Vestibulum sed elementum mi. Vestibulum sem nibh, venenatis vitae interdum non, condimentum a diam. Nullam sed quam nec quam tincidunt tempus. Aenean pretium risus at lectus rhoncus auctor. Nunc et nulla mauris.Sed fermentum libero eros, nec semper lectus convallis sit amet. In rhoncus porttitor elit, id laoreet turpis porttitor eu.Nam nulla sem, aliquet a metus ac, auctor aliquam mi. Vestibulum mattis eu est non volutpat. Vestibulum sed elementum mi.Vestibulum sem nibh, venenatis vitae interdum non, condimentum a diam. Nullam sed quam nec quam tincidunt tempus. Aenean pretium risus at lectus rhoncus auctor. Nunc et nulla mauris. </string>
     <string name="texte_explicatif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus est sem.Praesent ac purus vel elit vehicula scelerisque. Quisque eget dui vel elit posuere rhoncus id in risus. Maecenas tincidunt nulla a tellus pulvinar facilisis. Vestibulum congue gravida tincidunt. </string>
-    <string name="logo_adrarconnect">logo adrarConnect</string>
-    <string name="vous_tes_inscrit_a_cette_information_collective">Vous êtes inscrit a cette information collective : </string>
-    <string name="complet">Complet</string>
-    <string name="la_remplacer_par_celle_ci">La remplacer par celle-ci?</string>
-    <string name="mail_phil">philippe.ferraris@gmail.com</string>
-    <string name="mdp_phil">123456</string>
-    <string name="infoco_main">Information collective</string>
-    <string name="mon_espace_main">Mon espace</string>
-    <string name="vous_souhaitez_vous_inscrire_a_cette_information_collective">Vous souhaitez vous inscrire a cette information collective?</string>
 
+    <!-- POUR LES LOGO DIVERS -->
+    <string name="logo_adrarconnect">logo adrarConnect</string>
+    <string name="vous_ne_pouvez_vous_inscrire_a_cette_infoco">Vous ne pouvez vous inscrire à cette information collective car elle est complète</string>
     <!-- DERNIER AJOUT A TRIER ET A CLASSER -->
 
 </resources>

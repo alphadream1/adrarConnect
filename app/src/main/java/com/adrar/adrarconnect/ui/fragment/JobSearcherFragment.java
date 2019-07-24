@@ -27,8 +27,7 @@ public class JobSearcherFragment extends Fragment {
     }
 
     public static JobSearcherFragment newInstance() {
-        JobSearcherFragment fragment = new JobSearcherFragment();
-        return fragment;
+        return new JobSearcherFragment();
     }
 
     @Override

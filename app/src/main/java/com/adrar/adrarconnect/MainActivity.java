@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
     //Création du menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(0, ITEM_ID_FAQ, 0, "FAQ");
+        menu.add(0, ITEM_ID_FAQ, 0, R.string.faq);
         if (MyApplication.utilisateur != null) {
-            menu.add(3, ITEM_ID_SE_DECONNECTER, 1, "Se déconnecter");
+            menu.add(3, ITEM_ID_SE_DECONNECTER, 1, R.string.se_deconnecter);
         }
         return super.onCreateOptionsMenu(menu);
     }
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 // on lance l'activity FAQ
                 startActivity(new Intent(this, FaqActivity.class));
             } else {
-                Toast.makeText(this, "Un problème est survenu pendant le chargement des données des FAQ", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.un_pb_est_survenu_pendant_le_chargement_des_donnees, Toast.LENGTH_LONG).show();
             }
         } else if (item.getItemId() == ITEM_ID_SE_DECONNECTER) {
             MyApplication.setUtilisateur(null);
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         if (MyApplication.getAccueilData().getFormations() != null) {
             startActivity(new Intent(this, FormationActivity.class));
         } else {
-            Toast.makeText(this, "Un problème est survenu dans le chargement des formations", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.un_pb_est_survenu_pendant_le_chargement_des_formations, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         if (MyApplication.getAccueilData().getProcessusInscription() != null) {
             startActivity(new Intent(this, ProcessusActivity.class));
         } else {
-            Toast.makeText(this, "Une erreur est survenu dans le chargement du processus de recrutement", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.un_pb_est_survenu_pendant_le_chargement_du_process, Toast.LENGTH_LONG).show();
         }
     }
 

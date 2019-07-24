@@ -24,6 +24,7 @@ import com.adrar.adrarconnect.utils.MyApplication;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,8 +35,6 @@ public class MyPersonalDataActivity extends AppCompatActivity {
     private ImageView ivPhoto;
     private EditText etNom;
     private EditText etPrenom;
-    private TextView tvEmail;
-    private EditText etDateDeNaissance;
     private EditText etTelephone;
     private EditText etNumPE;
     private EditText etNumVoie;
@@ -45,6 +44,8 @@ public class MyPersonalDataActivity extends AppCompatActivity {
     private EditText etVille;
     private CheckBox cbDeveloppement;
     private CheckBox cbReseaux;
+    private EditText etDateDeNaissance;
+    private TextView tvEmail;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -107,7 +108,7 @@ public class MyPersonalDataActivity extends AppCompatActivity {
 
         if (userPhotoPresente(MyApplication.getUtilisateur()) != null) {
             ivPhoto.setImageBitmap(BitmapFactory.decodeByteArray(
-                    userPhotoPresente(MyApplication.getUtilisateur()), 0, userPhotoPresente(MyApplication.getUtilisateur()).length));
+                    userPhotoPresente(MyApplication.getUtilisateur()), 0, Objects.requireNonNull(userPhotoPresente(MyApplication.getUtilisateur())).length));
         }
 
 
@@ -167,7 +168,7 @@ public class MyPersonalDataActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<UserBean> call, Throwable t) {
                 Log.w("Err_Update", t + "");
-                Toast.makeText(MyPersonalDataActivity.this, "Une erreur c'est produite pendant l'envoi de vos informations, merci de recommencer svp.", Toast.LENGTH_LONG).show();
+                Toast.makeText(MyPersonalDataActivity.this, R.string.une_erreur_c_produite, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -222,12 +223,11 @@ public class MyPersonalDataActivity extends AppCompatActivity {
         }
     }
 
-    public byte[] userPhotoPresente(UserBean user) {
+    private byte[] userPhotoPresente(UserBean user) {
         for (DocumentsBean doc : user.getDocuments()
         ) {
             if (doc.getId_typeDocument() == Constants.DOC_TYPE_PHOTO) {
-                byte[] imageAsBytes = Base64.decode(doc.getBase64().getBytes(), 0);
-                return imageAsBytes;
+                return Base64.decode(doc.getBase64().getBytes(), 0);
             }
         }
         return null;

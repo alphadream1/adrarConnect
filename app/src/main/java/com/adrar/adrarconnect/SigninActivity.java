@@ -76,23 +76,23 @@ public class SigninActivity extends AppCompatActivity {
                                 @Override
                                 public void onFailure(Call<UserBean> call, Throwable t) {
                                     Log.w("erreur", "" + t);
-                                    Toast.makeText(etEmail.getContext(), "cette email est déjà utilisé.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(etEmail.getContext(), R.string.cette_email_est_deja_utiliser, Toast.LENGTH_LONG).show();
                                 }
                             });
                         } else {
-                            Toast.makeText(this, "le mot de passe et sa confirmation ne sont pas identique.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(this, R.string.le_mot_de_passe_et_sa_confirmation, Toast.LENGTH_LONG).show();
                         }
                     } else {
-                        Toast.makeText(this, "Le mot de passe doit contenir 6 caractères minimum.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, R.string.le_mdp_doit_contenir_6_caracteres, Toast.LENGTH_LONG).show();
                     }
                 } else {
-                    Toast.makeText(this, "le format de l'email n'est pas bon.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.le_format_de_l_email, Toast.LENGTH_LONG).show();
                 }
             } else {
-                Toast.makeText(this, "Veuillez saisir votre prénom.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.veuillez_saisir_votre_prenom, Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(this, "Veuillez saisir votre nom.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.veuillez_saisir_votre_nom, Toast.LENGTH_LONG).show();
         }
     }
 }

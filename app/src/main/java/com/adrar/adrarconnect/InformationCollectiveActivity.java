@@ -50,7 +50,7 @@ public class InformationCollectiveActivity extends AppCompatActivity {
 //        startActivity(choixInfocoIntent);
         // condition d'accés aux infoco
         if (MyApplication.getUtilisateur().getDocuments() == null || retourneLeBonDocument(MyApplication.getUtilisateur().getDocuments(), Constants.DOC_TYPE_CV) == null && retourneLeBonDocument(MyApplication.getUtilisateur().getDocuments(), Constants.DOC_TYPE_PRESCRIPTION_PE) == null) {
-            Toast.makeText(this, "Vous devez enregistrer vos documents dans votre espace personnel pour accéder a cette section", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.vous_devez_enregistrer_vos_documents, Toast.LENGTH_LONG).show();
         } else {
             if (retourneLeBonDocument(MyApplication.getUtilisateur().getDocuments(), Constants.DOC_TYPE_CV).getEtat() == Constants.DOC_VALIDER && retourneLeBonDocument(MyApplication.getUtilisateur().getDocuments(), Constants.DOC_TYPE_PRESCRIPTION_PE).getEtat() == Constants.DOC_VALIDER) {
                 // on prepare la nouvelle activité
@@ -58,12 +58,12 @@ public class InformationCollectiveActivity extends AppCompatActivity {
                 // on lance l'Activité
                 startActivity(choixInfocoIntent);
             } else {
-                Toast.makeText(this, "Vous n'avez pas accés a cette section tant que votre dossier n'est pas validé.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.vous_n_avez_pas_acces_a_cette_section, Toast.LENGTH_LONG).show();
             }
         }
     }
 
-    public DocumentsBean retourneLeBonDocument(ArrayList<DocumentsBean> list, int typeDeDocument) {
+    private DocumentsBean retourneLeBonDocument(ArrayList<DocumentsBean> list, int typeDeDocument) {
         for (DocumentsBean doc : list
         ) {
             if (doc.getId_typeDocument() == typeDeDocument) {

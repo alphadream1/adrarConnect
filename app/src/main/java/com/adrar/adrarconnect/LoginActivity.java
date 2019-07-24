@@ -32,8 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         progressBar = findViewById(R.id.progressBar);
 
-        etIdentifiant.setHint("E-mail");
-        etPassword.setHint("Mot de passe");
+        etIdentifiant.setHint(R.string.mail);
+        etPassword.setHint(R.string.mdp);
     }
 
     public void onClickConnection(final View view) {
@@ -55,14 +55,14 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<UserBean> call, Throwable t) {
                         Log.w("erreur", t + "");
-                        Toast.makeText(LoginActivity.this, "Une erreur dans votre identifiant ou mot de passe, merci de recommencer", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, R.string.une_erreur_mail_ou_mdp, Toast.LENGTH_LONG).show();
                     }
                 });
             } else {
-                Toast.makeText(this, "Le mot de passe ne contient pas les 6 caractères minimum", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.mdp_6caracteres_minimum, Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(this, "le format de l'identifiant n'est pas conforme, l'identifiant est votre email", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.format_identifiant_non_conforme, Toast.LENGTH_LONG).show();
         }
     }
 }

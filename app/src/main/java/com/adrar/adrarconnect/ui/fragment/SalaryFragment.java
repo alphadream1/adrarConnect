@@ -66,8 +66,7 @@ public class SalaryFragment extends Fragment {
     }
 
     public static SalaryFragment newInstance() {
-        SalaryFragment salaryFragment = new SalaryFragment();
-        return salaryFragment;
+        return new SalaryFragment();
     }
 
     @Override

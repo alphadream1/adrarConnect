@@ -17,13 +17,6 @@ import java.util.ArrayList;
 
 public class FormationActivity extends AppCompatActivity {
 
-    // données
-    private ArrayList<FormationBean> data;
-    // composant graphique
-    private RecyclerView rv;
-    // outil
-    private FormationAdapter adapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +26,13 @@ public class FormationActivity extends AppCompatActivity {
         int pixelSize = getResources().getDimensionPixelSize(R.dimen.formationRowSize);
 
         // création de la liste
-        data = new ArrayList<>();
+        // données
+        ArrayList<FormationBean> data = new ArrayList<>();
         // Instanciation d'un FormationAdapter
-        adapter = new FormationAdapter(data);
-        rv = findViewById(R.id.rvFormation);
+        // outil
+        FormationAdapter adapter = new FormationAdapter(data);
+        // composant graphique
+        RecyclerView rv = findViewById(R.id.rvFormation);
         //l'adapter que l'on souhaite afficher
         rv.setAdapter(adapter);
         //reglage de l'affichage

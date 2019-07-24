@@ -13,15 +13,6 @@ import java.util.ArrayList;
 
 public class ChoixInfoCoActivity extends AppCompatActivity {
 
-    //Données
-    private ArrayList<InfoCollectiveBean> data;
-    private Bundle extraInfoco;
-    // composant graphique
-    private RecyclerView rv;
-
-    //outils
-    private InformationCollectiveAdapter adapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +22,13 @@ public class ChoixInfoCoActivity extends AppCompatActivity {
         //----------------
         // instanciation
         //----------------
-        data = new ArrayList<>();
-        extraInfoco = getIntent().getExtras();
-        adapter = new InformationCollectiveAdapter(data);
-        rv = findViewById(R.id.rvChoixInformationCollective);
+        //Données
+        ArrayList<InfoCollectiveBean> data = new ArrayList<>();
+        Bundle extraInfoco = getIntent().getExtras();
+        //outils
+        InformationCollectiveAdapter adapter = new InformationCollectiveAdapter(data);
+        // composant graphique
+        RecyclerView rv = findViewById(R.id.rvChoixInformationCollective);
         // L’adapter que l’on souhaite afficher
         rv.setAdapter(adapter);
         //Réglage : affichage ligne par ligne

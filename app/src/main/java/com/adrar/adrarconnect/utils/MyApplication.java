@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MyApplication extends Application {
 
-    public static AccueilBean accueilData;
+    private static AccueilBean accueilData;
     public static InterfaceWebServices webServices;
     public static UserBean utilisateur;
     public static Context context;
@@ -58,7 +58,7 @@ public class MyApplication extends Application {
         return accueilData;
     }
 
-    public static void setAccueilData(AccueilBean accueilData) {
+    private static void setAccueilData(AccueilBean accueilData) {
         MyApplication.accueilData = accueilData;
     }
 

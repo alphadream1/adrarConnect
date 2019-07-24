@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class FaqAdapter extends RecyclerView.Adapter<FaqAdapter.ViewHolder> {
 
-    private ArrayList<FaqBean> data;
+    private final ArrayList<FaqBean> data;
 
     public FaqAdapter(ArrayList<FaqBean> data) {
         this.data = data;
@@ -26,9 +26,10 @@ public class FaqAdapter extends RecyclerView.Adapter<FaqAdapter.ViewHolder> {
 
     protected static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvQuestion, tvReponse;
+        private final TextView tvQuestion;
+        private final TextView tvReponse;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             tvQuestion = itemView.findViewById(R.id.tvQuestion);
             tvReponse = itemView.findViewById(R.id.tvReponse);

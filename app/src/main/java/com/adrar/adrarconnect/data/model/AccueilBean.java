@@ -60,10 +60,6 @@ public class AccueilBean {
         return adrar_html;
     }
 
-    public void setAdrar_html(String adrar_html) {
-        this.adrar_html = adrar_html;
-    }
-
     public ProcessusInscriptionBean getProcessusInscription() {
         return processusInscription;
     }

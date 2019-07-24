@@ -132,7 +132,7 @@ public class MyDocActivity extends AppCompatActivity {
         }
     }
 
-    public Boolean userHaveCV(UserBean user) {
+    private Boolean userHaveCV(UserBean user) {
         for (DocumentsBean doc : user.getDocuments()
         ) {
             if (doc.getId_typeDocument() == Constants.DOC_TYPE_CV) {
@@ -142,7 +142,7 @@ public class MyDocActivity extends AppCompatActivity {
         return false;
     }
 
-    public Boolean userHavePPE(UserBean user) {
+    private Boolean userHavePPE(UserBean user) {
         for (DocumentsBean doc : user.getDocuments()
         ) {
             if (doc.getId_typeDocument() == Constants.DOC_TYPE_PRESCRIPTION_PE) {
@@ -152,7 +152,7 @@ public class MyDocActivity extends AppCompatActivity {
         return false;
     }
 
-    public Boolean userHaveLM(UserBean user) {
+    private Boolean userHaveLM(UserBean user) {
         for (DocumentsBean doc : user.getDocuments()
         ) {
             if (doc.getId_typeDocument() == Constants.DOC_TYPE_LETTRE_MOTIVATION) {

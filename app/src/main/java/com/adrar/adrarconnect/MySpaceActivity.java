@@ -19,17 +19,9 @@ import com.adrar.adrarconnect.utils.MyApplication;
 
 public class MySpaceActivity extends AppCompatActivity {
 
-    private TextView tvPrenomUtilisateur;
     private SeekBar seekBar;
-    private TextView tvMySpaceInscription;
-    private TextView tvMySpaceInfoPerso;
-    private TextView tvMySpaceDocuments;
-    private TextView tvMySpaceInscriptionInfoCo;
-    private TextView tvMySpaceParticipationInfoCo;
-    private TextView tvMesInformations;
-    private TextView tvMesDocuments;
     private TextView tvExplication;
-    private TextView tvDossierValide;
+    private TextView tvPrenomUtilisateur;
     private ImageView ivIconCheck;
     private TextView tvInscritInfocoMySpace;
     private TextView tvDateInfocoMySpace;
@@ -40,22 +32,24 @@ public class MySpaceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_space);
+
+
+
         tvPrenomUtilisateur = findViewById(R.id.tvPrenomUtilisateur);
         seekBar = findViewById(R.id.seekBar);
-        tvMySpaceInscription = findViewById(R.id.tvMySpaceInscription);
-        tvMySpaceInfoPerso = findViewById(R.id.tvMySpaceInfoPerso);
-        tvMySpaceDocuments = findViewById(R.id.tvMySpaceDocuments);
-        tvMySpaceInscriptionInfoCo = findViewById(R.id.tvMySpaceInscriptionInfoCo);
-        tvMySpaceParticipationInfoCo = findViewById(R.id.tvMySpaceParticipationInfoCo);
-        tvMesInformations = findViewById(R.id.tvMesInformations);
-        tvMesDocuments = findViewById(R.id.tvMesDocuments);
         tvExplication = findViewById(R.id.tvExplication);
-        tvDossierValide = findViewById(R.id.tvDossierValide);
         ivIconCheck = findViewById(R.id.ivCheck);
         tvInscritInfocoMySpace = findViewById(R.id.tvInscritInfocoMySpace);
         tvDateInfocoMySpace = findViewById(R.id.tvDateInfocoMySpace);
         tvLieuInfocoMySpace = findViewById(R.id.tvLieuInfocoMySpace);
         cvMySpace = findViewById(R.id.cvMySpace);
+
+        // textView pour le text sous la seekBar a set pour click
+        TextView tvMySpaceInscription = findViewById(R.id.tvMySpaceInscription);
+        TextView tvMySpaceInfoPerso = findViewById(R.id.tvMySpaceInfoPerso);
+        TextView tvMySpaceDocuments = findViewById(R.id.tvMySpaceDocuments);
+        TextView tvMySpaceInscriptionInfoCo = findViewById(R.id.tvMySpaceInscriptionInfoCo);
+        TextView tvMySpaceParticipationInfoCo = findViewById(R.id.tvMySpaceParticipationInfoCo);
 
         //----------------
         // set des textView
@@ -82,7 +76,7 @@ public class MySpaceActivity extends AppCompatActivity {
         startActivity(new Intent(this, MyDocActivity.class));
     }
 
-    public void majAffichageTvExplicationAndSeekbar(int i) {
+    private void majAffichageTvExplicationAndSeekbar(int i) {
         switch (i) {
             case 1:
                 tvExplication.setText(Constants.ETAPE_INFOPERSO);
@@ -118,7 +112,7 @@ public class MySpaceActivity extends AppCompatActivity {
         }
     }
 
-    public boolean dossierValide() {
+    private boolean dossierValide() {
         Boolean ppeValide = false;
         Boolean cvValide = false;
         if (MyApplication.getUtilisateur().getDocuments() != null) {
@@ -135,14 +129,10 @@ public class MySpaceActivity extends AppCompatActivity {
                 }
             }
         }
-        if (ppeValide && cvValide) {
-            return true;
-        } else {
-            return false;
-        }
+        return ppeValide && cvValide;
     }
 
-    public Boolean documentEnvoyer() {
+    private Boolean documentEnvoyer() {
         Boolean ppeEnvoyer = false;
         Boolean cvEnvoyer = false;
         if (MyApplication.getUtilisateur().getDocuments() != null) {
@@ -155,11 +145,7 @@ public class MySpaceActivity extends AppCompatActivity {
                 }
             }
         }
-        if (ppeEnvoyer && cvEnvoyer) {
-            return true;
-        } else {
-            return false;
-        }
+        return ppeEnvoyer && cvEnvoyer;
     }
 
     public void onClickProcessusMySpace(View view) {

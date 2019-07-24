@@ -8,8 +8,6 @@ import com.adrar.adrarconnect.data.model.FormationBean;
 
 public class DescriptionFormationActivity extends AppCompatActivity {
 
-    private FormationBean data;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +15,7 @@ public class DescriptionFormationActivity extends AppCompatActivity {
         //la webview
         WebView myWebView = findViewById(R.id.webViewFormation);
         //récuperation des données
-        data = (FormationBean) getIntent().getSerializableExtra("formation");
+        FormationBean data = (FormationBean) getIntent().getSerializableExtra("formation");
 
         // affichage des données
         // html dans la webview

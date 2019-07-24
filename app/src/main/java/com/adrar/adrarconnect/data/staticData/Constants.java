@@ -43,10 +43,10 @@ public class Constants {
     public static final String URL_ACCUEIL = "/ws/accueil";
     public static final String URL_SIGNIN = "/ws/signin";
     public static final String URL_LOGIN = "/ws/login";
-    public static final String URL_CANDIDAT = "/ws/candidat";
+    private static final String URL_CANDIDAT = "/ws/candidat";
     public static final String URL_CANDIDAT_UPDATE_DETAILS = URL_CANDIDAT + "/update/details/";
     public static final String URL_CANDIDAT_UPDATE_DOCUMENT = URL_CANDIDAT + "/update/doc/";
-    public static final String URL_INFOCOL = "/ws/infos-collectives";
+    private static final String URL_INFOCOL = "/ws/infos-collectives";
     public static final String URL_INFOCOL_INSCRIPTION = URL_INFOCOL + "/inscription";
     public static final String URL_INFOCOL_MODIFICATION = URL_INFOCOL + "/update/";
     public static final String URL_INFOCOL_ANNULATION = URL_INFOCOL + "/delete/";

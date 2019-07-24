@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -52,7 +53,8 @@
         android:labelFor="@id/etNom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvNom"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:targetApi="o" />
 
     <TextView
         android:id="@+id/tvPrenom"
@@ -78,7 +80,8 @@
         android:labelFor="@id/etPrenom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvPrenom"
-        app:layout_constraintTop_toBottomOf="@+id/etNom" />
+        app:layout_constraintTop_toBottomOf="@+id/etNom"
+        tools:targetApi="o" />
 
     <TextView
         android:id="@+id/tvEmail"
@@ -104,7 +107,8 @@
         android:labelFor="@id/etEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvEmail"
-        app:layout_constraintTop_toBottomOf="@+id/etPrenom" />
+        app:layout_constraintTop_toBottomOf="@+id/etPrenom"
+        tools:targetApi="o" />
 
     <TextView
         android:id="@+id/tvMotDePasse"
@@ -130,7 +134,8 @@
         android:labelFor="@id/etPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvMotDePasse"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
+        tools:targetApi="o" />
 
     <TextView
         android:id="@+id/tvConfirMdp"
@@ -156,7 +161,8 @@
         android:labelFor="@id/etConfirMdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvConfirMdp"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        tools:targetApi="o" />
 
     <TextView
         android:id="@+id/tvValiderDoc"

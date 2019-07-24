@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class InformationCollectiveAdapter extends RecyclerView.Adapter<InformationCollectiveAdapter.ViewHolder> {
 
-    private ArrayList<InfoCollectiveBean> data;
+    private final ArrayList<InfoCollectiveBean> data;
 
     //---------------
     // Constructeur
@@ -36,8 +36,11 @@ public class InformationCollectiveAdapter extends RecyclerView.Adapter<Informati
     // classe qui stock les données d'1 ligne
     static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvVille, tvDate, tvInscrit, tvComplet;
-        View root;
+        final TextView tvVille;
+        final TextView tvDate;
+        final TextView tvInscrit;
+        final TextView tvComplet;
+        final View root;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -78,7 +81,7 @@ public class InformationCollectiveAdapter extends RecyclerView.Adapter<Informati
             @Override
             public void onClick(View v) {
                 if (datum.getComplet() == 1) {
-                    Toast.makeText(viewHolder.tvComplet.getContext(), "Vous ne pouvez vous inscrire à cette information collective car elle est complète", Toast.LENGTH_LONG).show();
+                    Toast.makeText(viewHolder.tvComplet.getContext(), R.string.vous_ne_pouvez_vous_inscrire_a_cette_infoco, Toast.LENGTH_LONG).show();
                 } else {
                     Intent intent = new Intent(viewHolder.root.getContext(), ValidationInformationCollectiveActivity.class);
                     intent.putExtra("infoco", datum);

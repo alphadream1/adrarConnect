@@ -25,7 +25,7 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.View
     //---------------
     // données
     //---------------
-    private ArrayList<FormationBean> data;
+    private final ArrayList<FormationBean> data;
 
     //---------------
     //
@@ -39,12 +39,12 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.View
     //---------------
     protected static class ViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView ivLogoFormation;
-        TextView tvIntituleFormation;
-        View tvTransparent;
+        final ImageView ivLogoFormation;
+        final TextView tvIntituleFormation;
+        final View tvTransparent;
 
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivLogoFormation = itemView.findViewById(R.id.ivLogoFormation);
             tvIntituleFormation = itemView.findViewById(R.id.tvIntituleFormation);
