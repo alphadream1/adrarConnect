@@ -9,9 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.adrar.adrarconnect.data.model.FormationBean;
-import com.adrar.adrarconnect.utils.MyApplication;
 import com.adrar.adrarconnect.ui.AutoFitGridLayoutManager;
 import com.adrar.adrarconnect.ui.adapter.FormationAdapter;
+import com.adrar.adrarconnect.utils.MyApplication;
 
 import java.util.ArrayList;
 

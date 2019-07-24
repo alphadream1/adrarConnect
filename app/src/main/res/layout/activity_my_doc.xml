@@ -39,7 +39,7 @@
         android:onClick="onClickAjouterCV"
         app:layout_constraintStart_toEndOf="@+id/tvCV"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/ic_ajouter" />
+        app:srcCompat="@mipmap/ic_ajouter" />
 
     <TextView
         android:id="@+id/textView18"
@@ -63,7 +63,7 @@
         android:onClick="onClickAjouterLM"
         app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/ivCv"
-        app:srcCompat="@drawable/ic_ajouter" />
+        app:srcCompat="@mipmap/ic_ajouter" />
 
     <TextView
         android:id="@+id/textView22"
@@ -87,7 +87,7 @@
         android:onClick="onClickAjouterPPE"
         app:layout_constraintStart_toEndOf="@+id/textView22"
         app:layout_constraintTop_toBottomOf="@+id/ivLettreMotivation"
-        app:srcCompat="@drawable/ic_ajouter" />
+        app:srcCompat="@mipmap/ic_ajouter" />
 
     <TextView
         android:id="@+id/tvValiderDoc"
@@ -125,7 +125,7 @@
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/ivCv"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/ic_check" />
+        app:srcCompat="@mipmap/ic_check" />
 
     <ImageView
         android:id="@+id/ivCheckLM"
@@ -137,7 +137,7 @@
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/ivLettreMotivation"
         app:layout_constraintTop_toBottomOf="@+id/ivCv"
-        app:srcCompat="@drawable/ic_check" />
+        app:srcCompat="@mipmap/ic_check" />
 
     <ImageView
         android:id="@+id/ivChechPPE"
@@ -149,5 +149,5 @@
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/ivPrescriptionPE"
         app:layout_constraintTop_toBottomOf="@+id/ivLettreMotivation"
-        app:srcCompat="@drawable/ic_check" />
+        app:srcCompat="@mipmap/ic_check" />
 </android.support.constraint.ConstraintLayout>

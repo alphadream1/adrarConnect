@@ -163,7 +163,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/icon_check"
             android:visibility="invisible"
-            app:srcCompat="@drawable/ic_check" />
+            app:srcCompat="@mipmap/ic_check" />
 
     </LinearLayout>
 
