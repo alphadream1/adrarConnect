@@ -87,6 +87,8 @@
     <string name="reseaux">Réseaux</string>
     <string name="developpement">Développement</string>
     <string name="reseaux2point">Réseaux</string>
+    <string name="vous_devez_au_minimum_remplir_etc">Vous devez au minimum remplir votre numéro de téléphone et votre numéro pôle emploi pour valider vos informations, merci</string>
+    <string name="format_ddn">JJ/MM/AAAA</string>
 
     <!-- MES DOCUMENTS ACTIVITY -->
     <string name="ajout_pieces_justificative">Ajout de vos pièces justificatives</string>
@@ -130,6 +132,7 @@
     <string name="vous_venez_de_vous_inscrire">Vous venez de vous inscrire a une information collective</string>
     <string name="vous_n_avez_pas_acces_a_cette_section">Vous n\'avez pas accés a cette section tant que votre dossier n\'est pas validé.</string>
     <string name="vous_devez_enregistrer_vos_documents">Vous devez enregistrer vos documents dans votre espace personnel pour accéder a cette section</string>
+    <string name="vous_ne_pouvez_vous_inscrire_a_cette_infoco">Vous ne pouvez vous inscrire à cette information collective car elle est complète</string>
 
     <!-- TEXTE DE TEST D'AFFICHAGE -->
     <string name="loremQuestion" translatable="false">1/Lorem ipsum dolor sit amet, consectetur adipiscing elit?</string>
@@ -139,7 +142,6 @@
 
     <!-- POUR LES LOGO DIVERS -->
     <string name="logo_adrarconnect">logo adrarConnect</string>
-    <string name="vous_ne_pouvez_vous_inscrire_a_cette_infoco">Vous ne pouvez vous inscrire à cette information collective car elle est complète</string>
     <!-- DERNIER AJOUT A TRIER ET A CLASSER -->
 
 </resources>

@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<UserBean> call, Throwable t) {
-                        Log.w("erreur", t + "");
+                        Log.w("erreurLogin", t + "");
                         Toast.makeText(LoginActivity.this, R.string.une_erreur_mail_ou_mdp, Toast.LENGTH_LONG).show();
                     }
                 });

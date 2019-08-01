@@ -99,17 +99,17 @@ public class MySpaceActivity extends AppCompatActivity {
                 seekBar.setProgress(5);
                 break;
         }
-        if (documentEnvoyer()) {
-            tvExplication.setText(Constants.ETAPE_VALIDDOC);
-            if (dossierValide()) {
-                tvExplication.setText(Constants.ETAPE_INFOCO);
-                seekBar.setProgress(3);
-                if (MyApplication.getUtilisateur().getID_infoCollective() > 0) {
-                    tvExplication.setText(Constants.ETAPE_RAPPEL_INFOCO);
-                    seekBar.setProgress(4);
-                }
-            }
-        }
+//        if (documentEnvoyer()) {
+//            tvExplication.setText(Constants.ETAPE_VALIDDOC);
+//            if (dossierValide()) {
+//                tvExplication.setText(Constants.ETAPE_INFOCO);
+//                seekBar.setProgress(3);
+//                if (MyApplication.getUtilisateur().getID_infoCollective() > 0) {
+//                    tvExplication.setText(Constants.ETAPE_RAPPEL_INFOCO);
+//                    seekBar.setProgress(4);
+//                }
+//            }
+//        }
     }
 
     private boolean dossierValide() {

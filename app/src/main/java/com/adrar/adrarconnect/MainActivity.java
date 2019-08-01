@@ -7,6 +7,7 @@ package com.adrar.adrarconnect;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,13 +16,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.adrar.adrarconnect.data.model.UserBean;
 import com.adrar.adrarconnect.utils.MyApplication;
+import com.adrar.adrarconnect.utils.SharedPreferenceUtilsKt;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-
-    // -------------
-    // data
-    // -------------
 
     // constantes pour le burger menu
     private static final int ITEM_ID_FAQ;
@@ -50,8 +53,23 @@ public class MainActivity extends AppCompatActivity {
         btInscrire = findViewById(R.id.btInscrire);
         tvSeConnecter = findViewById(R.id.tvSeConnecter);
 
+        // on test si on a les log en persitance
+        if (SharedPreferenceUtilsKt.getUser() != null) {
+            MyApplication.webServices.postUserLogin(SharedPreferenceUtilsKt.getUser()).enqueue(new Callback<UserBean>() {
+                @Override
+                public void onResponse(Call<UserBean> call, Response<UserBean> response) {
+                    MyApplication.setUtilisateur(response.body());
+                }
+
+                @Override
+                public void onFailure(Call<UserBean> call, Throwable t) {
+                    Log.w("erreur de log", "" + t);
+                }
+            });
+        }
+
         //on test si un utilisateur est logguer, et on set les affichage suivant la réponse
-        if (MyApplication.utilisateur != null) {
+        if (MyApplication.getUtilisateur() != null) {
             btInscrire.setText(getString(R.string.infoco_main));
             tvSeConnecter.setText(getString(R.string.mon_espace_main));
         }
@@ -60,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        if (MyApplication.utilisateur != null) {
+        if (MyApplication.getUtilisateur() != null) {
             btInscrire.setText(getString(R.string.infoco_main));
             tvSeConnecter.setText(getString(R.string.mon_espace_main));
         }
@@ -74,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, ITEM_ID_FAQ, 0, R.string.faq);
-        if (MyApplication.utilisateur != null) {
+        if (MyApplication.getUtilisateur() != null) {
             menu.add(3, ITEM_ID_SE_DECONNECTER, 1, R.string.se_deconnecter);
         }
         return super.onCreateOptionsMenu(menu);
@@ -94,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else if (item.getItemId() == ITEM_ID_SE_DECONNECTER) {
             MyApplication.setUtilisateur(null);
+            //SharedPreferenceUtilsKt.saveUser(null);
             recreate();
         }
         return super.onOptionsItemSelected(item);

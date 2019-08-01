@@ -9,6 +9,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.adrar.adrarconnect.data.model.AccueilBean;
+import com.adrar.adrarconnect.data.model.LoginBean;
 import com.adrar.adrarconnect.data.model.UserBean;
 import com.adrar.adrarconnect.data.staticData.Constants;
 
@@ -41,12 +42,15 @@ public class MyApplication extends Application {
             @Override
             public void onResponse(Call<AccueilBean> call, Response<AccueilBean> response) {
                 Log.w("retrofit", "Download ok");
+                assert response.body() != null;
+                SharedPreferenceUtilsKt.saveAcceuil(response.body());
                 MyApplication.setAccueilData(response.body());
             }
 
             @Override
             public void onFailure(Call<AccueilBean> call, Throwable t) {
                 Log.w("retrofit", "Download fail : " + t);
+                MyApplication.setAccueilData(SharedPreferenceUtilsKt.getAccueil());
             }
         });
     }

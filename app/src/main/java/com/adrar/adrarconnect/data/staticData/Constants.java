@@ -50,7 +50,6 @@ public class Constants {
     public static final String URL_INFOCOL_INSCRIPTION = URL_INFOCOL + "/inscription";
     public static final String URL_INFOCOL_MODIFICATION = URL_INFOCOL + "/update/";
     public static final String URL_INFOCOL_ANNULATION = URL_INFOCOL + "/delete/";
-    public static final String URL_ERREUR = "/ws/erreur";
 
     //----------------
     //  pour les textes de "mon espace"

@@ -24,6 +24,7 @@ import com.adrar.adrarconnect.utils.MyApplication;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
+import java.util.Date;
 import java.util.Objects;
 
 import retrofit2.Call;
@@ -76,8 +77,14 @@ public class MyPersonalDataActivity extends AppCompatActivity {
 
         // set des autres info sous conditions
         if (MyApplication.getUtilisateur().getDdn() != null) {
-            etDateDeNaissance.setText(MyApplication.getUtilisateur().getDdn().toString());
+            etDateDeNaissance.setText(Constants.SDF_JJ_MM_AAAA.format(MyApplication.getUtilisateur().getDdn()));
+        } else {
+            etDateDeNaissance.setHint(R.string.format_ddn);
         }
+        //---------------------------------------------------------------------------------------------------------------------------------------------------
+        // test du focus
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------
         if (MyApplication.getUtilisateur().getTelephone() != null) {
             etTelephone.setText(MyApplication.getUtilisateur().getTelephone());
         }
@@ -110,9 +117,8 @@ public class MyPersonalDataActivity extends AppCompatActivity {
             ivPhoto.setImageBitmap(BitmapFactory.decodeByteArray(
                     userPhotoPresente(MyApplication.getUtilisateur()), 0, Objects.requireNonNull(userPhotoPresente(MyApplication.getUtilisateur())).length));
         }
-
-
     }
+
 
     public void onClickValiderInfoPerso(View view) {
         UpdateUserBean user = new UpdateUserBean();
@@ -124,10 +130,15 @@ public class MyPersonalDataActivity extends AppCompatActivity {
         if (!MyApplication.getUtilisateur().getPrenom().equals(etPrenom.getText().toString()) && !etPrenom.getText().toString().equals("")) {
             user.setPrenom(etPrenom.getText().toString());
         }
-//        //todo finir ce if
-//        if (!etDateDeNaissance.getText().toString().equals("") || etDateDeNaissance.getText().toString().equals(Constants.SDF_JJ_MM_AAAA)) {
-//            //user.setDdn(Constants.SDF_JJ_MM_AAAA.format());
-//        }
+
+        if (!etDateDeNaissance.getText().toString().equals("")) {
+            try {
+                Date d = Constants.SDF_JJ_MM_AAAA.parse(etDateDeNaissance.getText().toString());
+                user.setDdn(d.getTime());
+            } catch (java.text.ParseException e) {
+                e.printStackTrace();
+            }
+        }
         if (!etTelephone.getText().toString().equals("")) {
             user.setTelephone(etTelephone.getText().toString());
         }
@@ -155,23 +166,26 @@ public class MyPersonalDataActivity extends AppCompatActivity {
         if (cbReseaux.isChecked()) {
             user.setReseau(Constants.BOOLEEN_TRUE);
         }
-        MyApplication.webServices.postUserUpdateDetails(user).enqueue(new Callback<UserBean>() {
-            @Override
-            public void onResponse(Call<UserBean> call, Response<UserBean> response) {
-                if (response.body() != null) {
-                    MyApplication.setUtilisateur(response.body());
-                    startActivity(new Intent(etNom.getContext(), MySpaceActivity.class));
-                    finish();
+        if (!etTelephone.getText().toString().trim().equals("") && !etNumPE.getText().toString().trim().equals("")) {
+            MyApplication.webServices.postUserUpdateDetails(user).enqueue(new Callback<UserBean>() {
+                @Override
+                public void onResponse(Call<UserBean> call, Response<UserBean> response) {
+                    if (response.body() != null) {
+                        MyApplication.setUtilisateur(response.body());
+                        startActivity(new Intent(etNom.getContext(), MySpaceActivity.class));
+                        finish();
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<UserBean> call, Throwable t) {
-                Log.w("Err_Update", t + "");
-                Toast.makeText(MyPersonalDataActivity.this, R.string.une_erreur_c_produite, Toast.LENGTH_LONG).show();
-            }
-        });
-
+                @Override
+                public void onFailure(Call<UserBean> call, Throwable t) {
+                    Log.w("Err_Update", t + "");
+                    Toast.makeText(MyPersonalDataActivity.this, R.string.une_erreur_c_produite, Toast.LENGTH_LONG).show();
+                }
+            });
+        } else {
+            Toast.makeText(this, R.string.vous_devez_au_minimum_remplir_etc, Toast.LENGTH_LONG).show();
+        }
     }
 
     public void onClickAnnulerInfoPerso(View view) {
@@ -224,12 +238,17 @@ public class MyPersonalDataActivity extends AppCompatActivity {
     }
 
     private byte[] userPhotoPresente(UserBean user) {
-        for (DocumentsBean doc : user.getDocuments()
-        ) {
-            if (doc.getId_typeDocument() == Constants.DOC_TYPE_PHOTO) {
-                return Base64.decode(doc.getBase64().getBytes(), 0);
+        if (user.getDocuments() != null) {
+            for (DocumentsBean doc : user.getDocuments()
+            ) {
+                if (doc.getId_typeDocument() == Constants.DOC_TYPE_PHOTO) {
+                    return Base64.decode(doc.getBase64().getBytes(), 0);
+                }
             }
+            return null;
+        } else {
+            return null;
         }
-        return null;
     }
+
 }
